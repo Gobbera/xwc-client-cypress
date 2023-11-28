@@ -28,5 +28,6 @@ describe('Create and send a new email', () => {
     cy.wait('@sendEmailRequest', { timeout: 10000 }).then((interception) => {
       expect(interception.response.statusCode).to.eq(200);
     });
+    cy.classificationRequest('email');
   });
 });

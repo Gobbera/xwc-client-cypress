@@ -22,8 +22,7 @@ describe('Receive online chat support', () => {
             cy.wrap($element).click();
         });
         cy.getByData('conversation-chat-container-btn-send-message').click();
-        cy.getByData('conversation-chat-container-btn-request-classification').click();
-        cy.classificationRequest();
+        cy.classificationRequest('chat');
         cy.intercept('GET', /\/xgen_desenv6.dll\?OpOnLine\?c=0&p1=\d+&p2=\w+-\w+-\w+-\w+-\w+&p3=\w+&p4=\d+&p5=&p6=&p7=\d+/).as('turnOffchatRequest');
         cy.getByData('conversation-chat-container-btn-turn-off-interaction').click();
         cy.wait('@turnOffchatRequest', { timeout: 10000 }).then((interception) => {

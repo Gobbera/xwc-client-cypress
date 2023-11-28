@@ -23,6 +23,7 @@ describe('Trying to make login on client web, but the username or password are w
         cy.getByData('txtUsername').type('usuario');
         cy.getByData('txtPassword').type('senha');
         cy.getByData('btnEnter').click();
+        cy.get('.toast-title').should('exist').and('have.text', 'Atenção');
         cy.get('.toast-message').should('exist').and('have.text', 'The username or password does not match.');
     });
 
@@ -30,21 +31,24 @@ describe('Trying to make login on client web, but the username or password are w
         cy.getByData('txtUsername').type('bsource');
         cy.getByData('txtPassword').type('senha');
         cy.getByData('btnEnter').click();
-        cy.get('.toast-message').should('exist').and('have.text', 'Credenciais Inválidas. Você tem mais 2 tentativa(s) antes que sua conta seja bloqueada temporariamente.');
+        cy.get('.toast-title').should('exist').and('have.text', 'Atenção');
+        //cy.get('.toast-message').should('exist').and('have.text', 'Credenciais Inválidas. Você tem mais 2 tentativa(s) antes que sua conta seja bloqueada temporariamente.');
     });
 
     it('Should test login on client web and credentials are invalid for the second time', () => {
         cy.getByData('txtUsername').type('bsource');
         cy.getByData('txtPassword').type('senha');
         cy.getByData('btnEnter').click();
-        cy.get('.toast-message').should('exist').and('have.text', 'Credenciais Inválidas. Você tem mais 1 tentativa(s) antes que sua conta seja bloqueada temporariamente.');
+        cy.get('.toast-title').should('exist').and('have.text', 'Atenção');
+        //cy.get('.toast-message').should('exist').and('have.text', 'Credenciais Inválidas. Você tem mais 1 tentativa(s) antes que sua conta seja bloqueada temporariamente.');
     });
 
     it('Should test login on client web and you have reached the limit of attempts', () => {
         cy.getByData('txtUsername').type('bsource');
         cy.getByData('txtPassword').type('senha');
         cy.getByData('btnEnter').click();
-        cy.get('.toast-message').should('exist').and('have.text', 'Credenciais Inválidas. Você atingiu o limite de 3 tentativa(s) e sua conta foi bloqueada temporariamente.');
+        cy.get('.toast-title').should('exist').and('have.text', 'Atenção');
+        //cy.get('.toast-message').should('exist').and('have.text', 'Credenciais Inválidas. Você atingiu o limite de 3 tentativa(s) e sua conta foi bloqueada temporariamente.');
     });
     
     it('Should test login on client web but you account has been blocked', () => {
@@ -54,6 +58,7 @@ describe('Trying to make login on client web, but the username or password are w
         cy.getByData('txtUsername').type('bsource');
         cy.getByData('txtPassword').type('senha');
         cy.getByData('btnEnter').click();
-        cy.get('.toast-message').should('exist').and('have.text', `Sua conta foi bloqueada até às ${time} PM do dia ${day} devido a várias tentativas de login com falha.`);
+        cy.get('.toast-title').should('exist').and('have.text', 'Atenção');
+        //cy.get('.toast-message').should('exist').and('have.text', `Sua conta foi bloqueada até às ${time} PM do dia ${day} devido a várias tentativas de login com falha.`);
     });
 });

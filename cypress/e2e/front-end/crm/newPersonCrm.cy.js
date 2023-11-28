@@ -102,8 +102,8 @@ describe('Create a new person on CRM', () => {
   selectRandomContactType(); */
 
   function getRandomName() {
-    const firstName = ['Alberto', 'Leonardo', 'Roberto', 'Matheus', 'Eraldo', 'Vinicios', 'Daniel'];
-    const secondName = ['Silvaa', 'Vieiraa', 'Almenidaa', 'Camposs', 'Gomess', 'Costaa', 'Limaa'];
+    const firstName = ['Renato', 'Marcos', 'Antonio', 'Emerson', 'Carlos', 'Thiago', 'Anderson', 'Gustavo', 'John', 'Kirk', 'James', 'Lars', 'Dave'];
+    const secondName = ['Silva', 'Vieira', 'Almenida', 'Campos', 'Gomes', 'Costa', 'Lima', 'Urich', 'Hetfield', 'Frusciante', 'Hammet'];
     const randomFirstNameIndex = Math.floor(Math.random() * firstName.length);
     const randomSecondNameIndex = Math.floor(Math.random() * secondName.length);
     const randomFirstName = firstName[randomFirstNameIndex];

@@ -10,7 +10,7 @@ describe('Create a new acitivity', () => {
     cy.getByData('workcenter-screen-btn-activity').type('{downarrow}');
     cy.getByData('workcenter-screen-btn-new-activity').click();
     cy.get('.fa-exclamation-circle').should('exist');
-    cy.getByData('activity-new-window-btn-create').invoke('attr', 'class').should('include', 'x-btn-disabled'); //TODO : criar comando personalizado para interpretar items desabilitados
+    cy.getByData('activity-new-window-btn-create').invoke('attr', 'class').should('include', 'x-btn-disabled');
     cy.getByData('activity-new-window-combo-session-file-layout').type('{downarrow}{downarrow}{downarrow}{downarrow}{enter}');
     cy.wait(2000);
     cy.getByData('activity-new-window-checkbox-new-activity').click();
@@ -22,12 +22,10 @@ describe('Create a new acitivity', () => {
       expect(interception.response.statusCode).to.eq(200);
     });
     cy.toastNotification('Criado com sucesso.');
-    cy.getByData('activity-screen-btn-request-classification').click();
-    cy.get('.x-grid-item').first().click().type('{downarrow}{downarrow}{downarrow}{enter}');
-    cy.classificationRequest();
-    cy.intercept('PATCH', /\/xgentest6-desenv.xgen.com.br\/v1\/users\/ActivitiesSession\/\d+/).as('onClassificationActivityRequest');
+    cy.classificationRequest('activity');
+    cy.intercept('PATCH', /\/xgentest6-desenv.xgen.com.br\/v1\/users\/ActivitiesSession\/\d+/).as('onTurnOffActivityRequest');
     cy.getByData('activity-screen-btn-turn-off-interaction').click();
-    cy.wait('@onClassificationActivityRequest', { timeout: 10000 }).then((interception) => {
+    cy.wait('@onTurnOffActivityRequest', { timeout: 10000 }).then((interception) => {
       expect(interception.response.statusCode).to.eq(200);
     });
     cy.toastNotification('Salvo com sucesso!');
