@@ -1,14 +1,33 @@
-describe('Create a new acitivity', () => {
+describe('Open Activities', () => {
   beforeEach(() => {
     cy.viewport(1600, 900);
     cy.login(Cypress.env('username'), Cypress.env('password'));
   });
 
+  it('Should open activities', () => {
+    cy.getByData('workcenter-screen-btn-activity').click();
+    cy.wait(5000);
+    cy.windowTitleIs('Atividade');
+  });
+  
+  it('Should open backlog activities', () => {
+    cy.getByData('workcenter-screen-btn-activity').click();
+    cy.getByData('activity-session-window-header-close').click();
+    cy.getByData('workcenter-screen-btn-activity').type('{downarrow}');
+    cy.getByData('workcenter-screen-btn-activity-backlog').click();
+    cy.wait(5000);
+    cy.windowTitleIs('Atividade');
+    cy.getByData('activity-session-header-btn-activity-pull').click();
+    cy.wait(5000);
+    cy.getByData('activity-session-window-header-close').click();
+  });
+  
   it('Should create a new activity', () => {
     cy.getByData('workcenter-screen-btn-activity').click();
     cy.getByData('activity-session-window-header-close').click();
     cy.getByData('workcenter-screen-btn-activity').type('{downarrow}');
     cy.getByData('workcenter-screen-btn-new-activity').click();
+    cy.windowTitleIs('Atividade');
     cy.get('.fa-exclamation-circle').should('exist');
     cy.getByData('activity-new-window-btn-create').invoke('attr', 'class').should('include', 'x-btn-disabled');
     cy.getByData('activity-new-window-combo-session-file-layout').type('{downarrow}{downarrow}{downarrow}{downarrow}{enter}');

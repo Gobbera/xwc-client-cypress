@@ -30,4 +30,13 @@ describe('Create and send a new email', () => {
     });
     cy.classificationRequest('email');
   });
+
+  it('Should cancel a new email', () => {
+    cy.getByData('workcenter-screen-btn-email').click();
+    cy.wait(3000);
+    cy.getByData('email-smtp-account-btn-new-email').click();
+    cy.getByData('email-attendance-header-btn-action').click();
+    cy.getByData('email-attendance-header-action-menu-btn-cancel').click();
+    cy.hitYesButton();
+  });
 });

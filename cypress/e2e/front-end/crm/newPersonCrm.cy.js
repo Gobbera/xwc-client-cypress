@@ -1,4 +1,12 @@
+import {faker} from '@faker-js/faker'
+
 describe('Create a new person on CRM', () => {
+  const user = {
+    name: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+    email: faker.internet.email(),
+    //phone: faker.internet.phone()
+  } 
   beforeEach(() => {
     cy.viewport(1600, 900);
     cy.login(Cypress.env('username'), Cypress.env('password'));
@@ -10,8 +18,8 @@ describe('Create a new person on CRM', () => {
     const phoneNumber = getRandomPhoneNumber();
     const dateOfBirth = getRandomBirthDate();
     cy.getByData('person-window-btn-new-grid-person').click();
-    cy.getByData('contact-window-client-contact-name').type(name);
-    cy.getByData('contact-window-client-contact-nick').type(formatString('nickname', name));
+    cy.getByData('contact-window-client-contact-name').type(`${user.name} ${user.lastName}`);
+    cy.getByData('contact-window-client-contact-nick').type(formatString('nickname', user.name));
     cy.getByData('contact-window-client-contact-gender').within(() => {
       cy.get('.x-form-arrow-trigger').click();
     });
@@ -29,15 +37,15 @@ describe('Create a new person on CRM', () => {
     cy.getByData('new-contact-container-combobox-contact-type').within(() => {
       cy.get('.x-form-arrow-trigger').click().type('{downarrow}{enter}');
     });
-    cy.getByData('new-contact-container-textfield-contact-name').type(name);
-    cy.getByData('new-contact-container-textfield-conversation-identification-email').type(`${formatString('email', name)}@gmail.com`);
+    cy.getByData('new-contact-container-textfield-contact-name').type(`${user.name} ${user.lastName}`);
+    cy.getByData('new-contact-container-textfield-conversation-identification-email').type(`${formatString('email', user.name)}@gmail.com`);
     cy.addContactRequest();
 
     cy.getByData('contact-tab-btn-new').click();
     cy.getByData('new-contact-container-combobox-contact-type').within(() => {
       cy.get('.x-form-arrow-trigger').click().type('{downarrow}{downarrow}{enter}');
     });
-    cy.getByData('new-contact-container-textfield-contact-name').type(name);
+    cy.getByData('new-contact-container-textfield-contact-name').type(user.name);
     cy.getByData('new-contact-container-textfield-conversation-identification-phone').type(phoneNumber);
     cy.addContactRequest();
 
