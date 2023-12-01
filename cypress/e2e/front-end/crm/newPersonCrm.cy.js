@@ -5,7 +5,7 @@ describe('Create a new person on CRM', () => {
     name: faker.person.firstName(),
     lastName: faker.person.lastName(),
     email: faker.internet.email(),
-    //phone: faker.internet.phone()
+    phone: faker.phone.phoneNumber()
   } 
   beforeEach(() => {
     cy.viewport(1600, 900);
