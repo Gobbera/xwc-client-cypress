@@ -14,6 +14,10 @@ Cypress.Commands.add('getByData', (selector) => {
     cy.get(`[data-e2e=${selector}]`);
 });
 
+Cypress.Commands.add('checkContent', (content) => {
+    cy.contains(content).should('be.visible').and('have.text', content);
+});
+
 Cypress.Commands.add('login', (username, password) => {
     cy.visit('/');
     cy.get('[data-e2e="txtUsername"]').type(username);
