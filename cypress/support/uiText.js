@@ -1,5 +1,13 @@
 window.UITEXT = {
 
+    //#region EMAIL
+
+    EMAIL_WINDOW_SUBJECT: {
+        PTBR: 'Adicione um assunto aqui...',
+        ENUS: 'Add a subject here...',
+        ESES: 'Agregue un asunto aquí...'
+    },
+
     //#region GENERAL
 
     GENERAL_ACTIVITIE: {
@@ -12,6 +20,18 @@ window.UITEXT = {
         PTBR: 'Atividades',
         ENUS: 'Activities',
         ESES: 'Actividades'
+    },
+
+    GENERAL_ATTACH: {
+        PTBR: 'Anexar',
+        ENUS: 'Attach',
+        ESES: 'Adjuntar'
+    },
+
+    GENERAL_ATTACHMENT: {
+        PTBR: 'Anexo',
+        ENUS: 'Attachment',
+        ESES: 'Adjunto'
     },
 
     GENERAL_ATTENDANCE: {
@@ -32,10 +52,52 @@ window.UITEXT = {
         ESES: 'Cancelar'
     },
 
+    GENERAL_HISTORIC: {
+        PTBR: 'Histórico',
+        ENUS: 'Historic',
+        ESES: 'Histórico'
+    },
+
+    GENERAL_IDENTIFICATION: {
+        PTBR: 'Identificação',
+        ENUS: 'Indetification',
+        ESES: 'Identificación'
+    },
+
+    GENERAL_IDENTIFICATION_DOTS: {
+        PTBR: 'Identificação:',
+        ENUS: 'Indetification:',
+        ESES: 'Identificación:'
+    },
+
+    GENERAL_LIST: {
+        PTBR: 'Lista',
+        ENUS: 'List',
+        ESES: 'Lista'
+    },
+
+    GENERAL_NAME: {
+        PTBR: 'Nome',
+        ENUS: 'Name',
+        ESES: 'Nombre'
+    },
+
+    GENERAL_NAME_DOTS: {
+        PTBR: 'Nome:',
+        ENUS: 'Name:',
+        ESES: 'Nombre:'
+    },
+
     GENERAL_PAGE: {
         PTBR: 'Página',
         ENUS: 'Page',
         ESES: 'Pagina'
+    },
+
+    GENERAL_PERSON: {
+        PTBR: 'Pessoa',
+        ENUS: 'Person',
+        ESES: 'Persona'
     },
 
     GENERAL_SEARCH: {
@@ -44,10 +106,34 @@ window.UITEXT = {
         ESES: 'Buscar'
     },
 
+    GENERAL_SEND: {
+        PTBR: 'Enviar',
+        ENUS: 'Send',
+        ESES: 'Mandar'
+    },
+
     GENERAL_OK: {
         PTBR: 'OK',
         ENUS: 'OK',
         ESES: 'OK'
+    },
+
+    GENERAL_TEXT: {
+        PTBR: 'Geral',
+        ENUS: 'General',
+        ESES: 'General'
+    },
+
+    GENERAL_TYPE: {
+        PTBR: 'Tipo',
+        ENUS: 'Type',
+        ESES: 'Tipo'
+    },
+
+    GENERAL_TYPE_DOTS: {
+        PTBR: 'Tipo:',
+        ENUS: 'Type:',
+        ESES: 'Tipo:'
     },
 
     //#region OPERATOR
@@ -74,6 +160,26 @@ window.UITEXT = {
         PTBR: 'Escalas',
         ENUS: 'Schedules',
         ESES: 'Escalas'
+    },
+    
+    //#region PERSON AND CONTACTS
+
+    PERSON_WINDOW_ASSOCIATE_NEW_PERSON: {
+        PTBR: 'Associar a nova pessoa',
+        ENUS: 'Associate a new person',
+        ESES: 'Asociar a nueva persona'
+    },
+
+    PERSON_WINDOW_ASSOCIATE_PERSON: {
+        PTBR: 'Associar a pessoa existente',
+        ENUS: 'Associate a person',
+        ESES: 'Asociar persona existente'
+    },
+
+    PERSON_WINDOW_MERGE_PERSON: {
+        PTBR: 'Unificar Pessoas',
+        ENUS: 'Merge Persons',
+        ESES: 'Fusionar personas'
     },
 
     //#region PROPERTY

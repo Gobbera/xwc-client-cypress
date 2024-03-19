@@ -11,45 +11,6 @@
 //
 // -- This is a parent command --
 
-//Util commands
-Cypress.Commands.add('getByData', (selector) => {
-    cy.get(`[data-e2e=${selector}]`);
-});
-
-Cypress.Commands.add('checkContent', (content) => {
-    cy.contains(content).should('exist').and('have.text', content);
-});
-
-Cypress.Commands.add('closeWindow', (context) => {
-    cy.getByData(`${context}-window-header-close`).click();
-});
-
-//Components Ext.js classic toolkit
-Cypress.Commands.add('windowsHeaderComponent', (context, content) => {
-    cy.getByData(`${context}-window-header`).checkContent(content);
-});
-
-Cypress.Commands.add('pagingToolBarComponent', (context) => {
-    cy.getByData(`${context}-pagingtoolbar-btn-page-first`).should('exist');
-    cy.getByData(`${context}-pagingtoolbar-btn-page-prev`).should('exist');
-    cy.getByData(`${context}-pagingtoolbar-numberfield`).checkContent(UITEXT.GENERAL_PAGE);
-    cy.getByData(`${context}-pagingtoolbar-btn-page-next`).should('exist');
-    cy.getByData(`${context}-pagingtoolbar-btn-page-last`).should('exist');
-    cy.getByData(`${context}-pagingtoolbar-btn-loading`).should('exist');
-});
-
-//Components XGen
-Cypress.Commands.add('windowHeaderComponent', (context) => {
-    cy.getByData(`${context}-window-header-collapse-top`).should('exist');
-    cy.getByData(`${context}-window-header-undefined`).should('exist');
-    cy.getByData(`${context}-window-header-undefined`).should('exist');
-    cy.getByData(`${context}-window-header-close`).should('exist');
-});
-
-Cypress.Commands.add('filterLabelComponent', (context) => {
-    cy.getByData(`${context}-filter-label`).should('exist');
-});
-
 //Rotines
 Cypress.Commands.add('login', (username, password) => {
     cy.visit('/');

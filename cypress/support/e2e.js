@@ -15,8 +15,14 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
-import './uiText.js';
-import './textHandler.js';
+import './Integrity';
+import './uiText';
+import './textHandler';
+import './ExtCTool';
+import './XGenCommands';
+import './XGenApiCommands';
+import './UtilCommands';
+
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
