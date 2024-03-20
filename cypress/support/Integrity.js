@@ -110,11 +110,19 @@ Cypress.Commands.add('checksTheIntegrity', (context, action) => {
             cy.getByData('informations-screen-header-collapse-top').should('exist');
             //aba de relacionados
             //aba de faq
-
+            
             case 'newEmail.historic':
-            cy.getByData('historic-tab-screen').first().click();
-            //cy.get('#gridview-1396').should('exist');
-            cy.pagingToolBarComponent('attendance-search-grid');
+                //cy.get('#gridview-1396').should('exist');
+                cy.pagingToolBarComponent('attendance-search-grid');
+            break;
+
+            case 'newEmail.activities':
+                cy.getByData('activity-session-attendance-header-combo-historic-status').should('exist');
+            break;
+
+            case 'activities':
+                cy.pagingToolBarComponent('attendance-search-grid');
+            break;
          
     } 
 });

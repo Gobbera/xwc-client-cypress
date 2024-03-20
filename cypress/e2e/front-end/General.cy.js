@@ -7,10 +7,38 @@ describe('General', () => {
 
     it.only('Checks the integrity of the client web', () => {
 
+       //cy.workCenterFlow('properties');
        //cy.workCenterFlow('properties.attendance');
-       cy.workCenterFlow('newEmail');
-        
+       //cy.workCenterFlow('newEmail');
+       //cy.workCenterFlow('newEmail.activities');
+       cy.setOperatorStatus('Disponivel');
        
+       //cy.workCenterFlow('activities');
+       //cy.xFilter('activity-session', 'by', 'attendance-protocol:2024031100046945 and client-contact-title:Teste');
+       
+       //cy.xFilter('activity-session', 'clear');
+       
+       //cy.pag('activity-session', '5');
+      });
+    });      
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        /*
         //Checks attendance tab
 
@@ -32,5 +60,4 @@ describe('General', () => {
         //Checks Portal tab
         //cy.getByData('asset-tab-features-btn-tab-portal').click();
         */
-    });
-});
+ 
