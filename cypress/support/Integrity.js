@@ -1,18 +1,4 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-
-//Util commands
-Cypress.Commands.add('checksTheIntegrity', (context, action) => {
+Cypress.Commands.add('checksTheIntegrity', (context) => {
     cy.getByData('asset-tab-features-btn-tab-attendance').checkContent(UITEXT.WORKCENTER_ATTENDANCE);
     cy.getByData('asset-tab-features-btn-tab-operator').checkContent(UITEXT.WORKCENTER_OPERATOR);
     cy.getByData('asset-tab-features-btn-tab-portal').checkContent(UITEXT.WORKCENTER_PORTAL);
@@ -44,6 +30,7 @@ Cypress.Commands.add('checksTheIntegrity', (context, action) => {
             cy.getByData('property-window-btn-ok').checkContent(UITEXT.GENERAL_OK);
             cy.getByData('property-window-btn-cancel').checkContent(UITEXT.GENERAL_CANCEL);
             break;
+
         case 'properties.attendance':
             cy.getByData('property-window-attendance-combo-capacity-online').checkContent(UITEXT.PROPERTY_WINDOW_ONLINE_MEDIA);
             cy.getByData('property-window-attendance-combo-capacity-offline').checkContent(UITEXT.PROPERTY_WINDOW_OFFLINE_MEDIA);
@@ -53,6 +40,7 @@ Cypress.Commands.add('checksTheIntegrity', (context, action) => {
             cy.getByData('property-window-btn-cancel').checkContent(UITEXT.GENERAL_CANCEL);
             cy.getByData('property-window-btn-ok').checkContent(UITEXT.GENERAL_OK);
             break;
+
         case 'search':
             //cy.windowsHeaderComponent('attendance-search', UITEXT.ATTENDANCE_WINDOW_TITLE);
             //cy.windowHeaderTools('attendance-search');
@@ -62,6 +50,7 @@ Cypress.Commands.add('checksTheIntegrity', (context, action) => {
             //TODO: atendance-resume 
             cy.pagingToolBarComponent('attendance-search-grid');
             break;
+
         case 'crm':
             //cy.windowsHeaderComponent('person-and-contacts', UITEXT.person-and-contacts);
             //cy.windowHeaderTools('person-and-contacts');
@@ -74,7 +63,7 @@ Cypress.Commands.add('checksTheIntegrity', (context, action) => {
             cy.getByData('person-window-btn-new-person').checkContent(UITEXT.PERSON_WINDOW_ASSOCIATE_NEW_PERSON);
             cy.getByData('person-window-btn-new-grid-person').checkContent(UITEXT.GENERAL_PERSON);
             cy.getByData('person-window-tabpanel-list').checkContent(UITEXT.GENERAL_LIST);
-            cy.pagingToolBarComponent('activity-new-window-persons-grid');
+
         case 'newEmail': 
             cy.getByData('workcenter-screen-btn-email').click();
             cy.getByData('email-screen-tab').should('exist');
@@ -106,13 +95,9 @@ Cypress.Commands.add('checksTheIntegrity', (context, action) => {
             cy.getByData('form-targetEl-textfield-textfield--inputel').checkContent(UITEXT.GENERAL_IDENTIFICATION_DOTS);
             cy.getByData('client-data-screen-associate-contact').should('exist');
             //cy.windowsHeaderComponent('contact-informations', 'Informações');
-            //campos customizados
             cy.getByData('informations-screen-header-collapse-top').should('exist');
-            //aba de relacionados
-            //aba de faq
             
             case 'newEmail.historic':
-                //cy.get('#gridview-1396').should('exist');
                 cy.pagingToolBarComponent('attendance-search-grid');
             break;
 
@@ -121,22 +106,8 @@ Cypress.Commands.add('checksTheIntegrity', (context, action) => {
             break;
 
             case 'activities':
-                cy.pagingToolBarComponent('attendance-search-grid');
+                cy.pagingToolBarComponent('activity-session');
             break;
          
     } 
 });
-
-
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })

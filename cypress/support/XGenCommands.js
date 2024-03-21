@@ -10,15 +10,13 @@ Cypress.Commands.add('xFilterLabelComponent', (context) => {
     cy.getByData(`${context}-filter-label`).should('exist');
 });
 
-Cypress.Commands.add('xFilter', (context, command, filtering) => {
+Cypress.Commands.add('xFilter', (context, command, filters) => {
     cy.getByData(`${context}-window-btn-filter`).click();
     switch (command) {
         case 'by':
-            const filters = filtering.split(' and ');
-            for (let i = 0; i < filters.length; i++) {
-                const filter = filters[i];
-                const [fieldName, value] = filter.split(':');
-                cy.getByData(`${context}-filter-form-textfield-${fieldName}`).find('input').type(value);
+            for (let p = 0; p < filters.length; p++) {
+                const filter = filters[p];
+                cy.getByData(`${context}-filter-form-textfield-${filter.fieldName}`).find('input').type(filter.value);
                 cy.wait(1000);
             }
             cy.wait(2000);
@@ -40,11 +38,17 @@ Cypress.Commands.add('setOperatorStatus', (status) => {
                 statusCode: '-5' 
             };
             break;
-        case 'Online': 
-            action = '{downarrow}{downarrow}{enter}';
+            case 'Online': 
+            action = {
+                status: '{downarrow}{downarrow}{downarrow}{downarrow}{downarrow}{enter}',
+                statusCode: '-4' 
+            };
             break;
-        case 'Offline': 
-            action = '{downarrow}{downarrow}{downarrow}{enter}';
+            case 'Offline': 
+            action = {
+                status: '{downarrow}{downarrow}{downarrow}{downarrow}{downarrow}{downarrow}{enter}',
+                statusCode: '-3' 
+            };
             break;
     }
     const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/status\\/${action.statusCode}\\/agent\\/\\w+\\?t=\\d+`);
@@ -84,44 +88,44 @@ Cypress.Commands.add('workCenterFlow', (action) => {
             break;
 
         case 'status':
-            //cy.getByData('workcenter-screen-combobox-status').click();
-            //TODO criar metodo para seleção de status
-            cy.get('#container-1049').click().type('{downarrow}{downarrow}{downarrow}{enter}');
+            cy.getByData('workcenter-screen-combobox-status').click();
             break;
 
         case 'search':
             cy.getByData('workcenter-screen-btn-search').click();
+            cy.checksTheIntegrity(actionString);
             break;
 
         case 'newOnline':
             cy.getByData('workcenter-screen-btn-chat').click();
+            cy.checksTheIntegrity(actionString);
             break;
 
         case 'crm':
             cy.getByData('workcenter-screen-btn-persons-and-contacts').click();
+            cy.checksTheIntegrity(actionString);
             break;
 
         case 'newEmail':
             cy.getByData('workcenter-screen-btn-email').click();
             if (action.tabContext === 'historic') {
                 cy.getByData('historic-tab-screen').first().click();
-                //cy.getByData(`historic-tab-screen${action.tabContext}`).click();
                 cy.checksTheIntegrity(actionString);
             }
             if (action.tabContext === 'activities') {
                 cy.getByData('tasks-tab-screen').first().click();
-                //cy.getByData(`historic-tab-screen${action.tabContext}`).click();
                 cy.checksTheIntegrity(actionString);
             }
             break;
 
         case 'activities':
             cy.getByData('workcenter-screen-btn-activity').click();
-            //cy.checksTheIntegrity(actionString);
+            cy.checksTheIntegrity(actionString);
             break;
             
         case 'notification':
             cy.getByData('workcenter-screen-btn-warning').click();
+            cy.checksTheIntegrity(actionString);
             break;
     }
 });
