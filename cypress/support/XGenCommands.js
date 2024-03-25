@@ -7,7 +7,7 @@ Cypress.Commands.add('xWindowHeaderTools', (context) => {
 });
 
 Cypress.Commands.add('xFilterLabelComponent', (context) => {
-    cy.getByData(`${context}-filter-label`).should('exist');
+    cy.getByData(`${context}-filter-bar`).should('exist');
 });
 
 Cypress.Commands.add('xFilter', (context, command, filters) => {
@@ -92,6 +92,11 @@ Cypress.Commands.add('workCenterFlow', (action) => {
             break;
 
         case 'search':
+            if (action.tabContext) {
+                cy.splitbtn('workcenter-screen', 'search', action.tabContext);
+                cy.checksTheIntegrity(actionString);
+                break;
+            }
             cy.getByData('workcenter-screen-btn-search').click();
             cy.checksTheIntegrity(actionString);
             break;
@@ -102,6 +107,11 @@ Cypress.Commands.add('workCenterFlow', (action) => {
             break;
 
         case 'crm':
+            if (action.tabContext) {
+                cy.splitbtn('workcenter-screen', 'persons-and-contacts', action.tabContext);
+                cy.checksTheIntegrity(actionString);
+                break;
+            }
             cy.getByData('workcenter-screen-btn-persons-and-contacts').click();
             cy.checksTheIntegrity(actionString);
             break;
@@ -119,6 +129,11 @@ Cypress.Commands.add('workCenterFlow', (action) => {
             break;
 
         case 'activities':
+            if (action.tabContext) {
+                cy.splitbtn('workcenter-screen', 'activities', action.tabContext);
+                cy.checksTheIntegrity(actionString);
+                break;
+            }
             cy.getByData('workcenter-screen-btn-activity').click();
             cy.checksTheIntegrity(actionString);
             break;

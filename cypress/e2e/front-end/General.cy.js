@@ -5,19 +5,31 @@ describe('General', () => {
       cy.login(Cypress.env('username'), Cypress.env('password'));
     });
 
+    //it.only('Checks the integrity of the client web', () => {     
+    //  cy.workCenterFlow('activities');
+    //  cy.xFilter('activity-session', 'by', [
+    //    { fieldName: "attendance-protocol" , value: '2024031100046945'},
+    //    { fieldName: "client-contact-title", value:'Teste'}
+    //  ]);
+    //});
+
     it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('activities');
-      cy.xFilter('activity-session', 'by', [
-        { fieldName: "attendance-protocol" , value: '2024031100046945'},
-        { fieldName: "client-contact-title", value:'Teste'}
-      ]);
+      cy.workCenterFlow('search.search-email-in-queue');
     });
-    it.only('bjhbgjmnbj', () => {     
-      cy.workCenterFlow('activities');
-      cy.xFilter('activity-session', 'by', [
-        { fieldName: "attendance-protocol" , value: '2024031100046945'},
-        { fieldName: "client-contact-title", value:'Teste'}
-      ]);
+    it.only('Checks the integrity of the client web', () => {     
+      cy.workCenterFlow('search.search-calls-in-queue');
+    });
+    it.only('Checks the integrity of the client web', () => {     
+      cy.workCenterFlow('search.search-last-calls');
+    });
+    it.only('Checks the integrity of the client web', () => {     
+      cy.workCenterFlow('search.backlog');
+    });
+    it.only('Checks the integrity of the client web', () => {     
+      cy.workCenterFlow('activities.new-activity');
+    });
+    it.only('Checks the integrity of the client web', () => {     
+      cy.workCenterFlow('activities.backlog');
     });
 });      
        

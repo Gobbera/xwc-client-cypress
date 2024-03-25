@@ -18,7 +18,7 @@ import './commands';
 import './Integrity';
 import './uiText';
 import './textHandler';
-import './ExtCTool';
+import './ExtClassicCommands';
 import './XGenCommands';
 import './XGenApiCommands';
 import './UtilCommands';
