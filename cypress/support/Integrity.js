@@ -70,8 +70,8 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             cy.getByData('interaction-search-header-attendance-status-status').should('exist');
             cy.getByData('interaction-search-header-attendance-created-at').should('exist');
             cy.getByData('interaction-search-header-attendance-closed-at').should('exist');
-            cy.getByData('interactions-view-tabbtn-related').should('exist');
-            cy.getByData('interactions-view-tabbtn-informations').should('exist');
+            cy.getByData('interactions-view-tabbtn-related').checkContent('Relacionadas');
+            cy.getByData('interactions-view-tabbtn-informations').checkContent('Informações');
             cy.getByData('attendance-related-pagingtoolbar-btn--fas fa-plus').should('exist');
             cy.getByData('attendance-related-pagingtoolbar-btn-page-prev').should('exist');
             cy.getByData('attendance-related-pagingtoolbar-numberfield').should('exist');
@@ -92,17 +92,17 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
 
         case 'crm':
-            //cy.windowsHeaderComponent('person-and-contacts', UITEXT.person-and-contacts);
-            //cy.windowHeaderTools('person-and-contacts');
-            //cy.filterLabelComponent('person-and-contacts');
+            cy.windowsHeaderComponent('person-and-contacts', UITEXT.WORKCENTER_PERSONS);
+            cy.getByData('person-window-tabpanel').should('exist');
+            cy.getByData('activity-new-window-persons-grid').should('exist');
             cy.getByData('activity-new-window-persons-grid-grid-search-text').checkContent(UITEXT.GENERAL_TEXT);
-            //cy.get('#person-and-contacts-grid').should('exist');
             cy.getByData('person-window-combo-person').checkContent(UITEXT.GENERAL_PERSON);
             cy.getByData('person-window-btn-merge-person').checkContent(UITEXT.PERSON_WINDOW_MERGE_PERSON);
             cy.getByData('person-window-btn-associate-person').checkContent(UITEXT.PERSON_WINDOW_ASSOCIATE_PERSON);
             cy.getByData('person-window-btn-new-person').checkContent(UITEXT.PERSON_WINDOW_ASSOCIATE_NEW_PERSON);
             cy.getByData('person-window-btn-new-grid-person').checkContent(UITEXT.GENERAL_PERSON);
             cy.getByData('person-window-tabpanel-list').checkContent(UITEXT.GENERAL_LIST);
+            cy.pagingToolBarComponent('activity-session');
             break;
 
         case 'newEmail': 
@@ -112,30 +112,30 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             cy.getByData('tasks-tab-screen').checkContent(UITEXT.GENERAL_ACTIVITIES);
             cy.getByData('email-attendance-header-btn-send').checkContent(UITEXT.GENERAL_SEND);
             cy.getByData('email-screen-email-attendance-header-btn-attachment').checkContent(UITEXT.GENERAL_ATTACHMENT);
-            //cy.getByData('email-screen-email-attendance-header-btn-cancel').checkContent(UITEXT.GENERAL_CANCEL);
+            cy.getByData('email-screen-email-attendance-header-btn-cancel').checkContent(UITEXT.GENERAL_CANCEL);
             cy.getByData('email-attendance-header-btn-save').should('be.hidden');
             cy.getByData('email-attendance-header-btn-finish').should('be.hidden');
             cy.getByData('email-attendance-header-btn-action').should('be.hidden');
-            //cy.getByData('email-attendance-header-btn-action').should('be.hidden'); nao requer resposta
+            cy.getByData('email-attendance-header-btn-action').should('be.hidden');
             cy.getByData('email-screen-btn-classification').should('exist');
             cy.getByData('email-channel-tag-field').checkContent('Tags');
             cy.getByData('email-screen-btn-messages-to').checkContent('Para');
-            //cy.get('#email-tag-field-1272-inputEl').should('exist');
+            cy.getByData('email-channel-tag-field').should('exist');
             cy.getByData('email-screen-btn-cc').checkContent('Cc');
             cy.getByData('email-screen-btn-bcc').checkContent('Bcc');
             cy.getByData('email-screen-textfield-subject').should('exist');
             cy.getByData('email-screen-htmleditor').should('exist');
-            //cy.get('#contact-details-container-1314').should('exist'); //contact-details
-            //cy.windowsHeaderComponent('contact-details', 'Contato');
+            
+            cy.getByData('attendance-container-tab-informations').should('exist');
+            cy.getByData('attendance-container-tab-related').should('exist');
+            cy.getByData('attendance-container-tab-faq').should('exist');
+            cy.getByData('client-data-screen-header').checkContent('Contato');
             cy.getByData('client-data-screen-header-collapse-top').should('exist');
-            //cy.getByData('contact-details-tab-contact').should('exist');
-            //cy.getByData('contact-details-tab-link').should('exist');
-            //cy.getByData('contact-details-tab-faq').should('exist');
             cy.getByData('client-data-screen-combobox-type').checkContent(UITEXT.GENERAL_TYPE_DOTS);
             cy.getByData('client-data-screen-textfield-name').checkContent(UITEXT.GENERAL_NAME_DOTS);
-            cy.getByData('form-targetEl-textfield-textfield--inputel').checkContent(UITEXT.GENERAL_IDENTIFICATION_DOTS);
-            cy.getByData('client-data-screen-associate-contact').should('exist');
-            //cy.windowsHeaderComponent('contact-informations', 'Informações');
+            cy.getByData('client-data-screen-text-associate-contact').checkContent(UITEXT.GENERAL_IDENTIFICATION_DOTS);
+            cy.getByData('client-data-btn-associate-contact').should('exist');
+            cy.getByData('informations-screen-header').checkContent('Informações');
             cy.getByData('informations-screen-header-collapse-top').should('exist');
                 break;
 
