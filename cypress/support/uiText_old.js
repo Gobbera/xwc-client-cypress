@@ -27,27 +27,137 @@ window.UITEXT = {
         ENUS: 'Month(s)',
         ESES: 'Mes(es)'
     },
+    GENERAL_MONTH_JANUARY: {
+        PTBR: 'Janeiro',
+        ENUS: 'January',
+        ESES: 'Enero'
+    },
+    GENERAL_MONTH_FEBRUARY: {
+        PTBR: 'Fevereiro',
+        ENUS: 'February',
+        ESES: 'Febrero'
+    },
+    GENERAL_MONTH_MARCH: {
+        PTBR: 'Março',
+        ENUS: 'March',
+        ESES: 'Marzo'
+    },
+    GENERAL_MONTH_APRIL: {
+        PTBR: 'Abril',
+        ENUS: 'April',
+        ESES: 'Abril'
+    },
+    GENERAL_MONTH_MAY: {
+        PTBR: 'Maio',
+        ENUS: 'May',
+        ESES: 'Mayo'
+    },
+    GENERAL_MONTH_JUNE: {
+        PTBR: 'Junho',
+        ENUS: 'June',
+        ESES: 'Junio'
+    },
+    GENERAL_MONTH_JULY: {
+        PTBR: 'Julho',
+        ENUS: 'July',
+        ESES: 'Julio'
+    },
+    GENERAL_MONTH_AUGUST: {
+        PTBR: 'Agosto',
+        ENUS: 'August',
+        ESES: 'Agosto'
+    },
+    GENERAL_MONTH_SEPTEMBER: {
+        PTBR: 'Setembro',
+        ENUS: 'September',
+        ESES: 'Septiembre'
+    },
+    GENERAL_MONTH_OCTOBER: {
+        PTBR: 'Outubro',
+        ENUS: 'October',
+        ESES: 'Octubre'
+    },
+    GENERAL_MONTH_NOVEMBER: {
+        PTBR: 'Novembro',
+        ENUS: 'November',
+        ESES: 'Noviembre'
+    },
+    GENERAL_MONTH_DECEMBER: {
+        PTBR: 'Dezembro',
+        ENUS: 'December',
+        ESES: 'Diciembre'
+    },
     GENERAL_DAYS: {
         PTBR: 'Dia(s)',
         ENUS: 'Day(s)',
         ESES: 'Dia(s)'
+    },
+    GENERAL_LAST_DAY_OF_THE_MONTH: {
+        PTBR: 'Último dia do mês',
+        ENUS: 'Last day of the month',
+        ESES: 'Último día del mes'
+    },
+    GENERAL_WEEK_SUNDAY: {
+        PTBR: 'Domingo',
+        ENUS: 'Sunday',
+        ESES: 'Domingo'
+    },
+    GENERAL_WEEK_MONDAY: {
+        PTBR: 'Segunda',
+        ENUS: 'Monday',
+        ESES: 'Lunes'
+    },
+    GENERAL_WEEK_TUESDAY: {
+        PTBR: 'Terça',
+        ENUS: 'Tuesday',
+        ESES: 'Martes'
+    },
+    GENERAL_WEEK_WEDNESDAY: {
+        PTBR: 'Quarta',
+        ENUS: 'Wednesday',
+        ESES: 'Miércoles'
+    },
+    GENERAL_WEEK_THURSDAY: {
+        PTBR: 'Quinta',
+        ENUS: 'Thursday',
+        ESES: 'Jueves'
+    },
+    GENERAL_WEEK_FRIDAY: {
+        PTBR: 'Sexta',
+        ENUS: 'Friday',
+        ESES: 'Viernes'
+    },
+    GENERAL_WEEK_SATURDAY: {
+        PTBR: 'Sábado',
+        ENUS: 'Saturday',
+        ESES: 'Sábado'
     },
     GENERAL_DETAILS: {
         PTBR: 'Detalhes',
         ENUS: 'Details',
         ESES: 'Detalles'
     },
-
     GENERAL_INFORMATION: {
         PTBR: 'Informação',
         ENUS: 'Information',
         ESES: 'Información'
     },
-
     GENERAL_CUSTOM: {
         PTBR: 'Personalizado',
         ENUS: 'Custom',
         ESES: 'Personalizado'
+    },
+
+    GENERAL_COPY: {
+        PTBR: 'Copiar',
+        ENUS: 'Copy',
+        ESES: 'Copiar'
+    },
+
+    GENERAL_ACESS: {
+        PTBR: 'Acessar',
+        ENUS: 'Access',
+        ESES: 'Acceso'
     },
 
     GENERAL_NEXT: {
@@ -111,6 +221,18 @@ window.UITEXT = {
         ESES: 'Copiar Mensagem'
     },
 
+    GENERAL_MESSAGE: {
+        PTBR: 'Mensagem',
+        ENUS: 'Menssage',
+        ESES: 'Mensaje'
+    },
+
+    GENERAL_CLICK_TO_REMOVE: {
+        PTBR: 'Clique para remover',
+        ENUS: 'Click to remove',
+        ESES: 'Haga clic para eliminar'
+    },
+
     GENERAL_COPY_MESSAGE_SUCCESS: {
         PTBR: 'Mensagem copiada com sucesso',
         ENUS: 'Message copied successfully',
@@ -143,6 +265,11 @@ window.UITEXT = {
         ENUS: 'No',
         ESES: 'No'
     },
+    GENERAL_BTN_CONCLUDE: {
+        PTBR: 'Concluir',
+        ENUS: 'Conclude',
+        ESES: 'Concluir'
+    },
 
     GENERAL_OPTIONS: {
         PTBR: 'Opções',
@@ -154,6 +281,24 @@ window.UITEXT = {
         PTBR: 'Cancelar',
         ENUS: 'Cancel',
         ESES: 'Cancelar'
+    },
+
+    GENERAL_UNKNOW: {
+        PTBR: 'Desconhecido',
+        ENUS: 'Unknow',
+        ESES: 'Desconocido'
+    },
+
+    GENERAL_BTN_REMOVE_FILTER: {
+        PTBR: 'Remover filtros',
+        ENUS: 'Remove filters',
+        ESES: 'Quitar filtros'
+    },
+
+    GENERAL_BTN_CLEAR: {
+        PTBR: 'Limpar',
+        ENUS: 'Clear',
+        ESES: 'Claro'
     },
 
     GENERAL_BTN_CREATE: {
@@ -185,6 +330,30 @@ window.UITEXT = {
         ESES: 'Sin acción'
     },
 
+    GENERAL_SUCCESS_TO: {
+        PTBR: 'Sucesso ao',
+        ENUS: 'Success to',
+        ESES: 'éxito para'
+    },
+
+    GENERAL_ERROR_TO: {
+        PTBR: 'Erro ao',
+        ENUS: 'Error to',
+        ESES: 'Error a'
+    },
+
+    GENERAL_RECEIVED_MESSAGE: {
+        PTBR: 'Recebido',
+        ENUS: 'Received',
+        ESES: 'Recibido'
+    },
+
+    GENERAL_SENT_MESSAGE: {
+        PTBR: 'Enviado',
+        ENUS: 'Sent',
+        ESES: 'Enviado'
+    },
+
     GENERAL_BTN_NEW: {
         PTBR: 'Novo',
         ENUS: 'New',
@@ -195,6 +364,18 @@ window.UITEXT = {
         PTBR: 'Excluir',
         ENUS: 'Delete',
         ESES: 'Apagar'
+    },
+
+    GENERAL_BTN_EDIT: {
+        PTBR: 'Editar',
+        ENUS: 'Edit',
+        ESES: 'Editar'
+    },
+
+    GENERAL_DESCRIPTION: {
+        PTBR: 'Descrição',
+        ENUS: 'Description',
+        ESES: 'Descripción'
     },
 
     GENERAL_BTN_ADD_ACTIVITY: {
@@ -244,10 +425,22 @@ window.UITEXT = {
         ENUS: 'Failed to save.',
         ESES: 'Error al guardar.'
     },
+    GENERAL_FAILED_TO_LOAD: {
+        PTBR: 'Falha ao carregar dados...',
+        ENUS: 'Failed to load data...',
+        ESES: 'Error al cargar datos...'
+    },
+
     GENERAL_EXTENSION: {
         PTBR: 'Extensão',
         ENUS: 'Extension',
         ESES: 'Extensíon'
+    },
+
+    GENERAL_ADDRESS: {
+        PTBR: 'Endereço',
+        ENUS: 'Address',
+        ESES: 'Dirección'
     },
 
     GENERAL_CREATED_WITH_SUCCESS: {
@@ -259,6 +452,22 @@ window.UITEXT = {
         PTBR: 'Erro ao criar.',
         ENUS: 'Error to create.',
         ESES: 'Error al crear.'
+    },
+    GENERAL_ERROR_ON_OPEN: {
+        PTBR: 'Erro ao abrir o filtro.',
+        ENUS: 'Error to open filter.',
+        ESES: 'Error al abrir el filtro.'
+    },
+    GENERAL_EDIT_ERROR: {
+        PTBR: 'Erro ao abrir item para edição.',
+        ENUS: 'Error to open item for edition.',
+        ESES: 'Error al abrir el elemento para edición.'
+    },
+
+    GENERAL_FILTER_RETURN_ERROR: {
+        PTBR: 'Erro ao filtrar dados<BR> Por favor, refaça a sua busca, ou entre em contato com o suporte!',
+        ENUS: 'Error filtering data<BR> Please redo your search, or contact support!',
+        ESES: 'Error al filtrar datos<BR> Rehaga su búsqueda o comuníquese con el soporte.'
     },
 
     GENERAL_CONFIRM_OPERATION_TEXT: {
@@ -324,6 +533,11 @@ window.UITEXT = {
         PTBR: 'Selecionar',
         ENUS: 'Select',
         ESES: 'Seleccione'
+    },
+    GENERAL_SELECT_ALL: {
+        PTBR: 'Selecionar tudo',
+        ENUS: 'Select all',
+        ESES: 'Seleccionar todo'
     },
 
     GENERAL_MULTI_SELECT: {
@@ -391,11 +605,32 @@ window.UITEXT = {
         ENUS: 'Close automatically',
         ESES: 'Cerrar automáticamente'
     },
+    GENERAL_AUTOMATION: {
+        PTBR: 'Automação',
+        ENUS: 'Automation',
+        ESES: 'Automatización'
+    },
+    GENERAL_AUTOMATION_TASKS: {
+        PTBR: 'Automação de Tarefas',
+        ENUS: 'Automation Tasks',
+        ESES: 'Tareas de automatización'
+    },
+    GENERAL_SCHEDULE: {
+        PTBR: 'Agendamento',
+        ENUS: 'Scheduling',
+        ESES: 'Planificación'
+    },
 
     GENERAL_BTN_FILTER: {
         PTBR: 'Filtrar',
         ENUS: 'Filter',
         ESES: 'Filtrar'
+    },
+
+    GENERAL_BTN_FILTERED_BY: {
+        PTBR: 'Filtrado por',
+        ENUS: 'Filtered by',
+        ESES: 'Filtrado por'
     },
 
     GENERAL_BTN_RELOAD: {
@@ -408,6 +643,12 @@ window.UITEXT = {
         PTBR: 'Todos',
         ENUS: 'All',
         ESES: 'Todos'
+    },
+
+    GENERAL_ALL_OPTIONS: {
+        PTBR: 'Todas as opções',
+        ENUS: 'All options',
+        ESES: 'Todas las opciones'
     },
 
     GENERAL_NUMBER: {
@@ -458,10 +699,28 @@ window.UITEXT = {
         ESES: 'Negocio'
     },
 
+    GENERAL_SELECTION_PROFILE: {
+        PTBR: 'Perfil de seleção',
+        ENUS: 'Selection profile',
+        ESES: 'Perfil de selección'
+    },
+
     GENERAL_SEARCH_EMPTY_TEXT: {
         PTBR: 'Busque aqui...',
         ENUS: 'Search here...',
         ESES: 'Busca aquí...'
+    },
+
+    GENERAL_MESSAGE_INFORMATION: {
+        PTBR: 'Informações da mensagem',
+        ENUS: 'Message information',
+        ESES: 'Información del mensaje'
+    },
+
+    GENERAL_ADDITIONAL_INFORMATION: {
+        PTBR: 'Informações adicionais',
+        ENUS: 'Additional information',
+        ESES: 'Información adicional'
     },
 
     GENERAL_WARNING_GENERIC_TITLE: {
@@ -493,6 +752,11 @@ window.UITEXT = {
         ENUS: 'Error.',
         ESES: 'Errores al guardar!'
     },
+    GENERAL_DELETE_WITH_ERROR: {
+        PTBR: 'Erros ao deletar!',
+        ENUS: 'Errors when deleting!',
+        ESES: '¡Errores al eliminar!'
+    },
 
     ERROR_EMAIL_BADWORD: {
         PTBR: 'Erros ao salvar!',
@@ -510,6 +774,12 @@ window.UITEXT = {
         PTBR: 'Operador',
         ENUS: 'Agent',
         ESES: 'Operador'
+    },
+
+    GENERAL_SUBJECT: {
+        PTBR: 'Assunto',
+        ENUS: 'Subject',
+        ESES: 'Asunto'
     },
 
     GENERAL_MEDIA_SOURCE: {
@@ -536,6 +806,18 @@ window.UITEXT = {
         ESES: 'Título'
     },
 
+    GENERAL_BACK_TO_HISTORY: {
+        PTBR: 'Voltar ao histórico',
+        ENUS: 'Back to history',
+        ESES: 'Volver al historial'
+    },
+
+    GENERAL_STACK_TRACE: {
+        PTBR: 'Stack Trace',
+        ENUS: 'Stack Trace',
+        ESES: 'Stack Trace'
+    },
+
     GENERAL_CALL_TYPE: {
         PTBR: 'Fila',
         ENUS: 'Queue',
@@ -547,7 +829,11 @@ window.UITEXT = {
         ENUS: 'Social',
         ESES: 'Social'
     },
-
+    GENERAL_CLOSING_ATTENDANCE: {
+        PTBR: 'Fechando Atendimento...',
+        ENUS: 'Closing Attendance...',
+        ESES: 'Cerrando Atención...'
+    },
     GENERAL_EMAIL: {
         PTBR: 'Email',
         ENUS: 'Email',
@@ -558,6 +844,11 @@ window.UITEXT = {
         PTBR: 'Tipo',
         ENUS: 'Type',
         ESES: 'Tipo'
+    },
+    GENERAL_LAST: {
+        PTBR: 'Último',
+        ENUS: 'Last',
+        ESES: 'Último'
     },
     GENERAL_NEXT_PAGE: {
         PTBR: 'Próxima Página',
@@ -584,11 +875,41 @@ window.UITEXT = {
         ENUS: 'Page',
         ESES: 'Pagina'
     },
+    GENERAL_LAST_EXECUTION: {
+        PTBR: 'Últ. Execução',
+        ENUS: 'Last Execution',
+        ESES: 'Últ. ejecución'
+    },
+    GENERAL_NEXT_EXECUTION: {
+        PTBR: 'Próx. Execução',
+        ENUS: 'Next Execution',
+        ESES: 'Próx. Ejecución'
+    },
 
     GENERAL_DISPLAYING: {
         PTBR: 'Mostrando',
         ENUS: 'Displaying',
         ESES: 'Mostrando'
+    },
+    GENERAL_INACTIVE: {
+        PTBR: 'Inativo',
+        ENUS: 'Inactive',
+        ESES: 'Inactivo'
+    },
+    GENERAL_ACTIVE: {
+        PTBR: 'Ativo',
+        ENUS: 'Active',
+        ESES: 'Activo'
+    },
+    GENERAL_EXECUTE_NOW: {
+        PTBR: 'Executar agora',
+        ENUS: 'Execute now',
+        ESES: 'Ejecutar ahora'
+    },
+    GENERAL_ABLE: {
+        PTBR: 'Habilitado',
+        ENUS: 'Able',
+        ESES: 'Activar'
     },
 
     GENERAL_CREATED_BY: {
@@ -618,6 +939,12 @@ window.UITEXT = {
         ESES: 'Cargando...'
     },
 
+    GENERAL_LOCATION: {
+        PTBR: 'Localização',
+        ENUS: 'Location',
+        ESES: 'Ubicación'
+    },
+
     GENERAL_PROCESSING: {
         PTBR: 'Processando...',
         ENUS: 'Processing...',
@@ -628,6 +955,11 @@ window.UITEXT = {
         PTBR: 'Nenhum resultado encontrado...',
         ENUS: 'No results found....',
         ESES: 'Ningún resultado encontrado....'
+    },
+    GENERAL_SEARCH_WITH_DATA_TO_DISPLAY: {
+        PTBR: 'Não há dados para exibir...',
+        ENUS: 'There is no data to display....',
+        ESES: 'No hay datos para mostrar....'
     },
 
     GENERAL_FORM_LAYOUT_LOAD_WARNING: {
@@ -642,6 +974,18 @@ window.UITEXT = {
         ESES: 'No hay aviso para mostrar.....'
     },
 
+    GENERAL_NO_MESSAGES_TO_VIEW: {
+        PTBR: 'Não há mensagens para exibir..',
+        ENUS: 'There are no messages to display...',
+        ESES: 'No hay mensajes para mostrar.....'
+    },
+
+    GENERAL_GO_TO_MAPS: {
+        PTBR: 'Ir para mapas',
+        ENUS: 'Go to maps',
+        ESES: 'Ir a mapas'
+    },
+
     GENERAL_EXPAND: {
         PTBR: 'Expandir',
         ENUS: 'Expand',
@@ -652,6 +996,12 @@ window.UITEXT = {
         PTBR: 'Condensar',
         ENUS: 'Collapse',
         ESES: 'Condensar'
+    },
+
+    GENERAL_MORE_OPTIONS: {
+        PTBR: 'Mais opções',
+        ENUS: 'More options',
+        ESES: 'Mas opciones'
     },
 
     GENERAL_CONNECTED: {
@@ -688,6 +1038,12 @@ window.UITEXT = {
         PTBR: 'Hoje',
         ENUS: 'Today',
         ESES: 'Hoy'
+    },
+
+    GENERAL_COMMAND: {
+        PTBR: 'Comando',
+        ENUS: 'Command',
+        ESES: 'Dominio'
     },
 
     GENERAL_EXITING_TEXT: {
@@ -732,6 +1088,11 @@ window.UITEXT = {
         ENUS: 'Wait for search...',
         ESES: 'Espera la busqueda...'
     },
+    GENERAL_UNINFORMED: {
+        PTBR: 'Não Informado',
+        ENUS: 'Not Specified',
+        ESES: 'No informado'
+    },
     GENERAL_SEARCHING: {
         PTBR: 'Buscando...',
         ENUS: 'Searching...',
@@ -761,6 +1122,11 @@ window.UITEXT = {
         PTBR: 'Observação de ação',
         ENUS: 'Action notes',
         ESES: 'Acción observación'
+    },
+    GENERAL_OBSERVATION: {
+        PTBR: 'Observação',
+        ENUS: 'Notes',
+        ESES: 'Observación'
     },
     GENERAL_AGE: {
         PTBR: 'Idade',
@@ -877,9 +1243,9 @@ window.UITEXT = {
     },
 
     GENERAL_EMPTY_TEXT_IFNORM_THE_ID: {
-        PTBR: 'Informe o Id.',
-        ENUS: 'Inform the ID.',
-        ESES: 'Informar al DNI.'
+        PTBR: 'Número do Telefone do Cliente',
+        ENUS: 'Customer Phone Number',
+        ESES: 'Número de teléfono del cliente'
     },
 
     GENERAL_SELECT_A_CONTACT_TO_NEW_ONLINE: {
@@ -893,6 +1259,23 @@ window.UITEXT = {
         ESES: 'Tags de calificación'
     },
 
+    GENERAL_IN_BACTH: {
+        PTBR: 'em lote',
+        ENUS: 'in batch',
+        ESES: 'en lote'
+    },
+
+    GENERAL_ARE_YOU_SURE: {
+        PTBR: 'Tem certeza?',
+        ENUS: 'Are you sure?',
+        ESES: 'Estas seguro?'
+    },
+
+    GENERAL_FOR: {
+        PTBR: 'para',
+        ENUS: 'for',
+        ESES: 'para'
+    },
 
     //Text Field Component
     TEXT_INVALID_CLASSIFY_ITEMS: {
@@ -1038,7 +1421,7 @@ window.UITEXT = {
         ESES: 'Desconectar'
     },
     WORKCENTER_ITEM_DISCONNECT_ALERT_MESSAGE: {
-        PTBR: 'Exitem atendimentos ainda pendentes, feche-os para fazer log off',
+        PTBR: 'Existem atendimentos ainda pendentes, feche-os para fazer log off',
         ENUS: 'There are calls still pending, close them to log off',
         ESES: 'Todavía hay citas pendientes, ciérrelas para desconectarse'
     },
@@ -1046,6 +1429,12 @@ window.UITEXT = {
         PTBR: 'Propriedades',
         ENUS: 'Properties',
         ESES: 'Propiedades'
+    },
+
+    WORKCENTER_ITEM_NEW_IM_CHAT_CONTACT_FILTER_PLACEHOLDER: {
+        PTBR: 'Procure por um nome ou telefone...',
+        ENUS: 'Search for a name or a phone...',
+        ESES: 'Busque un nombre o teléfono...'
     },
 
     WORKCENTER_ITEM_PRINT: {
@@ -1109,6 +1498,11 @@ window.UITEXT = {
         PTBR: 'Mensagem Original',
         ENUS: 'Original Message',
         ESES: 'Mensaje original'
+    },
+    EMAIL_SEARCH_FILTER_PLACEHOLDER: {
+        PTBR: 'Procure por um nome ou e-mail..',
+        ENUS: 'Search for a name or email...',
+        ESES: 'Busque un nombre o correo electrónico...'
     },
     EMAIL_FROM_FORWARD_ATTR: {
         PTBR: 'ENC:',
@@ -1446,9 +1840,9 @@ window.UITEXT = {
         ESES: 'Correo electrónico de borrador abierto'
     },
     EMAIL_HEADER_OPEN_FROM_QUEUE: {
-        PTBR: 'Abrir email em fila',
-        ENUS: 'Open email from queue',
-        ESES: 'Abrir correo electrónico en cola'
+        PTBR: 'Atender email agora',
+        ENUS: 'Open email now',
+        ESES: 'Responder correo electrónico ahora'
     },
     EMAIL_HEADER_PRINT: {
         PTBR: 'Imprimir e-mail',
@@ -1610,6 +2004,23 @@ window.UITEXT = {
         ESES: 'Plantilla'
     },
 
+    WORKCENTER_ITEM_IM_CHAT_WINDOW_NO_FIELDS: {
+        PTBR: 'O template selecionado não possui campo(s) a ser(em) preenchido(s).',
+        ENUS: 'The selected template has no field(s) to be filled.',
+        ESES: 'La plantilla seleccionada no tiene campo(s) para completar.'
+    },
+    WORKCENTER_ITEM_IM_CHAT_WINDOW_HEADER_VARIABLE: {
+        PTBR: 'Variável de cabeçalho',
+        ENUS: 'Header variable',
+        ESES: 'Variable de encabezado'
+    },
+
+    WORKCENTER_ITEM_IM_CHAT_WINDOW_NO_ATTACH_DATA: {
+        PTBR: 'O template selecionado não possui campo(s) de informação(ões) adicional(is) a ser(em) preenchido(s).',
+        ENUS: 'The selected template has no field(s) of additional information to be filled.',
+        ESES: 'La plantilla seleccionada no tiene campo(s) de información adicional para completar.'
+    },
+
     WORKCENTER_ITEM_NEW_IM_CHAT_START_ATTENDANCE: {
         PTBR: 'Iniciar atendimento',
         ENUS: 'Start Attendance',
@@ -1636,10 +2047,30 @@ window.UITEXT = {
         ENUS: 'Search',
         ESES: 'Buscar'
     },
-    WORKCENTER_ITEM_SEARCH_IN_QUEUE: {
-        PTBR: 'Busca da Fila',
+    WORKCENTER_ITEM_SEARCH_EMAIL_IN_QUEUE: {
+        PTBR: 'Busca Email na Fila',
         ENUS: 'Search in queue',
-        ESES: 'Búsqueda de cola'
+        ESES: 'Buscar email en cola'
+    },
+    WORKCENTER_ITEM_SEARCH_CHAT_IN_QUEUE: {
+        PTBR: 'Busca Chat na Fila',
+        ENUS: 'Search in queue',
+        ESES: 'Buscar chat en cola'
+    },
+    WORKCENTER_ITEM_SEARCH_CHAT_PROTOCOL: {
+        PTBR: 'Busca por Protocolo',
+        ENUS: 'Search by Protocol',
+        ESES: 'Buscar por protocolo'
+    },
+    WORKCENTER_ITEM_SEARCH_LAST_CALLS: {
+        PTBR: 'Últimos atendimentos',
+        ENUS: 'Last calls',
+        ESES: 'Últimas llamadas'
+    },
+    WORKCENTER_ATTENDANCE_SUMMARY: {
+        PTBR: 'Resumo do atendimento',
+        ENUS: 'Attendance Summary',
+        ESES: 'Resumen del servicio'
     },
     WORKCENTER_ITEM_BACKLOG: {
         PTBR: 'Backlog',
@@ -1733,9 +2164,9 @@ window.UITEXT = {
     //#endregion
 
     WORKCENTER_ITEM_WARNINGS: {
-        PTBR: 'Avisos',
-        ENUS: 'Warnings',
-        ESES: 'Avisos'
+        PTBR: 'Notificações',
+        ENUS: 'Notifications',
+        ESES: 'Notificaciones'
     },
 
     WORKCENTER_TERMINATION: {
@@ -1784,6 +2215,221 @@ window.UITEXT = {
     },
 
     //#endregion
+    TASK_AUTOMATION_NAME: {
+        PTBR: 'Nome da automação',
+        ENUS: 'Automation name',
+        ESES: 'Nombre de la automatización'
+    },
+    TASK_AUTOMATION_CRON_EXPRESSION: {
+        PTBR: 'Expressão Cron',
+        ENUS: 'Cron expression',
+        ESES: 'Expresión cron'
+    },
+    TASK_AUTOMATION_ERROR_ADVISE: {
+        PTBR: 'Houveram erros ao processar os dados dessa atividade',
+        ENUS: 'There were errors processing the data of this activity',
+        ESES: 'Hubo errores al procesar los datos de esta actividad'
+    },
+    TASK_AUTOMATION_DESCRIPTION: {
+        PTBR: 'Descrição da automação',
+        ENUS: 'Description of automation',
+        ESES: 'Descripción de la automatización.'
+    },
+    TASK_AUTOMATION_LAYOUT_ACTIVITY: {
+        PTBR: 'Layout da atividade',
+        ENUS: 'Activity layout',
+        ESES: 'Diseño de la actividad'
+    },
+    TASK_AUTOMATION_PRIORITY_ACTIVITY: {
+        PTBR: 'Prioridade da atividade',
+        ENUS: 'Activity priority',
+        ESES: 'Prioridad de la actividad'
+    },
+
+    TASK_AUTOMATION_TITLE_ACTIVITY: {
+        PTBR: 'Título da atividade',
+        ENUS: 'Activity title',
+        ESES: 'Título de la actividad'
+    },
+    TASK_AUTOMATION_TYPE_ACTIVITY: {
+        PTBR: 'Tipo da atividade',
+        ENUS: 'Activity type',
+        ESES: 'Tipo de actividad'
+    },
+    TASK_AUTOMATION_EXECUTION_STATUS : {
+        PTBR: 'Status da Execução',
+        ENUS: 'Execution Status',
+        ESES: 'Estado de ejecución'
+    },
+
+    TASK_AUTOMATION_EMPTY_TASK_DETAILS_HISTORY : {
+        PTBR: 'Sem historico de automação',
+        ENUS: 'No automation history',
+        ESES: 'Sin historial de automatización'
+    },
+
+    TASK_AUTOMATION_DETAIL_HISTORY : {
+        PTBR: 'Detalhe da Execução',
+        ENUS: 'Execution Detail',
+        ESES: 'Detalle de la ejecución'
+    },
+
+    TASK_AUTOMATION_TYPE : {
+        PTBR: 'Tipo de Automação',
+        ENUS: 'Automation Type',
+        ESES: 'Tipo de automatización'
+    },
+
+    TASK_AUTOMATION_ERROR_FILL_REQUIRED_FIELD: {
+        PTBR: 'Preencha o campo obrigatório: ',
+        ENUS: 'Fill the required field: ',
+        ESES: 'Complete el campo obligatorio: '
+    },
+
+    TASK_AUTOMATION_FIELD_NAME: {
+        PTBR: 'Nome',
+        ENUS: 'Name',
+        ESES: 'Nombre'
+    },
+
+    TASK_AUTOMATION_FIELD_RECURRENCE_TYPE: {
+        PTBR: 'Tipo de recorrência',
+        ENUS: 'Recurrence Type',
+        ESES: 'Tipo de recurrencia'
+    },
+
+    TASK_AUTOMATION_FIELD_DATE_START: {
+        PTBR: 'Data de início',
+        ENUS: 'Start date',
+        ESES: 'Fecha de inicio'
+    },
+
+    TASK_AUTOMATION_LAST_EXECUTION_ERROR_COUNT: {
+        PTBR: 'Qtde Erros Últ. Execução',
+        ENUS: 'Last execution error count',
+        ESES: 'Cantidad de errores en la última ejecución'
+    },
+
+    TASK_AUTOMATION_FIELD_LAST_EXECUTION_START: {
+        PTBR: 'Início última execução',
+        ENUS: 'Start Last Run',
+        ESES: 'Iniciar la última ejecución'
+    },
+
+    TASK_AUTOMATION_FIELD_LAST_EXECUTION_END: {
+        PTBR: 'Fim última execução',
+        ENUS: 'End Last Execution',
+        ESES: 'Finalizar la última ejecución'
+    },
+
+    TASK_AUTOMATION_FIELD_NEXT_EXECUTION: {
+        PTBR: 'Próxima execução',
+        ENUS: 'Next execution',
+        ESES: 'Siguiente ejecución'
+    },
+
+    TASK_AUTOMATION_FIELD_DATE_END: {
+        PTBR: 'Data de finalização',
+        ENUS: 'End date',
+        ESES: 'Fecha de finalización'
+    },
+
+    TASK_AUTOMATION_FIELD_TIME_START: {
+        PTBR: 'Hora de início',
+        ENUS: 'Start time',
+        ESES: 'Hora de inicio'
+    },
+
+    TASK_AUTOMATION_FIELD_LAST_DAY_OF_MONTH: {
+        PTBR: 'Último dia (Mês)',
+        ENUS: 'Last day (Month)',
+        ESES: 'Último día (Mes)'
+    },
+
+    TASK_AUTOMATION_FIELD_DAYS: {
+        PTBR: 'Dia(s)',
+        ENUS: 'Day(s)',
+        ESES: 'Dia(s)'
+    },
+    TASK_AUTOMATION_FIELD_REPEAT_DAY: {
+        PTBR: 'Repetiar a cada (Frequnência de dias)',
+        ENUS: 'Repeat every (Frequency of days)',
+        ESES: 'Repetir a cada (Frecuencia de días)'
+    },
+    TASK_AUTOMATION_FIELD_MONTH: {
+        PTBR: 'Mes(es)',
+        ENUS: 'Month(s)',
+        ESES: 'Mes(es)'
+    },
+
+    TASK_AUTOMATION_FIELD_WEEKDAYS: {
+        PTBR: 'Dias da semana',
+        ENUS: 'Days of the week',
+        ESES: 'Dias de la semana'
+    },
+
+    TASK_AUTOMATION_WITH_ERROR: {
+        PTBR: 'Execução com erro',
+        ENUS: 'Execution with error',
+        ESES: 'Ejecución con error'
+    },
+
+    TASK_AUTOMATION_STATUS_UNKNOW: {
+        PTBR: 'Desconhecido',
+        ENUS: 'Unknow',
+        ESES: 'Desconocido'
+    },
+
+    TASK_AUTOMATION_STATUS_NOT_EXECUTED: {
+        PTBR: 'Não executado',
+        ENUS: 'Not executed',
+        ESES: 'Sin ejecutar'
+    },
+    TASK_AUTOMATION_STATUS_WAITING_EXECUTION: {
+        PTBR: 'Aguardando execução',
+        ENUS: 'Waiting execution',
+        ESES: 'Esperando ejecución'
+    },
+    TASK_AUTOMATION_STATUS_STARTED: {
+        PTBR: 'Iniciado',
+        ENUS: 'Started',
+        ESES: 'Comenzó'
+    },
+    TASK_AUTOMATION_STATUS_EXECUTING: {
+        PTBR: 'Executando',
+        ENUS: 'Executing',
+        ESES: 'Ejecutando'
+    },
+    TASK_AUTOMATION_STATUS_SUCCESS: {
+        PTBR: 'Sucesso',
+        ENUS: 'Success',
+        ESES: 'Éxito'
+    },
+    TASK_AUTOMATION_STATUS_FINISHED_NO_MORE_SCHEDULE: {
+        PTBR: 'Concluído, não há mais agendamento',
+        ENUS: 'Finished, no more schedule',
+        ESES: 'Terminado, no más agenda.'
+    },
+    TASK_AUTOMATION_STATUS_FINISHED_BY_ERROR: {
+        PTBR: 'Finalizado por erro',
+        ENUS: 'Finished by error',
+        ESES: 'Terminado por error'
+    },
+    TASK_AUTOMATION_STATUS_ERROR: {
+        PTBR: 'Erro',
+        ENUS: 'Error',
+        ESES: 'Error'
+    },
+    TASK_AUTOMATION_ERROR_VALID_FIELDS_LAYOUT: {
+        PTBR: 'Preencha todos os campos do layout requeridos',
+        ENUS: 'Fill in all the required fields of the layout',
+        ESES: 'Complete todos los campos del diseño requeridos'
+    },
+    TASK_AUTOMATION_ERROR_TIME_START: {
+        PTBR: 'Data de início menor que a data atual',
+        ENUS: 'Start date less than current date',
+        ESES: 'Fecha de inicio anterior a la fecha actual'
+    },
 
     //#endregion
 
@@ -1799,6 +2445,18 @@ window.UITEXT = {
         PTBR: 'Conversa',
         ENUS: 'Conversation',
         ESES: 'Hablar'
+    },
+
+    CLIENT_CONVERSATION_WRITE_A_MESSAGE: {
+        PTBR: 'Digite uma mensagem...',
+        ENUS: 'Type a message...',
+        ESES: 'Escribe un mensaje...'
+    },
+
+    CLIENT_CONVERSATION_ERROR_SEND_MESSAGE: {
+        PTBR: 'Erro ao enviar mensagem nessa conversa.',
+        ENUS: 'Error sending message in this conversation.',
+        ESES: 'Error al enviar mensaje en esta conversación.'
     },
 
     //#region Conversation
@@ -1892,7 +2550,7 @@ window.UITEXT = {
         ESES: 'Cola'
     },
     CLIENT_CONVERSATION_HISTORIC: {
-        PTBR: 'Historico',
+        PTBR: 'Histórico',
         ENUS: 'Historic',
         ESES: 'Histórico'
     },
@@ -1949,6 +2607,11 @@ window.UITEXT = {
         PTBR: 'Associar empresa',
         ENUS: 'Associate enterprise',
         ESES: 'Asociar empresa'
+    },
+    CLIENT_CONTACT_ASSOCIATE_ENTERPRISE_FAILURE: {
+        PTBR: 'Erro ao associar empresa',
+        ENUS: 'Error associating enterprise',
+        ESES: 'Error al asociar empresa'
     },
 
     CLIENT_CONTACT_SELECT_IMAGE: {
@@ -2211,6 +2874,21 @@ window.UITEXT = {
         ENUS: 'Address Added',
         ESES: 'Direccion Agregado'
     },
+    CLIENT_CONTACT_ADDRESS_FAILURE: {
+        PTBR: 'Erro ao associar endereço',
+        ENUS: 'Error associating address',
+        ESES: 'Error al asociar direccion'
+    },
+    CLIENT_CONTACT_ADDRESS_ADDED_FAILURE: {
+        PTBR: 'Falha ao adicionar endereço',
+        ENUS: 'Failure to add address',
+        ESES: 'Erro para agregar direccion'
+    },
+    CLIENT_CONTACT_ADDED_FAILURE: {
+        PTBR: 'Falha ao adicionar Contato',
+        ENUS: 'Failure to add Contact',
+        ESES: 'Erro para agregar Contacto'
+    },
     CLIENT_CONTACT_ENTERPRISE_ADDED_FAILURE: {
         PTBR: 'Falha ao adicionar empresa',
         ENUS: 'Failure to add enterprise',
@@ -2255,6 +2933,26 @@ window.UITEXT = {
         PTBR: 'Adicionar nova empresa',
         ENUS: 'Add new enterprise',
         ESES: 'Agregar nueva empresa'
+    },
+    CLIENT_CONTACT_ADD_SCHEDULE_TASK: {
+        PTBR: 'Adicionar nova tarefa agendada',
+        ENUS: 'Add new scheduled Task',
+        ESES: 'Agregar nueva tareas programadas'
+    },
+    CLIENT_CONTACT_ADD_SCHEDULE_TASK_SUCCESS: {
+        PTBR: 'Tarefa agendada com Sucesso',
+        ENUS: 'Task scheduled successfully',
+        ESES: 'Tarea programada exitosamente'
+    },
+    CLIENT_CONTACT_ADD_SCHEDULE_TASK_CHANGE_SUCCESS: {
+        PTBR: 'Alteração tarefa agendada com sucesso',
+        ENUS: 'Successfully changed scheduled task',
+        ESES: 'Tarea programada cambiada exitosamente'
+    },
+    CLIENT_CONTACT_ADD_SCHEDULE_TASK_REMOVED_SUCCESS: {
+        PTBR: 'Tarefa agendada removida com Sucesso',
+        ENUS: 'Scheduled task removed successfully',
+        ESES: 'La tarea programada se eliminó correctamente'
     },
     CLIENT_CONTACT_NO_CONTACTS: {
         PTBR: 'Essa pessoa não possuí nenhum contato associado',
@@ -2471,6 +3169,91 @@ window.UITEXT = {
         ENUS: 'Interaction History',
         ESES: 'Historial de interacciones'
     },
+    CLIENT_CONTACT_AUTOMATED_TASKS_TAB: {
+        PTBR: 'Automação de tarefas',
+        ENUS: 'Task Automation',
+        ESES: 'Automatización de tareas'
+    },
+    CLIENT_CONTACT_SCHEDULED_REPETITION_DAYS: {
+        PTBR: 'Repetir a cada',
+        ENUS: 'Repeat every',
+        ESES: 'Repite cada'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_MODE: {
+        PTBR: 'Modo de execução',
+        ENUS: 'Execution mode',
+        ESES: 'Modo de ejecución'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_DAY: {
+        PTBR: 'Dia da execução',
+        ENUS: 'Day of execution',
+        ESES: 'dia de ejecucion'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_RECURRENCE: {
+        PTBR: 'Recorrência',
+        ENUS: 'Recurrence',
+        ESES: 'Reaparición'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_ONCE: {
+        PTBR: 'Uma vez',
+        ENUS: 'Once',
+        ESES: 'Una vez'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_EVERY_DAY: {
+        PTBR: 'Diário',
+        ENUS: 'Daily',
+        ESES: 'A diario'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_WEEKLY: {
+        PTBR: 'Semanal',
+        ENUS: 'Weekly',
+        ESES: 'Semanalmente'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_MONTHLY: {
+        PTBR: 'Mensal',
+        ENUS: 'Monthly',
+        ESES: 'Mensual'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_EXECUTION_MODE_DAY: {
+        PTBR: 'Dia específico do mês',
+        ENUS: 'Specific day of the month',
+        ESES: 'Día específico del mes'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_FREQUENCY: {
+        PTBR: 'Frequência de execução',
+        ENUS: 'Execution frequency',
+        ESES: 'Frecuencia de ejecución'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_FREQUENCY_WEEKDAYS: {
+        PTBR: 'Executar nos dias da semana',
+        ENUS: 'Run on weekdays',
+        ESES: 'Correr de lunes a viernes'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_START_TIME: {
+        PTBR: 'Hora de Início',
+        ENUS: 'Start Time',
+        ESES: 'Hora de inicio'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_START_EXECUTION: {
+        PTBR: 'Início da janela de execução',
+        ENUS: 'Start of execution window',
+        ESES: 'Ventana de inicio de ejecución'
+    },
+    CLIENT_CONTACT_SCHEDULED_TASKS_END_EXECUTION: {
+        PTBR: 'Final da janela de execução',
+        ENUS: 'End of execution window',
+        ESES: 'Ventana de fin de ejecución'
+    },
+    CLIENT_INTERACTION_ONLINE_OPEN_NOW: {
+        PTBR: 'Chamar agora!',
+        ENUS: 'Call now!',
+        ESES: '¡Llama ahora!'
+    },
+    CLIENT_INTERACTION_ONLINE_OPEN_NOW_TEXT: {
+        PTBR: 'Deseja realmente criar uma interação com esse WhatsApp?',
+        ENUS: 'Do you really want to create an interaction with this WhatsApp?',
+        ESES: '¿De verdad quieres crear una interacción con este WhatsApp?'
+    },
 
     //#endregion
 
@@ -2526,6 +3309,11 @@ window.UITEXT = {
         ENUS: 'Attention',
         ESES: 'Aviso'
     },
+    WINDOW_SEND_MEDIA_ERROR_FILE: {
+        PTBR: 'Falha ao enviar o arquivo',
+        ENUS: 'Failed to send attachment',
+        ESES: 'No se pudieron enviar lo archivo seleccionado'
+    },
 
     //#endregion
 
@@ -2578,6 +3366,11 @@ window.UITEXT = {
         ENUS: 'Send email',
         ESES: 'Enviar correo electrónico'
     },
+    CLIENT_SEND_EMAIL_CLASSIFICATION_PENDENCIE_TOOLTIP: {
+        PTBR: 'Por favor, classifique o atendimento corretamente antes de usar a ação',
+        ENUS: 'Please classificate the attendance correctly before use the action',
+        ESES: 'Por favor clasifique lo atendimiento correctamente antes de utilizar la acción.'
+    },
     CLIENT_MESSAGES_ATTACHMENT: {
         PTBR: 'Anexo',
         ENUS: 'Attachment',
@@ -2619,9 +3412,9 @@ window.UITEXT = {
         ESES: 'Reenviar este correo electrónico'
     },
     CLIENT_MESSAGES_FINISH: {
-        PTBR: 'Finalizar',
-        ENUS: 'Finish',
-        ESES: 'Terminar'
+        PTBR: 'Não requer resposta',
+        ENUS: 'No response required',
+        ESES: 'No requiere respuesta'
     },
     CLIENT_MESSAGES_FINISH_TOOLTIP: {
         PTBR: 'Finalizar atendimento',
@@ -2662,6 +3455,11 @@ window.UITEXT = {
         PTBR: 'Para',
         ENUS: 'To',
         ESES: 'Para'
+    },
+    CLIENT_MESSAGES_BTN_TOOLTIP: {
+        PTBR: 'Clique para adicionar contatos!',
+        ENUS: 'Click to add contacts!',
+        ESES: 'Haga clic aquí para agregar contactos'
     },
     CLIENT_MESSAGES_SUBJECT: {
         PTBR: 'Adicione um assunto aqui...',
@@ -2784,6 +3582,11 @@ window.UITEXT = {
         ENUS: 'Closed',
         ESES: 'Cerrado'
     },
+    CLOSED_AT_IN: {
+        PTBR: 'Fechado em',
+        ENUS: 'Closed in',
+        ESES: 'Cerrado en'
+    },
     INTERACTIONS: {
         PTBR: 'Interações',
         ENUS: 'Interactions',
@@ -2819,6 +3622,12 @@ window.UITEXT = {
         ESES: 'Nombre'
     },
 
+    CLIENT_DATA_SURNAME: {
+        PTBR: 'Sobrenome',
+        ENUS: 'Surname',
+        ESES: 'Apellido'
+    },
+
     CLIENT_DATA_EMAIL: {
         PTBR: 'Email',
         ENUS: 'Email',
@@ -2834,6 +3643,11 @@ window.UITEXT = {
         PTBR: 'Preencha todos os campos requiridos',
         ENUS: 'Fill in all required fields',
         ESES: 'Complete todos los campos obligatorios'
+    },
+    CLIENT_DATA_REQUIRED_FIELD: {
+        PTBR: 'Esse campo é requirido',
+        ENUS: 'This field is required',
+        ESES: 'Este campo es requerido'
     },
     //#endregion
 
@@ -2908,6 +3722,12 @@ window.UITEXT = {
         PTBR: 'Nova Atividade',
         ENUS: 'New Activity',
         ESES: 'Nueva Actividad'
+    },
+
+    ACTIVITY_OPEN_ACTIVITY: {
+        PTBR: 'Abrir Atividade',
+        ENUS: 'Open Activity',
+        ESES: 'Abrir Actividad'
     },
 
     ACTIVITY_PROTOCOL: {
@@ -3125,6 +3945,23 @@ window.UITEXT = {
         ESES: 'Cerrar curaduría'
     },
 
+    ACTIVITY_CLOSE: {
+        PTBR: 'Encerrar Atividades(s)',
+        ENUS: 'Close Activity(ies)',
+        ESES: 'Cerrar actividad(es)'
+    },
+
+    SELECT_ALL_ACTIVITY: {
+        PTBR: 'Selecionar todas as atividades',
+        ENUS: 'Select all activities',
+        ESES: 'Seleccionar todas las actividades'
+    },
+    SELECT_MULTIPLE_ACTIVITIES: {
+        PTBR: 'Seleção Múltipla',
+        ENUS: 'Multiple Selection',
+        ESES: 'Selección múltiple'
+    },
+
     ACTIVITY_CURATED_AFTER_ACTION_COMPLETION_OF_THE_CURATION: {
         PTBR: 'Conclusão da Curadoria',
         ENUS: 'Completion of the Curation',
@@ -3299,6 +4136,12 @@ window.UITEXT = {
         PTBR: 'Novo',
         ENUS: 'New',
         ESES: 'Nuevo'
+    },
+
+    ACTIVITY_SESSION_STATUS_WAITING_TO_BE_QUEUED: {
+        PTBR: 'Aguardando para ser enfileirado',
+        ENUS: 'Waiting to be queued',
+        ESES: 'Esperando para ser encolado'
     },
 
     ACTIVITY_SESSION_STATUS_QUEUE: {
@@ -3494,6 +4337,11 @@ window.UITEXT = {
         ESES: 'Urgente'
     },
     //#endregion
+    ACTIVITY_SESSION_GRID_ITENS_PER_PAGE: {
+        PTBR: 'Itens por página',
+        ENUS: 'Items per page',
+        ESES: 'Artículos por página'
+    },
     ACTIVITY_SESSION_RELATED_OPEN_INTERNALLY: {
         PTBR: 'Abrir internamente',
         ENUS: 'Open internally',
@@ -3555,14 +4403,14 @@ window.UITEXT = {
         ESES: 'Campos personalizados'
     },
     ACTIVITY_SESSION_FILTER_SEE_CUSTOM_FIELDS: {
-        PTBR: 'Veja campos customizados',
-        ENUS: 'See custom fields',
-        ESES: 'Ver campos personalizados'
+        PTBR: 'Campos customizados',
+        ENUS: 'Custom fields',
+        ESES: 'Campos personalizados'
     },
     ACTIVITY_SESSION_FILTER_CUSTOM_FIELDS_LENGTH: {
-        PTBR: 'Campos customizados configurados',
-        ENUS: 'Configured custom fields.',
-        ESES: 'Campos personalizados configurados.'
+        PTBR: 'Campo configurados',
+        ENUS: 'Configured field.',
+        ESES: 'Campos configurado.'
     },
     ACTIVITY_SESSION_FILTER_FIELD_DETAILS_FILL: {
         PTBR: 'Preencha os valores',
@@ -3709,6 +4557,11 @@ window.UITEXT = {
         PTBR: 'Desabilitar o envio de mensagens pressionando o ENTER',
         ENUS: 'Disable sending messages by pressing ENTER',
         ESES: 'Deshabilite el envío de mensajes presionando ENTER'
+    },
+    PROPERTY_TURNOFF_MESSAGE_SOUND: {
+        PTBR: 'Desabilitar som de nova mensagem',
+        ENUS: 'Turn off new message sound',
+        ESES: 'Deshabilite el sonido de nueva mesajes'
     },
     //#endregion
 
@@ -4112,10 +4965,20 @@ window.UITEXT = {
         ENUS: 'In Queue?',
         ESES: 'En la fila?'
     },
+    ATTENDANCE_QUEUE_ATTENDANCE: {
+        PTBR: 'Atendimentos na Fila',
+        ENUS: 'In Queue Attendances',
+        ESES: 'Atendimentos en la fila'
+    },
     ATTENDANCE_IN_SAVED: {
         PTBR: 'Salvo',
         ENUS: 'Saved',
         ESES: 'Salvado'
+    },
+    ATTENDANCE_SAVED_ATTENDANCE: {
+        PTBR: 'Atendimentos Salvos',
+        ENUS: 'Saved Attendances',
+        ESES: 'Atendimientos Salvados'
     },
     ATTENDANCE_FILTER_CONTACT_TYPE_EMAIL: {
         PTBR: 'E-mail',
@@ -4224,6 +5087,11 @@ window.UITEXT = {
         ENUS: 'Order',
         ESES: 'Orden'
     },
+    ATTENDANCE_ORDERING: {
+        PTBR: 'Ordenação',
+        ENUS: 'Ordering',
+        ESES: 'Ordenar'
+    },
     ATTENDANCE_ORDER_ASCENDING: {
         PTBR: 'Mais antigo para mais recente',
         ENUS: 'Oldest to newest',
@@ -4272,9 +5140,9 @@ window.UITEXT = {
     },
 
     ATTENDANCE_AUX_EMAIL: {
-        PTBR: 'Auxiliar (e-mail)',
-        ENUS: 'Helper (e-mail)',
-        ESES: 'Ayudante (correo electrónico)'
+        PTBR: 'E-mail',
+        ENUS: 'E-mail',
+        ESES: 'Correo electrónico'
     },
 
     ATTENDANCE_PERSON_ID: {
@@ -4469,6 +5337,11 @@ window.UITEXT = {
         ENUS: 'Failed to load notifications',
         ESES: 'Error al cargar notificaciones'
     },
+    WARNING_FINISH_PENDENT_BLOCKED: {
+        PTBR: 'O aviso não pode ser finalizado, pois existem pendências para serem finalizadas.',
+        ENUS: 'The notice cannot be finalized, as there are pending issues to be finalized.',
+        ESES: 'El aviso no se puede finalizar, ya que quedan asuntos pendientes por finalizar.'
+    },
     //#endregion\
 
     //#region SMTP
@@ -4572,6 +5445,11 @@ window.UITEXT = {
         PTBR: 'Fila fechada',
         ENUS: 'Closed queue',
         ESES: 'Cola cerrada'
+    },
+    INTERACTION_PICK_FROM_QUEUE: {
+        PTBR: 'Atender agora / Priorizar',
+        ENUS: 'Open now / Priorize',
+        ESES: 'Responder ahora / Priorizar'
     },
     INTERACTION_STATUS_MARK_NO_AGENT_AVAILABLE: {
         PTBR: 'Sem operador disponível',
@@ -4804,6 +5682,153 @@ window.UITEXT = {
         ENUS: 'Internal system error',
         ESES: 'Error interno del sistema'
     },
+
+    //STEP TYPE
+
+    STATUS_NONE: {
+        PTBR: 'Em fila',
+        ENUS: 'In Queue',
+        ESES: 'TRADUZIR'
+    },
+
+    STATUS_DIVERTED : {
+        PTBR: 'Transferido',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_ABANDONED: {
+        PTBR: 'Abandonado',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_CUSTOMERCHANGEMEDIA : {
+        PTBR: 'Transferência para outra Mídia',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_CUSTOMERDONEINQUEUE : {
+        PTBR: 'Finalizado em fila',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_AGENTDONE : {
+        PTBR: 'Encerrado pelo Operador',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_CUSTOMERDONE : {
+        PTBR: 'Encerrado pelo Cliente',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_AGENTTRANSFERTOAGENT : {
+        PTBR: 'Transferência para Operador',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_AGENTTRANSFERTOCALLTYPE : {
+        PTBR: 'Transferência para Segmento',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_DONENETWORKCUSTOMERTIMEOUT : {
+        PTBR: 'Encerrado por timeout do Cliente',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_DONENETWORKAGENTERROR : {
+        PTBR: 'Falha de conexão do Operador',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_DONEINACTIVITY : {
+        PTBR: 'Encerrado por inatividade do Cliente',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_SERVICEBUSYUNAVAILABLE : {
+        PTBR: 'Serviço indisponível',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_SERVICECLOSED : {
+        PTBR: 'Fora do Horário',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_BLACKLISTINTERACTION : {
+        PTBR: 'Blacklist',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_DONENETWORKCUSTOMERERROR : {
+        PTBR: 'Falha de conexão do Cliente',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_DONEROUTINGERROR : {
+        PTBR: 'Encerrado por Erro no Roteamento',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_DONETRANSFEREXTERNALSERVICE : {
+        PTBR: 'Transferência para Sistema Externo',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_VIRTUALAGENTTRANSFERTOCALLTYPE: {
+        PTBR: 'Transferência para Segmento pelo Robô',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_OUTBOUNDSENT: {
+        PTBR: 'Outbound - Enviado',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_OUTBOUNDFAILEDTOSEND: {
+        PTBR: 'Outbound - Erro no envio',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_MARKSPAMBYOPER: {
+        PTBR: 'Spam (Operador)',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_MARKSPAMBYSYSTEM: {
+        PTBR: 'Spam (Sistema)',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
+    STATUS_MARKSPAMBYSUPER: {
+        PTBR: 'Spam Confirmado pelo Supervisor',
+        ENUS: 'ENUS_TRADUZIR',
+        ESES: 'ESES_TRADUZIR'
+    },
+
     //SOFTPHONE
     SOFTPHONE_SEARCH_FOR_A_PERSON_TO_RELATE: {
         PTBR: 'Busque uma pessoa para relacionar esse contato...',
@@ -4819,36 +5844,6 @@ window.UITEXT = {
         PTBR: 'Ligar',
         ENUS: 'Call',
         ESES: 'Llamada'
-    },
-    SOFTPHONE_CALLING: {
-        PTBR: 'Chamando...',
-        ENUS: 'Calling...',
-        ESES: 'Llamando...'
-    },
-    SOFTPHONE_CONNECTED: {
-        PTBR: 'Conectado',
-        ENUS: 'Connected',
-        ESES: 'Llamando...'
-    },
-    SOFTPHONE_NEW_CALL: {
-        PTBR: 'Nova ligação',
-        ENUS: 'New Call',
-        ESES: 'Nueva llamada'
-    },
-    SOFTPHONE_RECEIVING_CALL: {
-        PTBR: 'Recebendo Chamada...',
-        ENUS: 'Receiving Call...',
-        ESES: 'Recibiendo llamada...'
-    },
-    SOFTPHONE_CALL_ENDED: {
-        PTBR: 'Chamada encerrada',
-        ENUS: 'Call ended',
-        ESES: 'Llamada terminada'
-    },
-    SOFTPHONE_CALL_IN_WAIT: {
-        PTBR: 'Chamada em espera',
-        ENUS: 'Call in wait',
-        ESES: 'Llamada en espera'
     },
     SOFTPHONE_AUTO_ANWSER: {
         PTBR: 'Resposta automática',
@@ -4925,11 +5920,6 @@ window.UITEXT = {
         ENUS: 'Softphone stopped. Contact IT support.',
         ESES: 'Softphone detenido. Comuníquese con el soporte de TI.'
     },
-    SOFTPHONE_LOGIN_ADVISE: {
-        PTBR: 'Você deve efetuar o login para utilizar os serviços de webphone',
-        ENUS: 'You must login to use webphone services',
-        ESES: 'Debes iniciar sesión para utilizar los servicios de telefonía web.'
-    },
     //DEVICES
     DEVICES_ENUMRATE_NOT_SUPPORTED: {
         PTBR: 'Enumeração de dispositivos de mídia não é suportado.',
@@ -4958,6 +5948,76 @@ window.UITEXT = {
         PTBR: 'Não pressione F5 para atualizar esse sistema, para isso utilizar o botão "Desconectar" para recarregar essa aplicação.',
         ENUS: 'Do not press F5 to update this system, use the "Disconnect" button to reload this application.',
         ESES: 'No presione F5 para actualizar este sistema, use el botón "Desconectar" para recargar esta aplicación.'
+    },
+    CHAT_EMOJI: {
+        PTBR: 'Selecionar emoji',
+        ENUS: 'Select emoji',
+        ESES: 'Seleccione emoji'
+    },
+    RELEASE_ATTENDANCE_ADVISE: {
+        PTBR: 'Você tem pendência com dados do usuário de atendimentos anteriores. Considere preencher os dados pois o atendimento de inatividade será descarregado para liberar recursos para esta aplicação.',
+        ENUS: 'You have pendency with user data on previous attendance. Consider fill data because the inactivity attendance will be unload to release resources for this application.',
+        ESES: 'Tienes pendencia con datos de usuario sobre asistencia anterior. Considere completar los datos porque la asistencia por inactividad se descargará para liberar recursos para esta aplicación.'
+    },
+    TOOLBAR_ACTIONS_REPLY: {
+        PTBR: 'Responder',
+        ENUS: 'Reply',
+        ESES: 'Respuesta'
+    },
+    TOOLBAR_ACTIONS_REACT: {
+        PTBR: 'Reagir',
+        ENUS: 'React',
+        ESES: 'Reaccionar'
+    },
+    TOOLBAR_ACTIONS_FORWARD: {
+        PTBR: 'Encaminhar',
+        ENUS: 'Forward',
+        ESES: 'Hacia adelante'
+    },
+    TOOLBAR_ACTIONS_STAR: {
+        PTBR: 'Marcar como favorito',
+        ENUS: 'Mark as favorite',
+        ESES: 'Marcar como favorito'
+    },
+    TOOLBAR_ACTIONS_REPORT: {
+        PTBR: 'Reportar',
+        ENUS: 'Report',
+        ESES: 'Para reportar'
+    },
+    TOOLBAR_ACTIONS_DELETE: {
+        PTBR: 'Excluir',
+        ENUS: 'Delete',
+        ESES: 'Borrar'
+    },
+    QUOTE_MESSAGE_TEXT: {
+        PTBR: 'Citar mensagem',
+        ENUS: 'Quote message',
+        ESES: 'Citar mensaje'
+    },
+    MENU_EXTERNA_SYSTEM: {
+        PTBR: 'Sistema',
+        ENUS: 'System',
+        ESES: 'Sistema'
+    },
+    MESSAGE_LOCATION_TEXT: {
+        PTBR: 'Localização',
+        ENUS: 'Location',
+        ESES: 'Ubicación'
+    },
+    ERROR_CHAT_ALREADY_IN_QUEUE: {
+        PTBR: 'Esse WhatsApp já está em atendimento ou em fila.',
+        ENUS: 'This WhatsApp is already in an attendance or in queue.',
+        ESES: 'El WhatsApp ya está en una cola de atención.'
+    },
+    ERROR_CHAT_OUTOF_WINDOW: {
+        PTBR: 'Limite de 24hrs atingido. Disponível apenas o envio de template.',
+        ENUS: '.',
+        ESES: '.'
+    },
+    ERROR_CHAT_GENERIC_ERROR: {
+        PTBR: 'Ocorreu um erro.',
+        ENUS: '.',
+        ESES: '.'
     }
 
 };

@@ -2,7 +2,7 @@
 
 //integrity
 Cypress.Commands.add('windowsHeaderComponent', (context, content) => {
-    cy.getByData(`${context}-window-header`).checkContent(content);
+    cy.getByData(`${context}-window-header`).checkContent(content) || cy.getByData(`${context}-header`).checkContent(content);
 });
 
 Cypress.Commands.add('pagingToolBarComponent', (context) => {
