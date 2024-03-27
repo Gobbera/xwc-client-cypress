@@ -82,7 +82,7 @@ Cypress.Commands.add('workCenterFlow', (action) => {
             cy.getByData('workcenter-screen-btn-properties').click();
             cy.checksTheIntegrity(action);
             if (action.tabContext) {
-                cy.getByData(`property-window-btn-window-${action.tabContext}`).click();
+                cy.getByData(`property-window-tabbtn-window-${action.tabContext}`).click();
                 cy.checksTheIntegrity(actionString);
             }
             break;
@@ -134,7 +134,7 @@ Cypress.Commands.add('workCenterFlow', (action) => {
                 cy.checksTheIntegrity(actionString);
                 break;
             }
-            cy.getByData('workcenter-screen-btn-activity').click();
+            cy.getByData('workcenter-screen-splitbtn-activity').click();
             cy.checksTheIntegrity(actionString);
             break;
             

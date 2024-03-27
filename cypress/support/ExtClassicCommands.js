@@ -26,6 +26,5 @@ Cypress.Commands.add('pag', (context, num) => {
 
 Cypress.Commands.add('splitbtn', (context, button, menuitem) => {
     cy.getByData(`${context}-splitbtn-${button}`).find(`[data-e2e="${context}-splitbtn-arrow-${button}"]`).click({force: true});
-    cy.wait(1000);
-    cy.getByData(`${context}-menuitem-${button}-${menuitem}`).click();
+    cy.getByData(`${context}-menuitem-${menuitem}`).click();
 });

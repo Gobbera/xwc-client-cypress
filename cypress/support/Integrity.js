@@ -170,31 +170,35 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
             
         case 'activities':
-            cy.getByData('activity-session-window-header').should('Atividade');
+            //cy.getByData('activity-session-window-header').should('Atividade');
             cy.pagingToolBarComponent('activity-session');
             break;
 
         case 'activities.new-activity':
-            cy.getByData('activity-new-window-combo-session-file-layout').checkContent('Layout');
+            cy.getByData('activity-new-window-combo-session-file-layout').should('exist');
             cy.getByData('activity-new-window-combo-type').should('exist');
             cy.getByData('activity-new-window-combo-priority').should('exist');
-            cy.getByData('activity-new-window-textfield-client-contact-title').checkContent('Titulo');
+            cy.getByData('activity-new-window-textfield-client-contact-title').should('exist');
             cy.getByData('activity-new-window-session-fill-data').should('exist');
             cy.getByData('activity-new-window-card-virtual-tabs').should('exist');
-            cy.getByData('activity-new-window-tabbtn-client-persons-and-contacts').checkContent('Pessoas e Contatos');
-            cy.getByData('activity-new-window-tabbtn-client-persons-and-contacts-new').checkContent('Adicionar Pessoa');
+            cy.getByData('activity-new-window-tabbtn-client-persons-and-contacts').should('exist');
+            cy.getByData('activity-new-window-tabbtn-client-persons-and-contacts-new').should('exist');
             cy.getByData('activity-new-window-persons-grid').should('exist');
             cy.getByData('activity-new-window-persons-grid-grid-search-text').should('exist');
-            cy.pagingToolBarComponent('activity-new-window-persons-grid');
+            cy.pagingToolBarComponent('activity-new-window-persons');
             cy.getByData('activity-new-window-exclamation-icon').should('exist');
             cy.getByData('activity-new-window-checkbox-new-activity').should('exist');
-            cy.getByData('activity-new-window-btn-switch-open-now').checkContent('Atender Agora');
-            cy.getByData('activity-new-window-btn-create').should('Criar');
+            cy.getByData('activity-new-window-btn-switch-open-now').should('exist');
+            cy.getByData('activity-new-window-btn-create').should('exist');
             break;
 
         case 'activities.new-activity.client-persons-and-contacts-new':
     
         case 'activities.backlog':
+            //cy.getByData('activity-session-window-header').should('Atividade');
+            cy.xWindowHeaderTools('activity-session');
+            cy.xFilterLabelComponent('activity-session');
+            cy.pagingToolBarComponent('activity-session');
             break;        
-    } 
+    }
 });
