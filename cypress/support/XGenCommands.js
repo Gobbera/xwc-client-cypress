@@ -130,7 +130,7 @@ Cypress.Commands.add('workCenterFlow', (action) => {
 
         case 'activities':
             if (action.tabContext) {
-                cy.splitbtn('workcenter-screen', 'activities', action.tabContext);
+                cy.splitbtn('workcenter-screen', 'activity', action.tabContext);
                 cy.checksTheIntegrity(actionString);
                 break;
             }

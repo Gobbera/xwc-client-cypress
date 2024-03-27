@@ -28,9 +28,9 @@ describe('General', () => {
     //it.only('Checks the integrity of the client web', () => {     
     //  cy.workCenterFlow('activities.new-activity');
     //});
-    //it.only('Checks the integrity of the client web', () => {     
-    //  cy.workCenterFlow('activities.backlog');
-    //});
+    it.only('Checks the integrity of the client web', () => {     
+      cy.workCenterFlow('activities.backlog');
+    });
 });      
        
 

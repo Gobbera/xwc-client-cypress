@@ -1,21 +1,24 @@
 Cypress.Commands.add('checksTheIntegrity', (context) => {
-    cy.getByData('asset-tab-features-btn-tab-attendance').checkContent(UITEXT.WORKCENTER_ATTENDANCE);
-    cy.getByData('asset-tab-features-btn-tab-operator').checkContent(UITEXT.WORKCENTER_OPERATOR);
-    cy.getByData('asset-tab-features-btn-tab-portal').checkContent(UITEXT.WORKCENTER_PORTAL);
-    cy.getByData('workcenter-screen-btn-disconnect').checkContent(UITEXT.WORKCENTER_DISCONNECT);
-    cy.getByData('workcenter-screen-btn-properties').checkContent(UITEXT.WORKCENTER_PROPERTIES);
-    cy.getByData('workcenter-screen-online-attendances-on-queue').should('exist');
-    cy.getByData('workcenter-screen-offline-attendances-on-queue').should('exist');
-    cy.getByData('workcenter-screen-combobox-status').checkContent('system');
-    cy.getByData('workcenter-screen-btn-search').checkContent(UITEXT.WORKCENTER_SEARCH);
-    cy.getByData('workcenter-screen-btn-chat').checkContent(UITEXT.WORKCENTER_NEW_IM_CHAT);
-    cy.getByData('workcenter-screen-btn-persons-and-contacts').checkContent(UITEXT.WORKCENTER_PERSONS);
-    cy.getByData('workcenter-screen-btn-email').checkContent(UITEXT.WORKCENTER_NEW_EMAIL);
-    cy.getByData('workcenter-screen-btn-activity').checkContent(UITEXT.WORKCENTER_ACTIVITIE);
-    cy.getByData('workcenter-screen-btn-warning').checkContent(UITEXT.WORKCENTER_NOTIFICATIONS);
-    cy.getByData('asset-attedance-container-txt-search').should('exist');
-    cy.getByData('asset-attedance-container-btn-search').should('exist');
     switch (context) {
+        case 'workcenter':
+            cy.getByData('asset-tab-features-btn-tab-attendance').checkContent(UITEXT.WORKCENTER_ATTENDANCE);
+            cy.getByData('asset-tab-features-btn-tab-operator').checkContent(UITEXT.WORKCENTER_OPERATOR);
+            cy.getByData('asset-tab-features-btn-tab-portal').checkContent(UITEXT.WORKCENTER_PORTAL);
+            cy.getByData('workcenter-screen-btn-disconnect').checkContent(UITEXT.WORKCENTER_DISCONNECT);
+            cy.getByData('workcenter-screen-btn-properties').checkContent(UITEXT.WORKCENTER_PROPERTIES);
+            cy.getByData('workcenter-screen-online-attendances-on-queue').should('exist');
+            cy.getByData('workcenter-screen-offline-attendances-on-queue').should('exist');
+            cy.getByData('workcenter-screen-combobox-status').checkContent('system');
+            cy.getByData('workcenter-screen-btn-search').checkContent(UITEXT.WORKCENTER_SEARCH);
+            cy.getByData('workcenter-screen-btn-chat').checkContent(UITEXT.WORKCENTER_NEW_IM_CHAT);
+            cy.getByData('workcenter-screen-btn-persons-and-contacts').checkContent(UITEXT.WORKCENTER_PERSONS);
+            cy.getByData('workcenter-screen-btn-email').checkContent(UITEXT.WORKCENTER_NEW_EMAIL);
+            cy.getByData('workcenter-screen-btn-activity').checkContent(UITEXT.WORKCENTER_ACTIVITIE);
+            cy.getByData('workcenter-screen-btn-warning').checkContent(UITEXT.WORKCENTER_NOTIFICATIONS);
+            cy.getByData('asset-attedance-container-txt-search').should('exist');
+            cy.getByData('asset-attedance-container-btn-search').should('exist');
+            break;
+
         case 'properties':
             cy.windowsHeaderComponent('property-window', UITEXT.PROPERTY_WINDOW_TITLE);
             cy.getByData('property-window').should('exist');
@@ -146,8 +149,9 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
         case 'newEmail.activities':
             cy.getByData('activity-session-attendance-header-combo-historic-status').should('exist');
             break;
-
+            
         case 'activities':
+            cy.getByData('activity-session-window-header').should('Atividade');
             cy.pagingToolBarComponent('activity-session');
             break;
 
