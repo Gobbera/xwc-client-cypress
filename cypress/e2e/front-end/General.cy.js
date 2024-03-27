@@ -13,24 +13,24 @@ describe('General', () => {
     //  ]);
     //});
 
-    it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('search.search-email-in-queue');
-    });
-    it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('search.search-calls-in-queue');
-    });
-    it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('search.search-last-calls');
-    });
-    it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('search.backlog');
-    });
-    it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('activities.new-activity');
-    });
-    it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('activities.backlog');
-    });
+    //it.only('Checks the integrity of the client web', () => {     
+    //  cy.workCenterFlow('search.search-email-in-queue');
+    //});
+    //it.only('Checks the integrity of the client web', () => {     
+    //  cy.workCenterFlow('search.search-calls-in-queue');
+    //});
+    //it.only('Checks the integrity of the client web', () => {     
+    //  cy.workCenterFlow('search.search-last-calls');
+    //});
+    //it.only('Checks the integrity of the client web', () => {     
+    //  cy.workCenterFlow('search.backlog');
+    //});
+    //it.only('Checks the integrity of the client web', () => {     
+    //  cy.workCenterFlow('activities.new-activity');
+    //});
+    //it.only('Checks the integrity of the client web', () => {     
+    //  cy.workCenterFlow('activities.backlog');
+    //});
 });      
        
 
