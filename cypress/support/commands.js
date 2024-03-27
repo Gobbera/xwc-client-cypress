@@ -23,18 +23,6 @@ Cypress.Commands.add('setOnlineStatus', () => {
     cy.get('#container-1049').click().type('{downarrow}{downarrow}{downarrow}{enter}');
 });
 
-Cypress.Commands.add('isDisabled', (data) => {
-    cy.getByData(data).invoke('attr', 'class').should('include', 'x-btn-disabled');
-});
-
-Cypress.Commands.add('isEnabled', (data) => {
-    cy.getByData(data).invoke('attr', 'class').should('not.include', 'x-btn-disabled');
-});
-
-Cypress.Commands.add('toastNotification', (notificationType) => {
-    cy.get('.toast-notification').should('exist').and('have.text', notificationType);
-});
-
 Cypress.Commands.add('hitYesButton', () => {
     cy.get('.x-btn-inner').contains('Sim').click();
 });

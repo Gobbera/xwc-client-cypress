@@ -35,6 +35,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
 
         case 'properties.attendance':
+            cy.windowsHeaderComponent('property-window', UITEXT.PROPERTY_WINDOW_TITLE);
             cy.getByData('property-window-attendance-combo-capacity-online').checkContent(UITEXT.PROPERTY_WINDOW_ONLINE_MEDIA);
             cy.getByData('property-window-attendance-combo-capacity-offline').checkContent(UITEXT.PROPERTY_WINDOW_OFFLINE_MEDIA);
             cy.getByData('property-window-attendance-checkbox-turnoff-notification-sound').checkContent(UITEXT.PROPERTY_WINDOW_TURNOFF_NOTIFICATION_SOUND);
@@ -45,11 +46,11 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
 
         case 'search':
-            cy.windowsHeaderComponent('attendance-search', UITEXT.ATTENDANCE_WINDOW_TITLE);
-            cy.windowHeaderTools('attendance-search');
-            cy.filterLabelComponent('attendance-search');
+            cy.windowsHeaderComponent('attendance-search', UITEXT.GENERAL_SEARCH);
+            cy.xWindowHeaderTools('attendance-search');
+            cy.xFilterLabelComponent('attendance-search');
             cy.getByData('attendance-search-grid').should('exist');
-            cy.pagingToolBarComponent('attendance-search-grid');
+            cy.pagingToolBarComponent('attendance-search');
             cy.getByData('attendance-search-right-panel').should('exist');
             cy.getByData('interaction-search-header').should('exist');
             cy.getByData('interaction-search-header-text-attendance-summary').checkContent('Resumo de Atendimento');
@@ -83,16 +84,19 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
         
         case 'search.search-email-in-queue':
-
+            cy.windowsHeaderComponent('attendance-search', UITEXT.GENERAL_SEARCH);
             break;
-
+            
         case 'search.search-calls-in-queue':
+            cy.windowsHeaderComponent('attendance-search', UITEXT.GENERAL_SEARCH);
             break;
-
+            
         case 'search.search-last-calls':
+            cy.windowsHeaderComponent('attendance-search', UITEXT.GENERAL_SEARCH);
             break;
-
+                
         case 'search.backlog':
+            cy.windowsHeaderComponent('attendance-search', UITEXT.GENERAL_SEARCH);
             break;
 
         case 'crm':
@@ -147,7 +151,6 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             cy.getByData('email-screen-btn-bcc').checkContent('Bcc');
             cy.getByData('email-screen-textfield-subject').should('exist');
             cy.getByData('email-screen-htmleditor').should('exist');
-            
             cy.getByData('attendance-container-tab-informations').should('exist');
             cy.getByData('attendance-container-tab-related').should('exist');
             cy.getByData('attendance-container-tab-faq').should('exist');
@@ -170,7 +173,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
             
         case 'activities':
-            //cy.getByData('activity-session-window-header').should('Atividade');
+            cy.windowsHeaderComponent('activity-session', UITEXT.GENERAL_ACTIVITY);
             cy.pagingToolBarComponent('activity-session');
             break;
 
@@ -195,7 +198,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
         case 'activities.new-activity.client-persons-and-contacts-new':
     
         case 'activities.backlog':
-            //cy.getByData('activity-session-window-header').should('Atividade');
+            cy.windowsHeaderComponent('activity-session', UITEXT.GENERAL_ACTIVITY);
             cy.xWindowHeaderTools('activity-session');
             cy.xFilterLabelComponent('activity-session');
             cy.pagingToolBarComponent('activity-session');

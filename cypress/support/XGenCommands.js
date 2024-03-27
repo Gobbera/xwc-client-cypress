@@ -1,13 +1,28 @@
 //Components XGen
 Cypress.Commands.add('xWindowHeaderTools', (context) => {
     cy.getByData(`${context}-window-header-collapse-top`).should('exist');
-    cy.getByData(`${context}-window-header-undefined`).should('exist');
-    cy.getByData(`${context}-window-header-undefined`).should('exist');
+    cy.getByData(`${context}-window-header-filter`).should('exist');
+    cy.getByData(`${context}-window-header-refresh`).should('exist');
     cy.getByData(`${context}-window-header-close`).should('exist');
 });
 
+
 Cypress.Commands.add('xFilterLabelComponent', (context) => {
     cy.getByData(`${context}-filter-bar`).should('exist');
+});
+
+Cypress.Commands.add('isDisabled', (data) => {
+    cy.getByData(data).invoke('attr', 'class').should('include', 'x-btn-disabled');
+});
+
+Cypress.Commands.add('isEnabled', (data) => {
+    cy.getByData(data).invoke('attr', 'class').should('not.include', 'x-btn-disabled');
+});
+
+//Commands
+
+Cypress.Commands.add('toastNotification', (text) => {
+    cy.get('.toast-notification').should('exist').and('have.text', text);
 });
 
 Cypress.Commands.add('xFilter', (context, command, filters) => {
@@ -97,7 +112,7 @@ Cypress.Commands.add('workCenterFlow', (action) => {
                 cy.checksTheIntegrity(actionString);
                 break;
             }
-            cy.getByData('workcenter-screen-btn-search').click();
+            cy.getByData('workcenter-screen-splitbtn-search').click();
             cy.checksTheIntegrity(actionString);
             break;
 
@@ -112,7 +127,7 @@ Cypress.Commands.add('workCenterFlow', (action) => {
                 cy.checksTheIntegrity(actionString);
                 break;
             }
-            cy.getByData('workcenter-screen-btn-persons-and-contacts').click();
+            cy.getByData('workcenter-screen-splitbtn-persons-and-contacts').click();
             cy.checksTheIntegrity(actionString);
             break;
 

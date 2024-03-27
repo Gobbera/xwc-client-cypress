@@ -5,6 +5,7 @@ describe('General', () => {
       cy.login(Cypress.env('username'), Cypress.env('password'));
     });
 
+<<<<<<< Updated upstream
     //it.only('Checks the integrity of the client web', () => {     
     //  cy.workCenterFlow('activities');
     //  cy.xFilter('activity-session', 'by', [
@@ -65,3 +66,9 @@ describe('General', () => {
         //cy.getByData('asset-tab-features-btn-tab-portal').click();
         */
  
+=======
+    it.only('Checks the integrity of the client web', () => {     
+      cy.workCenterFlow('search');
+    });
+});
+>>>>>>> Stashed changes

@@ -10,7 +10,7 @@ window.UITEXT = {
 
     //#region GENERAL
 
-    GENERAL_ACTIVITIE: {
+    GENERAL_ACTIVITY: {
         PTBR: 'Atividade',
         ENUS: 'Activitie',
         ESES: 'Actividade'
