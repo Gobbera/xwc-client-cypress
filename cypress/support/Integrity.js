@@ -83,6 +83,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
         
         case 'search.search-email-in-queue':
+
             break;
 
         case 'search.search-calls-in-queue':
@@ -95,6 +96,24 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
 
         case 'crm':
+            cy.windowsHeaderComponent('person-and-contacts', UITEXT.WORKCENTER_PERSONS);
+            cy.getByData('person-window-tabpanel').should('exist');
+            cy.getByData('activity-new-window-persons-grid').should('exist');
+            cy.getByData('activity-new-window-persons-grid-grid-search-text').checkContent(UITEXT.GENERAL_TEXT);
+            cy.getByData('person-window-combo-person').checkContent(UITEXT.GENERAL_PERSON);
+            cy.getByData('person-window-btn-merge-person').checkContent(UITEXT.PERSON_WINDOW_MERGE_PERSON);
+            cy.getByData('person-window-btn-associate-person').checkContent(UITEXT.PERSON_WINDOW_ASSOCIATE_PERSON);
+            cy.getByData('person-window-btn-new-person').checkContent(UITEXT.PERSON_WINDOW_ASSOCIATE_NEW_PERSON);
+            cy.getByData('person-window-btn-new-grid-person').checkContent(UITEXT.GENERAL_PERSON);
+            cy.getByData('person-window-tabpanel-list').checkContent(UITEXT.GENERAL_LIST);
+            cy.pagingToolBarComponent('activity-session');
+            break;
+
+        case 'crm.task-automation':
+            //<debug>
+            debugger;
+            //</debug>
+            
             cy.windowsHeaderComponent('person-and-contacts', UITEXT.WORKCENTER_PERSONS);
             cy.getByData('person-window-tabpanel').should('exist');
             cy.getByData('activity-new-window-persons-grid').should('exist');
