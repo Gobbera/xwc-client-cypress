@@ -111,8 +111,12 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
 
         case 'crm.task-automation':
             cy.windowsHeaderComponent('task-automation', UITEXT.GENERAL_AUTOMATION_TASKS);
-            // cy.getByData('person-window-tabpanel').should('exist');
-            // cy.getByData('activity-new-window-persons-grid').should('exist');
+            cy.getByData('task-automation-header-text-person-name').should('exist');
+            cy.getByData('task-automation-header-text-execution-status').should('exist');
+            cy.getByData('task-automation-header-text-status').should('exist');
+            cy.getByData('task-automation-header-text-date-start').should('exist');
+            cy.getByData('task-automation-header-text-last-execution-start').should('exist');
+            cy.getByData('task-automation-header-text-last-execution-end').should('exist');
             // cy.getByData('activity-new-window-persons-grid-grid-search-text').checkContent(UITEXT.GENERAL_TEXT);
             // cy.getByData('person-window-combo-person').checkContent(UITEXT.GENERAL_PERSON);
             // cy.getByData('person-window-btn-merge-person').checkContent(UITEXT.PERSON_WINDOW_MERGE_PERSON);

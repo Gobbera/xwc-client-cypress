@@ -12,11 +12,9 @@ describe('General', () => {
     //    { fieldName: "client-contact-title", value:'Teste'}
     //  ]);
     //});
-
-    
-    it.only('Checks the integrity of the client web', () => {     
-      cy.workCenterFlow('properties.attendances');
-    });
+    // it.only('Checks the integrity of the client web', () => {     
+    //   cy.workCenterFlow('properties.attendances');
+    // });
     //it.only('Checks the integrity of the client web', () => {     
     //  cy.workCenterFlow('activities.backlog');
     //});
