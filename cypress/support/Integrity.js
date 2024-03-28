@@ -84,7 +84,41 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
         
         case 'search.search-email-in-queue':
-            cy.windowsHeaderComponent('attendance-search', UITEXT.GENERAL_SEARCH);
+            cy.windowsHeaderComponent('attendance-search', UITEXT.WORKCENTER_SEARCH_EMAIL_IN_QUEUE);
+            cy.xWindowHeaderTools('attendance-search');
+            cy.xFilterLabelComponent('attendance-search');
+            cy.getByData('attendance-search-grid').should('exist');
+            cy.pagingToolBarComponent('attendance-search');
+            cy.getByData('attendance-search-right-panel').should('exist');
+            cy.getByData('interaction-search-header').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary').checkContent(UITEXT.WORKCENTER_ATTENDANCE_SUMMARY);
+            cy.getByData('interaction-search-header-attendance-summary-icon').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-online-open').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-open').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-online-queue-pick').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-classification').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-message-historic-email').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-open-draft').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-open-from-queue').should('exist');
+            cy.getByData('interaction-search-header-attendance-summary-interaction-item-print').should('exist');
+            cy.getByData('interaction-search-header-attendance-details').should('exist');
+            cy.getByData('interaction-search-header-attendance-details-protocol').should('exist');
+            cy.getByData('interaction-search-header-attendance-details-identification').should('exist');
+            cy.getByData('interaction-search-header-seg-info').should('exist');
+            cy.getByData('interaction-search-header-seg-info-segment').should('exist');
+            cy.getByData('interaction-search-header-seg-info-agent-title').should('exist');
+            cy.getByData('interaction-search-header-data-view').should('exist');
+            cy.getByData('interaction-search-header-attendance-status').should('exist');
+            cy.getByData('interaction-search-header-attendance-status-status').should('exist');
+            cy.getByData('interaction-search-header-attendance-created-at').should('exist');
+            cy.getByData('interaction-search-header-attendance-closed-at').should('exist');
+            cy.getByData('interactions-view-tabbtn-related').checkContent('Relacionadas');
+            cy.getByData('interactions-view-tabbtn-informations').checkContent('Informações');
+            cy.getByData('attendance-related-pagingtoolbar-btn--fas fa-plus').should('exist');
+            cy.getByData('attendance-related-pagingtoolbar-btn-page-prev').should('exist');
+            cy.getByData('attendance-related-pagingtoolbar-numberfield').should('exist');
+            cy.getByData('attendance-related-pagingtoolbar-btn-page-next').should('exist');
+            cy.getByData('attendance-related-pagingtoolbar-btn-loading').should('exist');
             break;
             
         case 'search.search-calls-in-queue':

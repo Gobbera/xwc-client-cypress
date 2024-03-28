@@ -296,6 +296,12 @@ window.UITEXT = {
         ESES: 'Servicio'
     },
 
+    WORKCENTER_ATTENDANCE_SUMMARY: {
+        PTBR: 'Resumo do atendimento',
+        ENUS: 'Attendance Summary',
+        ESES: 'Resumen del servicio'
+    },
+
     WORKCENTER_DISCONNECT: {
         PTBR: 'Desconectar',
         ENUS: 'Disconnect',
@@ -354,6 +360,12 @@ window.UITEXT = {
         PTBR: 'Busca',
         ENUS: 'Search',
         ESES: 'Buscar'
+    },
+
+    WORKCENTER_SEARCH_EMAIL_IN_QUEUE: {
+        PTBR: 'Busca Email na Fila',
+        ENUS: 'Search in queue',
+        ESES: 'Buscar email en cola'
     },
 
     WORKCENTER_WARNINGS: {

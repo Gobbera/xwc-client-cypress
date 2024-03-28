@@ -5,7 +5,7 @@ describe('To Draft', () => {
     });
     
     it.only('Testing', () => {
-      cy.workCenterFlow('activities');
+      cy.workCenterFlow('search.search-email-in-queue');
     });
 });
   
