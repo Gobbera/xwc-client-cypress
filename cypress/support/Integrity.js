@@ -114,7 +114,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             cy.getByData('interaction-search-header-attendance-closed-at').should('exist');
             cy.getByData('interactions-view-tabbtn-related').checkContent('Relacionadas');
             cy.getByData('interactions-view-tabbtn-informations').checkContent('Informações');
-            cy.getByData('attendance-related-pagingtoolbar-btn--fas fa-plus').should('exist');
+            cy.getByData('activity-session-relateds-grid-pagingtoolbar-btn-plus').should('exist');
             cy.getByData('attendance-related-pagingtoolbar-btn-page-prev').should('exist');
             cy.getByData('attendance-related-pagingtoolbar-numberfield').should('exist');
             cy.getByData('attendance-related-pagingtoolbar-btn-page-next').should('exist');
