@@ -20,16 +20,21 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
 
         case 'properties':
-            cy.windowsHeaderComponent('property-window', UITEXT.PROPERTY_WINDOW_TITLE);
+            cy.windowsHeaderComponent('property', UITEXT.PROPERTY_WINDOW_TITLE);
             cy.getByData('property-window').should('exist');
-            cy.getByData('property-window-btn-quick-phrases').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASES);
-            cy.getByData('property-window-btn-window-attendance').checkContent(UITEXT.PROPERTY_WINDOW_ATTENDANCES);
+            cy.getByData('property-window-tabbtn-quick-phrases').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASES);
+            cy.getByData('property-window-tabbtn-window-attendances').checkContent(UITEXT.PROPERTY_WINDOW_ATTENDANCES);
             cy.getByData('property-window-quick-phrases-textfield-description').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASES_DESCRIPTION);
             cy.getByData('property-window-quick-phrases-textfield-phrase1').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE1);
             cy.getByData('property-window-quick-phrases-textfield-phrase2').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE2);
             cy.getByData('property-window-quick-phrases-textfield-phrase3').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE3);
             cy.getByData('property-window-quick-phrases-textfield-phrase4').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE4);
             cy.getByData('property-window-quick-phrases-textfield-phrase5').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE5);
+            cy.getByData('property-window-quick-phrases-textfield-phrase6').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE6);
+            cy.getByData('property-window-quick-phrases-textfield-phrase7').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE7);
+            cy.getByData('property-window-quick-phrases-textfield-phrase8').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE8);
+            cy.getByData('property-window-quick-phrases-textfield-phrase9').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE9);
+            cy.getByData('property-window-quick-phrases-textfield-phrase10').checkContent(UITEXT.PROPERTY_WINDOW_QUICK_PHRASE10);
             cy.getByData('property-window-btn-ok').checkContent(UITEXT.GENERAL_OK);
             cy.getByData('property-window-btn-cancel').checkContent(UITEXT.GENERAL_CANCEL);
             break;

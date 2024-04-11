@@ -12,16 +12,6 @@
 // -- This is a parent command --
 
 //Rotines
-Cypress.Commands.add('login', (username, password) => {
-    cy.visit('/');
-    cy.get('[data-e2e="txtUsername"]').type(username);
-    cy.get('[data-e2e="txtPassword"]').type(password);
-    cy.get('[data-e2e="btnEnter"]').click();
-});
-
-Cypress.Commands.add('setOnlineStatus', () => {
-    cy.get('#container-1049').click().type('{downarrow}{downarrow}{downarrow}{enter}');
-});
 
 Cypress.Commands.add('hitYesButton', () => {
     cy.get('.x-btn-inner').contains('Sim').click();

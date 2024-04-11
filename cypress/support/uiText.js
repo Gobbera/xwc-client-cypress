@@ -190,6 +190,12 @@ window.UITEXT = {
         ESES: 'Atenciones'
     },
 
+    PROPERTY_WINDOW_MAX_CAPACITY: {
+        PTBR: 'Você não pode configurar mais do que {0} atendimento(s) simulatâneo(s)',
+        ENUS: 'You cannot configure more than {0} simultaneous attendance',
+        ESES: 'No puede configurar más de {0} servicios simultáneos'
+    },
+
     PROPERTY_WINDOW_QUICK_PHRASES: {
         PTBR: 'Frases Rápidas',
         ENUS: 'Quick Phrases',
@@ -242,6 +248,36 @@ window.UITEXT = {
         PTBR: 'Frase 5 (Alt + 5):',
         ENUS: 'Phrase 5 (Alt + 5):',
         ESES: 'Oración 5 (Alt + 5):'
+    },
+
+    PROPERTY_WINDOW_QUICK_PHRASE6: {
+        PTBR: 'Frase 6 (Alt + 6):',
+        ENUS: 'Phrase 6 (Alt + 6):',
+        ESES: 'Oración 6 (Alt + 6):'
+    },
+
+    PROPERTY_WINDOW_QUICK_PHRASE7: {
+        PTBR: 'Frase 7 (Alt + 7):',
+        ENUS: 'Phrase 7 (Alt + 7):',
+        ESES: 'Oración 7 (Alt + 7):'
+    },
+
+    PROPERTY_WINDOW_QUICK_PHRASE8: {
+        PTBR: 'Frase 8 (Alt + 8):',
+        ENUS: 'Phrase 8 (Alt + 8):',
+        ESES: 'Oración 8 (Alt + 8):'
+    },
+
+    PROPERTY_WINDOW_QUICK_PHRASE9: {
+        PTBR: 'Frase 9 (Alt + 9):',
+        ENUS: 'Phrase 9 (Alt + 9):',
+        ESES: 'Oración 9 (Alt + 9):'
+    },
+
+    PROPERTY_WINDOW_QUICK_PHRASE10: {
+        PTBR: 'Frase 10 (Alt + 0):',
+        ENUS: 'Phrase 10 (Alt + 0):',
+        ESES: 'Oración 10 (Alt + 0):'
     },
 
     PROPERTY_WINDOW_OFFLINE_MEDIA: {

@@ -20,6 +20,15 @@ Cypress.Commands.add('isEnabled', (data) => {
 });
 
 //Commands
+Cypress.Commands.add('login', (username, password, request) => {
+    cy.visit('/');
+    cy.getByData('txtUsername').type(username);
+    cy.getByData('txtPassword').type(password);
+    cy.getByData('btnEnter').click();
+    if(request) {
+        cy.loginRequest();
+    }
+});
 
 Cypress.Commands.add('toastNotification', (text) => {
     cy.get('.toast-notification').should('exist').and('have.text', text);
@@ -95,7 +104,7 @@ Cypress.Commands.add('workCenterFlow', (action) => {
 
         case 'properties':
             cy.getByData('workcenter-screen-btn-properties').click();
-            cy.checksTheIntegrity(action);
+            cy.checksTheIntegrity(actionString);
             if (action.tabContext) {
                 cy.getByData(`property-window-tabbtn-window-${action.tabContext}`).click();
                 cy.checksTheIntegrity(actionString);

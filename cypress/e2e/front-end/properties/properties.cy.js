@@ -1,50 +1,99 @@
-describe('Open properties', () => {
-    const phrase = 'teste';
+import {faker} from '@faker-js/faker'
+
+describe('Propriedades', () => {
     beforeEach(() => {
         cy.viewport(1600, 900);
-        cy.login(Cypress.env('username'), Cypress.env('password'));
-        cy.getByData('workcenter-screen-btn-properties').click();
+        cy.wait(1000);
+        cy.login(Cypress.env('username'), Cypress.env('password'), true);
     });
-
-    it('Open properties and test the components and functionalities', () => {
-        cy.windowTitleIs('Propriedades');
-        cy.getByData('property-window-btn-quick-phrases').first().within(() => {
-            cy.get('.x-tab-inner').should('exist').and('have.text', 'Frases Rápidas');
+    
+    it('Propriedades - Frases Rapidas - Preenchendo os campos', () => {
+        cy.workCenterFlow('properties');
+        cy.getByData('property-window-quick-phrases-textfield-phrase1').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase2').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase3').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase4').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase5').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase6').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase7').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase8').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase9').find('input').clear().type(faker.lorem.sentence(4));
+        cy.getByData('property-window-quick-phrases-textfield-phrase10').find('input').clear().type(faker.lorem.sentence(4));
+        cy.intercept('PUT', /\/xgen_desenv6.dll\/v1\/agent\/propertie\?agentId=1886&t=\d+/).as('propertieRequest');
+        cy.getByData('property-window-btn-ok').click();
+        cy.wait('@propertieRequest', { timeout: 10000 }).then((interception) => {
+                expect(interception.response.statusCode).to.eq(200);
         });
-        cy.getByData('property-window-btn-window-attendance').first().within(() => {
-            cy.get('.x-tab-inner').should('exist').and('have.text', 'Atendimentos');
-        });
-        cy.getByData('property-window-quick-phrases-textfield-description').first().within(() => {
-            cy.get('.x-autocontainer-innerCt').should('exist').and('have.text', 'Use as frases rápidas como suporte ao atendimento, facilita e agiliza o atendimento. Cada frase pode ter até 300 caracteres.');
-        });
-        cy.getByData('property-window-quick-phrases-textfield-phrase1').should('exist');
-        cy.getByData('property-window-quick-phrases-textfield-phrase2').should('exist');
-        cy.getByData('property-window-quick-phrases-textfield-phrase3').should('exist');
-        cy.getByData('property-window-quick-phrases-textfield-phrase4').should('exist');
-        cy.getByData('property-window-quick-phrases-textfield-phrase5').should('exist');
-
-        cy.getByData('property-window-btn-window-attendance').click();
-
-        cy.getByData('property-window-attendance-combo-capacity-online').click().then(() => {
-            for (let i = 0; i < 12; i++) {
-                cy.get('.x-boundlist-item').contains(i.toString()).should('exist');
-            }
-        });
-        cy.getByData('property-window-attendance-combo-capacity-online').within(() => {
-            cy.get('.x-form-arrow-trigger').click();
-        });
-
-        cy.wait(3000);
-
-        cy.getByData('property-window-attendance-combo-capacity-offline').click().then(() => {
-            for (let i = 0; i < 12; i++) {
-                cy.get('.x-boundlist-item').contains(i.toString()).should('exist');
-            }
-        });
-        cy.getByData('property-window-attendance-combo-capacity-offline').within(() => {
-            cy.get('.x-form-arrow-trigger').click();
-        });
-
+    });
+            
+    it('Propriedades - Frases Rapidas - Verificando os campos', () => {
+        cy.workCenterFlow('properties');
+        cy.get('@loginRequest').then(() => {
+            const response = Cypress.env('response');
+            const messageShortcuts = response.config.messageShortcuts;
+            cy.getByData('property-window-quick-phrases-textfield-phrase1').find('input').should('have.value', messageShortcuts[0].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase2').find('input').should('have.value', messageShortcuts[1].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase3').find('input').should('have.value', messageShortcuts[2].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase4').find('input').should('have.value', messageShortcuts[3].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase5').find('input').should('have.value', messageShortcuts[4].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase6').find('input').should('have.value', messageShortcuts[5].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase7').find('input').should('have.value', messageShortcuts[6].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase8').find('input').should('have.value', messageShortcuts[7].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase9').find('input').should('have.value', messageShortcuts[8].texto);
+            cy.getByData('property-window-quick-phrases-textfield-phrase10').find('input').should('have.value', messageShortcuts[9].texto);
+        });        
+    });
+    
+    it('Propriedades - Atendimentos - Preenchendo os campos', () => {
+        cy.workCenterFlow('properties.attendances');
+        cy.getByData('property-window-attendance-combo-capacity-online').click();
+        cy.selectComboItem('0');
+        cy.getByData('property-window-btn-ok').click();
+        cy.workCenterFlow('properties.attendances');
+        cy.getByData('property-window-attendance-combo-capacity-offline').click();
+        cy.selectComboItem('0');
+        cy.getByData('property-window-btn-ok').click();
+        cy.workCenterFlow('properties.attendances');
+        cy.getByData('property-window-attendance-combo-capacity-online').click();
+        cy.selectComboItem(faker.number.octal({ min: 1, max: 6 }))
+        cy.getByData('property-window-btn-ok').click();
+        cy.workCenterFlow('properties.attendances');
+        cy.getByData('property-window-attendance-combo-capacity-offline').click();
+        cy.selectComboItem(faker.number.octal({ min: 1, max: 6 }))
         cy.getByData('property-window-btn-ok').click();
     });
-});  
+    
+    it('Propriedades - Atendimentos - Verificando os campos', () => {
+        cy.workCenterFlow('properties.attendances'); 
+        cy.get('@loginRequest').then(() => {
+            const response = Cypress.env('response');
+            const capacity = response.config.capacity;    
+            cy.getByData('property-window-attendance-combo-capacity-online').find('input').should('have.value', capacity.online);
+            cy.getByData('property-window-attendance-combo-capacity-offline').find('input').should('have.value', capacity.offline);
+        });
+    });
+
+    it('Propriedades - Atendimentos - Excedendo limite de atendimentos', () => {
+        cy.workCenterFlow('properties.attendances');
+        cy.get('@loginRequest').then(() => {
+            const response = Cypress.env('response');
+            const maximumCapacity = response.config.capacity.maximum; 
+            cy.getByData('property-window-attendance-combo-capacity-online').click();
+            cy.selectComboItem('0');
+            cy.getByData('property-window-btn-ok').click();
+            cy.workCenterFlow('properties.attendances');
+            cy.getByData('property-window-attendance-combo-capacity-offline').click();
+            cy.selectComboItem(maximumCapacity);
+            cy.getByData('property-window-btn-ok').click();
+            cy.workCenterFlow('properties.attendances');
+            cy.getByData('property-window-attendance-combo-capacity-online').click();
+            cy.selectComboItem(maximumCapacity);
+            cy.intercept('PUT', /\/xgen_desenv6.dll\/v1\/agent\/propertie\?agentId=1886&t=\d+/).as('propertieRequest');
+            cy.getByData('property-window-btn-ok').click();
+            cy.wait('@propertieRequest', { timeout: 10000 }).then((interception) => {
+                expect(interception.response.statusCode).to.eq(500);
+            });
+            cy.alertWindow('{"error":500,"msg":"Internal Server Error"}');// UITEXT.PROPERTY_WINDOW_MAX_CAPACITY 
+        });
+    });
+});

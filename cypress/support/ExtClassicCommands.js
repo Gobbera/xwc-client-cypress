@@ -5,6 +5,10 @@ Cypress.Commands.add('windowsHeaderComponent', (context, content) => {
     cy.getByData(`${context}-window-header`).checkContent(content) || cy.getByData(`${context}-header`).checkContent(content);
 });
 
+Cypress.Commands.add('alertWindow', (content) => {
+    cy.get('[role="alertdialog"]').checkContent(content);
+});
+
 Cypress.Commands.add('pagingToolBarComponent', (context) => {
     cy.getByData(`${context}-grid-pagingtoolbar-btn-page-first`).should('exist');
     cy.getByData(`${context}-grid-pagingtoolbar-btn-page-prev`).should('exist');
@@ -15,7 +19,12 @@ Cypress.Commands.add('pagingToolBarComponent', (context) => {
 });
 
 
+
 //commands
+Cypress.Commands.add('selectComboItem', (item) => {
+    cy.get('.x-boundlist-item').contains(item).click();
+});
+
 Cypress.Commands.add('closeWindow', (context) => {
     cy.getByData(`${context}-window-header-close`).click();
 });
