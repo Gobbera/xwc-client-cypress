@@ -37,3 +37,14 @@ Cypress.Commands.add('splitbtn', (context, button, menuitem) => {
     cy.getByData(`${context}-splitbtn-${button}`).find(`[data-e2e="${context}-splitbtn-arrow-${button}"]`).click({force: true});
     cy.getByData(`${context}-menuitem-${menuitem}`).click();
 });
+
+Cypress.Commands.add('WindowYesOrNo', (value) => {
+    if (value === 'y') {
+        cy.get('.x-btn-inner').contains('Sim').click();
+        return;
+    }
+    if (value === 'n') {
+        cy.get('.x-btn-inner').contains('Não').click();
+        return;
+    }
+});

@@ -8,5 +8,6 @@ Cypress.Commands.add('loginRequest', () => {
         Cypress.env('id', response.agent.id);
         Cypress.env('maximumCapacity', response.config.capacity.maximum);
         Cypress.env('capacity', response.config.capacity);
+        Cypress.env('isapi', response.config.url.isapi);
     });
 });

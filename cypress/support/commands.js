@@ -13,10 +13,6 @@
 
 //Rotines
 
-Cypress.Commands.add('hitYesButton', () => {
-    cy.get('.x-btn-inner').contains('Sim').click();
-});
-
 Cypress.Commands.add('classificationRequest', (options) => {
     switch (options) {
         case 'email':

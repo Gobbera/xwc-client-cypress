@@ -52,6 +52,12 @@ window.UITEXT = {
         ESES: 'Cancelar'
     },
 
+    GENERAL_CONNECTED: {
+        PTBR: 'Conectado',
+        ENUS: 'Connected',
+        ESES: 'Conectado'
+    },
+
     GENERAL_HISTORIC: {
         PTBR: 'Histórico',
         ENUS: 'Historic',
@@ -134,6 +140,12 @@ window.UITEXT = {
         PTBR: 'Tipo:',
         ENUS: 'Type:',
         ESES: 'Tipo:'
+    },
+
+    GENERAL_WARNING: {
+        PTBR: 'Atenção',
+        ENUS: 'Warning',
+        ESES: 'Aviso'
     },
 
     //#region OPERATOR
@@ -316,6 +328,20 @@ window.UITEXT = {
         PTBR: 'Busca',
         ENUS: 'Search',
         ESES: 'Buscar'
+    },
+
+    //#region WARNING
+
+    WARNING_USERNAME_OR_PASSWORD_DOES_NOT_MATCH: {
+        PTBR: 'O nome de usuário ou senha não corresponde.',
+        ENUS: 'The username or password does not match.',
+        ESES: 'El nombre de usuario o la contraseña no coinciden.'
+    },
+
+    WARNING_DISCONNECT_LOGOUT_MESSAGE: {
+        PTBR: 'Realmente deseja se desconectar?',
+        ENUS: 'Do you really want to log out?',
+        ESES: 'De verdad quieres desconectarte?'
     },
 
     //#region WORKCENTER

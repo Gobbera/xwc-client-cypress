@@ -6,7 +6,6 @@ Cypress.Commands.add('xWindowHeaderTools', (context) => {
     cy.getByData(`${context}-window-header-close`).should('exist');
 });
 
-
 Cypress.Commands.add('xFilterLabelComponent', (context) => {
     cy.getByData(`${context}-filter-bar`).should('exist');
 });
@@ -33,6 +32,12 @@ Cypress.Commands.add('login', (username, password, request) => {
 Cypress.Commands.add('toastNotification', (text) => {
     cy.get('.toast-notification').should('exist').and('have.text', text);
 });
+
+Cypress.Commands.add('getToast', (title, text) => {
+    cy.get('.toast-title').should('exist').and('have.text', title);
+    cy.get('.toast-message').should('exist').and('have.text', text);
+});
+
 
 Cypress.Commands.add('xFilter', (context, command, filters) => {
     cy.getByData(`${context}-window-btn-filter`).click();
