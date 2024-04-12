@@ -5,7 +5,7 @@ module.exports = {
     'username': 'bsource2',
     'password': '!@#Bsource123', 
     'baseFieldTest': 'Teste',
-    'email': 'leonardo.gobbo@bsource.com.br'
+    'email': 'leonardo.gobbo@bsource.com.br',
   },
   e2e: {
     baseUrl: 'https://xgentest6-desenv.xgen.com.br/xgen_desenv6/clientv2/clientcytest',
