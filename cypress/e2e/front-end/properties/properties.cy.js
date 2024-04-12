@@ -9,7 +9,6 @@ describe('Propriedades', () => {
     
     it('Propriedades - Frases Rapidas - Preenchendo os campos', () => {
         cy.workCenterFlow('properties');
-        const id = Cypress.env('id');
         cy.getByData('property-window-quick-phrases-textfield-phrase1').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase2').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase3').find('input').clear().type(faker.lorem.sentence(4));
@@ -20,7 +19,8 @@ describe('Propriedades', () => {
         cy.getByData('property-window-quick-phrases-textfield-phrase8').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase9').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase10').find('input').clear().type(faker.lorem.sentence(4));
-        cy.intercept('PUT', /\/xgen_desenv6.dll\/v1\/agent\/propertie\?agentId=1886&t=\d+/).as('propertieRequest');
+        const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/propertie\\?agentId=${Cypress.env('id')}&t=\\d+`);
+        cy.intercept('PUT', urlRegex).as('propertieRequest');
         cy.getByData('property-window-btn-ok').click();
         cy.wait('@propertieRequest', { timeout: 10000 }).then((interception) => {
                 expect(interception.response.statusCode).to.eq(200);
@@ -81,11 +81,12 @@ describe('Propriedades', () => {
         cy.workCenterFlow('properties.attendances');
         cy.getByData('property-window-attendance-combo-capacity-online').click();
         cy.selectComboItem(maximumCapacity);
-        cy.intercept('PUT', /\/xgen_desenv6.dll\/v1\/agent\/propertie\?agentId=1886&t=\d+/).as('propertieRequest');
+        const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/propertie\\?agentId=${Cypress.env('id')}&t=\\d+`);
+        cy.intercept('PUT', urlRegex).as('propertieRequest');
         cy.getByData('property-window-btn-ok').click();
         cy.wait('@propertieRequest', { timeout: 10000 }).then((interception) => {
-            expect(interception.response.statusCode).to.eq(500);
+                expect(interception.response.statusCode).to.eq(500);
         });
             cy.alertWindow('{"error":500,"msg":"Internal Server Error"}');// UITEXT.PROPERTY_WINDOW_MAX_CAPACITY 
-        });
+    });
 });

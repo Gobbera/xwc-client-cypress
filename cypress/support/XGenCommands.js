@@ -67,16 +67,22 @@ Cypress.Commands.add('setOperatorStatus', (status) => {
                 statusCode: '-5' 
             };
             break;
-            case 'Online': 
+        case 'Online': 
             action = {
                 status: '{downarrow}{downarrow}{downarrow}{downarrow}{downarrow}{enter}',
                 statusCode: '-4' 
             };
             break;
-            case 'Offline': 
+        case 'Offline': 
             action = {
                 status: '{downarrow}{downarrow}{downarrow}{downarrow}{downarrow}{downarrow}{enter}',
                 statusCode: '-3' 
+            };
+            break;
+        case 'Pausa': 
+            action = {
+                status: '{downarrow}{enter}',
+                statusCode: '24' 
             };
             break;
     }
