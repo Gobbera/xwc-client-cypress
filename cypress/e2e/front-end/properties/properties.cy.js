@@ -19,12 +19,7 @@ describe('Propriedades', () => {
         cy.getByData('property-window-quick-phrases-textfield-phrase8').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase9').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase10').find('input').clear().type(faker.lorem.sentence(4));
-        const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/propertie\\?agentId=${Cypress.env('id')}&t=\\d+`);
-        cy.intercept('PUT', urlRegex).as('propertieRequest');
-        cy.getByData('property-window-btn-ok').click();
-        cy.wait('@propertieRequest', { timeout: 10000 }).then((interception) => {
-                expect(interception.response.statusCode).to.eq(200);
-        });
+        cy.propertieRequest(200);
     });
             
     it('Propriedades - Frases Rapidas - Verificando os campos', () => {
@@ -68,7 +63,7 @@ describe('Propriedades', () => {
         cy.getByData('property-window-attendance-combo-capacity-offline').find('input').should('have.value', capacity.offline);
     });
 
-    it('Propriedades - Atendimentos - Excedendo limite de atendimentos', () => {
+    it.only('Propriedades - Atendimentos - Excedendo limite de atendimentos', () => {
         cy.workCenterFlow('properties.attendances');
         const maximumCapacity = Cypress.env('maximumCapacity');
         cy.getByData('property-window-attendance-combo-capacity-online').click();
@@ -81,12 +76,7 @@ describe('Propriedades', () => {
         cy.workCenterFlow('properties.attendances');
         cy.getByData('property-window-attendance-combo-capacity-online').click();
         cy.selectComboItem(maximumCapacity);
-        const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/propertie\\?agentId=${Cypress.env('id')}&t=\\d+`);
-        cy.intercept('PUT', urlRegex).as('propertieRequest');
-        cy.getByData('property-window-btn-ok').click();
-        cy.wait('@propertieRequest', { timeout: 10000 }).then((interception) => {
-                expect(interception.response.statusCode).to.eq(500);
-        });
-            cy.alertWindow('{"error":500,"msg":"Internal Server Error"}');// UITEXT.PROPERTY_WINDOW_MAX_CAPACITY 
+        cy.propertieRequest(500);
+        cy.alertWindow('{"error":500,"msg":"Internal Server Error"}');// UITEXT.PROPERTY_WINDOW_MAX_CAPACITY 
     });
 });

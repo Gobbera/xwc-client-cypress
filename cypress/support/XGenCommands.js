@@ -86,12 +86,7 @@ Cypress.Commands.add('setOperatorStatus', (status) => {
             };
             break;
     }
-    const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/status\\/${action.statusCode}\\/agent\\/\\w+\\?t=\\d+`);
-    cy.intercept('PUT', urlRegex).as('changeStatusRequest');
-        cy.get('#container-1049').click().type(action.status);
-        cy.wait('@changeStatusRequest', { timeout: 10000 }).then((interception) => {
-            expect(interception.response.statusCode).to.eq(200);
-    });
+    cy.changeStatusRequest(action.statusCode, action.status);
 });
 
 

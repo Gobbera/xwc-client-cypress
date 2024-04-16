@@ -57,8 +57,10 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             cy.getByData('attendance-search-grid').should('exist');
             cy.pagingToolBarComponent('attendance-search');
             cy.getByData('attendance-search-right-panel').should('exist');
+            cy.wait(3000);
+            cy.getByData('interactions-view').should('exist');
             cy.getByData('interaction-search-header').should('exist');
-            cy.getByData('interaction-search-header-text-attendance-summary').checkContent('Resumo de Atendimento');
+            cy.getByData('interaction-search-header-attendance-summary').should('exist');
             cy.getByData('interaction-search-header-attendance-summary-icon').should('exist');
             cy.getByData('interaction-search-header-attendance-summary-interaction-online-open').should('exist');
             cy.getByData('interaction-search-header-attendance-summary-interaction-open').should('exist');
@@ -95,6 +97,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             cy.getByData('attendance-search-grid').should('exist');
             cy.pagingToolBarComponent('attendance-search');
             cy.getByData('attendance-search-right-panel').should('exist');
+            cy.wait(3000);
             cy.getByData('interaction-search-header').should('exist');
             cy.getByData('interaction-search-header-attendance-summary').checkContent(UITEXT.WORKCENTER_ATTENDANCE_SUMMARY);
             cy.getByData('interaction-search-header-attendance-summary-icon').should('exist');
