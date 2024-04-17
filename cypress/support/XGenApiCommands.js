@@ -40,10 +40,20 @@ Cypress.Commands.add('searchRequest', (filter, code) => {
 });
 
 Cypress.Commands.add('viewerRequest', (code) => {
-    const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6cs\\.dll\\/v1\\/interaction\\/viewer\\?agentid=${Cypress.env('id')}&mediaType=16&wid=[-\\w]+&rid=[-\\w]+&t=\\d+`);
+    const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6cs\\.dll\\/v1\\/interaction\\/viewer\\?agentid=${Cypress.env('id')}&mediaType=16&wid=\\w+-\\w+-\\w+-\\w+-\\w+&rid=\\w+-\\w+-\\w+-\\w+-\\w+&t=\d+/`);
+    cy.intercept('GET', urlRegex).as('viewerRequest');
+    //cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
+    cy.wait('@viewerRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
+Cypress.Commands.add('emailRetrievedQueuedRequest', (code) => {
+    const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\?WSEmailRetrievedQueued\\?wid=\w+-\w+-\w+-\w+-\w+&rid=\w+-\w+-\w+-\w+-\w+agentid=1887&t=\d+`);
     cy.intercept('GET', urlRegex).as('viewerRequest');
     cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
     cy.wait('@viewerRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
     });
 });
+

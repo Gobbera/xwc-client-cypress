@@ -55,17 +55,6 @@ Cypress.Commands.add('addContactRequest', () => {
     cy.toastNotification('Contato Adicionado');
 });
 
-Cypress.Commands.add('typeDownkey', (qts) => {
-    
-});
-
-Cypress.Commands.add('windowTitleIs', (title) => {
-    cy.get('.x-window-header-title').within(() => {
-        cy.get('.x-title-text').should('exist').and('have.text', title);
-    });
-});
-
-
 //
 //
 // -- This is a child command --
