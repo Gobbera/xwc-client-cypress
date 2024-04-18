@@ -18,6 +18,12 @@ Cypress.Commands.add('isEnabled', (data) => {
     cy.getByData(data).invoke('attr', 'class').should('not.include', 'x-btn-disabled');
 });
 
+Cypress.Commands.add('attendanceCard', (icon) => {
+    cy.getByData('attendance-card-btn-click-offline-email').should('exist').within(() => {
+        cy.get(icon).should('exist');
+    });
+});
+
 //Commands
 Cypress.Commands.add('login', (username, password, request) => {
     cy.visit('/');
@@ -29,7 +35,17 @@ Cypress.Commands.add('login', (username, password, request) => {
     }
 });
 
-Cypress.Commands.add('toastNotification', (text) => {
+
+
+Cypress.Commands.add('xClassify', (item) => {
+    cy.getByData('email-screen-btn-classification').click();
+    cy.selectGridCheckBoxItem(item);
+    //cy.classificationRequest();
+    cy.getByData('classification-panel-btn-general-classification').click();
+    cy.xToastNotification('Salvo com sucesso!');
+});
+
+Cypress.Commands.add('xToastNotification', (text) => {
     cy.get('.toast-notification').should('exist').and('have.text', text);
 });
 

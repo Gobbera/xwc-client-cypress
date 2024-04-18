@@ -20,14 +20,12 @@ describe('Busca', () => {
         cy.wait(3000);
         cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
         cy.closeWindow('attendance-search');
-        //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); //adicionar numero do protocolo
+        //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); //TODO: adicionar numero do protocolo
         cy.getByData('email-screen-attendance-header-btn-action').click();
-        cy.getByData('attendance-card-btn-click-offline-email').should('exist').within(() => {
-            cy.get('.fa-envelope').should('exist');
-        });
+        cy.attendanceCard('.fa-envelope');
         cy.get('.attendance-card-selected').should('exist');
         cy.getByData('email-screen-attendance-header-action-menu-btn-transfer').click();
-        cy.toastNotification('Rascunho salvo');
+        cy.xToastNotification('Rascunho salvo');
         cy.isDisabled('attendance-transfer-btn-transfer-attendance');
         cy.wait(5000);
         cy.getByData('attendance-transfer-tab-calltype').should('exist');
@@ -47,19 +45,17 @@ describe('Busca', () => {
        cy.wait(3000);
        cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
        cy.closeWindow('attendance-search');
-       //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); //adicionar numero do protocolo
+       //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); //TODO: adicionar numero do protocolo
        cy.getByData('email-screen-attendance-header-btn-action').click();
-       cy.getByData('attendance-card-btn-click-offline-email').should('exist').within(() => {
-           cy.get('.fa-envelope').should('exist');
-       });
+       cy.attendanceCard('.fa-envelope');
        cy.get('.attendance-card-selected').should('exist');
        cy.getByData('email-screen-attendance-header-action-menu-btn-transfer').click();
-       cy.toastNotification('Rascunho salvo');
+       cy.xToastNotification('Rascunho salvo');
        cy.getByData('attendance-transfer-tab-agent').click();
        cy.isDisabled('attendance-transfer-btn-transfer-attendance');
        cy.getByData('attendance-transfer-tab-calltype').should('exist');
        cy.get('.x-grid-item').eq(1).click({force: true});
-       //const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\/v1\\/agent\\/transfer?mediaType=16&agentId=1886&wid=\w&rid=\w`);
+       //const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\/v1\\/agent\\/transfer?mediaType=16&agentId=1886&wid=\w&rid=\w`); TODO:
        //cy.intercept('POST', urlRegex).as('transferRequest');
        cy.getByData('attendance-transfer-btn-transfer-attendance').click();
        //    cy.wait('@transferRequest', { timeout: 10000 }).then((interception) => {
@@ -69,23 +65,18 @@ describe('Busca', () => {
 
     it('Buscar - Email na fila - Classificar', () => {
         //cy.workCenterFlow('search.search-email-in-queue');
-        cy.workCenterFlow('search.backlog'); //trocar para email da fila
+        cy.workCenterFlow('search.backlog'); //TODO: trocar para email da fila
         cy.wait(3000);
         cy.selectGridItem(0);
         cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
         cy.closeWindow('attendance-search');
-        //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); //adicionar numero do protocolo
-        cy.getByData('attendance-card-btn-click-offline-email').should('exist').within(() => {
-            cy.get('.fa-envelope').should('exist');
-        });
+        //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); // TODO: adicionar numero do protocolo
+        cy.attendanceCard('.fa-envelope');
         cy.get('.attendance-card-selected').should('exist');
-        cy.getByData('email-screen-btn-classification').click();
-        cy.selectGridCheckBoxItem(0);
-        cy.getByData('classification-panel-btn-general-classification').click();
-        cy.toastNotification('Salvo com sucesso!');
+        cy.xClassify(0);
         cy.getByData('email-screen-btn-classification').click();
        
-       //const urlRegex = new RegExp(`\\https:\\/\\/xgentest6-desenv\\.xgen\\.com\\.br\\/v1\\/users\\/classifications\\/6\\/classification_response`);
+       //const urlRegex = new RegExp(`\\https:\\/\\/xgentest6-desenv\\.xgen\\.com\\.br\\/v1\\/users\\/classifications\\/6\\/classification_response`); TODO:
        //cy.intercept('POST', urlRegex).as('transferRequest');
        //    cy.wait('@transferRequest', { timeout: 10000 }).then((interception) => {
        //    expect(interception.response.statusCode).to.eq(200);

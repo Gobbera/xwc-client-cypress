@@ -23,14 +23,14 @@ describe('Open Activities', () => {
       cy.wait('@onNewActivityRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
       });
-      cy.toastNotification('Criado com sucesso.');
+      cy.xToastNotification('Criado com sucesso.');
       cy.classificationRequest('activity');
       cy.intercept('PATCH', /\/xgentest6-desenv.xgen.com.br\/v1\/users\/ActivitiesSession\/\d+/).as('onTurnOffActivityRequest');
       cy.getByData('activity-screen-btn-turn-off-interaction').click();
       cy.wait('@onTurnOffActivityRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
       });
-      cy.toastNotification('Salvo com sucesso!');
+      cy.xToastNotification('Salvo com sucesso!');
       //cy.getByData('form-innerCt-textfield-segmento').type(Cypress.env('baseFieldTest'));
       //cy.getByData('form-innerCt-textfield-telefone').type(Cypress.env('baseFieldTest'));
       //cy.getByData('form-innerCt-textfield-nome').type(Cypress.env('baseFieldTest'));

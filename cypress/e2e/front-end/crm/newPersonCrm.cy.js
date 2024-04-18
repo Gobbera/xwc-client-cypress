@@ -59,7 +59,7 @@ describe('Create a new person on CRM', () => {
 
     cy.wait(3000);
     cy.getByData('contact-window-btn-save').click();
-    cy.toastNotification('Atualizado com sucesso');
+    cy.xToastNotification('Atualizado com sucesso');
 
     cy.getByData('contact-window-btn-save').click();
 

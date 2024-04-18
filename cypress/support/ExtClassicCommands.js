@@ -6,7 +6,7 @@ Cypress.Commands.add('windowsHeaderComponent', (context, content) => {
 });
 
 Cypress.Commands.add('alertWindow', (content) => {
-    cy.get('[role="alertdialog"]').checkContent(content);
+    cy.get('[role="alertdialog"]').should('exist').and('have.text', content);
 });
 
 Cypress.Commands.add('pagingToolBarComponent', (context) => {
@@ -48,13 +48,17 @@ Cypress.Commands.add('splitbtn', (context, button, menuitem) => {
     cy.getByData(`${context}-menuitem-${menuitem}`).click();
 });
 
-Cypress.Commands.add('WindowYesOrNo', (value) => {
+Cypress.Commands.add('windowYesOrNo', (value) => {
     if (value === 'y') {
         cy.get('.x-btn-inner').contains('Sim').click();
         return;
     }
     if (value === 'n') {
         cy.get('.x-btn-inner').contains('Não').click();
+        return;
+    }
+    if (value === 'ok') {
+        cy.get('.x-btn-inner').contains('OK').click();
         return;
     }
 });

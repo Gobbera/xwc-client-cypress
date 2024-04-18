@@ -28,6 +28,6 @@ describe('Receive online chat support', () => {
         cy.wait('@turnOffchatRequest', { timeout: 10000 }).then((interception) => {
             expect(interception.response.statusCode).to.eq(200);
         });
-        cy.toastNotification('Salvo com sucesso!');
+        cy.xToastNotification('Salvo com sucesso!');
     });
 });

@@ -6,8 +6,7 @@ describe('Login credenciais válidas', () => {
     });
 
     it('Login credenciais válidas.', () => {
-        const isapi = Cypress.env('isapi');
-        cy.getByData('asset-bottom-container-connection-address').should('exist').and('have.text', isapi);
+        cy.getByData('asset-bottom-container-connection-address').should('exist').and('have.text', Cypress.env('isapi'));
         cy.get('.fa-circle').eq(1).should('exist');
         cy.get('.fa-circle').eq(1).parent().should('contain', UITEXT.GENERAL_CONNECTED);
     });
