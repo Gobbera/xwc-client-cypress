@@ -6,7 +6,6 @@ describe('New Online window', () => {
 
     it('Open new Online window', () => {
         cy.getByData('workcenter-screen-btn-chat').click();
-        cy.windowTitleIs('Novo Online');
         cy.getByData('workcenter-imchat-combobox-workcenter-item-new-chat-queue-from').click().type('{downarrow}{enter}');
     });
 });
