@@ -25,6 +25,16 @@ Cypress.Commands.add('selectComboItem', (item) => {
     cy.get('.x-boundlist-item').contains(item).click();
 });
 
+Cypress.Commands.add('selectGridItem', (item) => {
+    cy.get('.x-grid-item').eq(item).click({force: true});
+})
+;
+Cypress.Commands.add('selectGridCheckBoxItem', (item) => {
+    cy.get('.x-grid-item').eq(item).within(() => {
+        cy.get('.x-tree-checkbox').click();
+    });
+});
+
 Cypress.Commands.add('closeWindow', (context) => {
     cy.getByData(`${context}-window-header-close`).click();
 });
@@ -48,3 +58,4 @@ Cypress.Commands.add('WindowYesOrNo', (value) => {
         return;
     }
 });
+
