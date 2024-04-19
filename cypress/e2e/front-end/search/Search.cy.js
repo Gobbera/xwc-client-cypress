@@ -22,7 +22,7 @@ describe('Busca', () => {
         cy.closeWindow('attendance-search');
         //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); //TODO: adicionar numero do protocolo
         cy.getByData('email-screen-attendance-header-btn-action').click();
-        cy.attendanceCard('.fa-envelope');
+        cy.xAttendanceCard('.fa-envelope');
         cy.get('.attendance-card-selected').should('exist');
         cy.getByData('email-screen-attendance-header-action-menu-btn-transfer').click();
         cy.xToastNotification('Rascunho salvo');
@@ -47,7 +47,7 @@ describe('Busca', () => {
        cy.closeWindow('attendance-search');
        //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); //TODO: adicionar numero do protocolo
        cy.getByData('email-screen-attendance-header-btn-action').click();
-       cy.attendanceCard('.fa-envelope');
+       cy.xAttendanceCard('.fa-envelope');
        cy.get('.attendance-card-selected').should('exist');
        cy.getByData('email-screen-attendance-header-action-menu-btn-transfer').click();
        cy.xToastNotification('Rascunho salvo');
@@ -71,7 +71,7 @@ describe('Busca', () => {
         cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
         cy.closeWindow('attendance-search');
         //cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist'); // TODO: adicionar numero do protocolo
-        cy.attendanceCard('.fa-envelope');
+        cy.xAttendanceCard('.fa-envelope');
         cy.get('.attendance-card-selected').should('exist');
         cy.xClassify(0);
         cy.getByData('email-screen-btn-classification').click();

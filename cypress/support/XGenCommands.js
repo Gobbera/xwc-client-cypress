@@ -18,9 +18,15 @@ Cypress.Commands.add('isEnabled', (data) => {
     cy.getByData(data).invoke('attr', 'class').should('not.include', 'x-btn-disabled');
 });
 
-Cypress.Commands.add('attendanceCard', (icon) => {
-    cy.getByData('attendance-card-btn-click-offline-email').should('exist').within(() => {
-        cy.get(icon).should('exist');
+Cypress.Commands.add('xAttendanceCard', (type) => {
+    if(type === 'task') {
+        type = { icon: '.fa-tasks', cardType: 'activity-activitytask' };
+    }
+    if(type === 'email') {
+        type = { icon: '.fa-envelope', cardType: 'offline-email' };
+    }
+    cy.getByData(`attendance-card-btn-click-${type.cardType}`).should('exist').within(() => {
+        cy.get(type.icon).should('exist');
     });
 });
 

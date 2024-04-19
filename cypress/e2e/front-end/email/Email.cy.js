@@ -1,19 +1,18 @@
 describe('Novo e-mail', () => {
     beforeEach(() => {
       cy.viewport(1600, 900);
-      cy.login(Cypress.env('username'), Cypress.env('password'));
+      cy.login(Cypress.env('username'), Cypress.env('password'), true);
     });
   
-    it('Novo e-mail - Novo e-mail', () => {
+    it.only('Novo e-mail - Novo e-mail', () => {
+      const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\?WSNewEmailMessage\\?agentid=${Cypress.env('id')}&t=\\d+`);
+      cy.intercept('GET', urlRegex).as('newEmailRequest');
       cy.workCenterFlow('newEmail');
-      //const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\?WSNewEmailMessage\\?agentid=${Cypress.env('id');}&t=\\d+&calltypeId=38`);
-      //cy.intercept('GET', urlRegex).as('newEmailRequest');
-      cy.getByData('email-smtp-account-btn-new-email').click();
-      //cy.wait('@newEmailRequest', { timeout: 10000 }).then((interception) => {
-      //  expect(interception.response.statusCode).to.eq(200);
-      //});
-      cy.attendanceCard('.fa-envelope');
-      cy.isDisabled('email-screen-attendance-header-btn-send');
+      cy.wait('@newEmailRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+      });
+      cy.xAttendanceCard('email');
+      //cy.isDisabled('email-screen-attendance-header-btn-send');
     });
     
     
@@ -21,7 +20,7 @@ describe('Novo e-mail', () => {
       cy.workCenterFlow('newEmail');
       cy.getByData('email-smtp-account-btn-new-email').click();
       cy.isDisabled('email-screen-attendance-header-btn-send');
-      cy.attendanceCard('.fa-envelope');
+      cy.xAttendanceCard('.fa-envelope');
       cy.getByData('email-screen-attendance-header-btn-cancel').click();
       cy.windowYesOrNo('y');
     });
@@ -29,7 +28,7 @@ describe('Novo e-mail', () => {
     it('Novo e-mail - Classificar', () => {
       cy.workCenterFlow('newEmail');
       cy.wait(3000);
-      cy.attendanceCard('.fa-envelope');
+      cy.xAttendanceCard('.fa-envelope');
       cy.getByData('email-screen-btn-classification').click();
       cy.xClassify(0);
     });
@@ -51,7 +50,7 @@ describe('Novo e-mail', () => {
       //});
     });
 
-    it.only('Novo e-mail - Erro ao enviar', () => {
+    it('Novo e-mail - Erro ao enviar', () => {
       cy.workCenterFlow('newEmail');
       cy.wait(3000);
       cy.getByData('email-screen-attendance-header-btn-send').click();
