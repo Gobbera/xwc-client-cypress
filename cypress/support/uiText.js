@@ -330,6 +330,14 @@ window.UITEXT = {
         ESES: 'Buscar'
     },
 
+    //#region TOAST NOTIFICATIONS
+
+    TOAST_NOTIFICATIONS_CREATED_WITH_SUCCESS: {
+        PTBR: 'Criado com sucesso.',
+        ENUS: 'Successfully created.',
+        ESES: 'Creado con éxito.'
+    },
+
     //#region WARNING
 
     WARNING_USERNAME_OR_PASSWORD_DOES_NOT_MATCH: {

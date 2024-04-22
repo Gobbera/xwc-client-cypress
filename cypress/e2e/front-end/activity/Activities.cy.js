@@ -40,25 +40,41 @@ describe('Atividades', () => {
     cy.workCenterFlow('activities.activity-backlog'); //TODO trocar no client para somente backlog
   });
 
-  it('Atividades - Nova atividade - Verificar no grid', () => {
+  it.only('Atividades - Nova atividade - Verificar no grid', () => {
     cy.workCenterFlow('activities.new-activity');
     cy.get('.fa-exclamation-circle').should('exist');
     cy.getByData('activity-new-window-btn-create').invoke('attr', 'class').should('include', 'x-btn-disabled');
     cy.getByData('activity-new-window-combo-session-file-layout').type('{downarrow}{enter}');
     cy.getByData('activity-new-window-checkbox-new-activity').click();
-    cy.get('.x-grid-item-container').click();
+    cy.getByData('activity-new-window-persons-grid').click();
+    const urlRegex = new RegExp('xgentest6-desenv.xgen.com.br/v1/users/ActivitiesSession')
+    cy.intercept('POST', urlRegex).as('postNewActivityRequest');
     cy.getByData('activity-new-window-btn-create').click();
+    cy.wait('@postNewActivityRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(201);
+        const response = interception.request.query;
+        Cypress.env('wid', response.p2);
+    });
     cy.workCenterFlow('activities');
+    cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CREATED_WITH_SUCCESS);
     cy.getByData('activity-session-window-header-filter').click();
-    cy.getByData('activity-session-filter-form-datefield-attendance-date-start').find('input').clear().type('19/04/2024');
-    //cy.intercept('GET', /\/xgen_desenv6.dll\?OnActivity\?c=0&p1=\d+&p2=\w+-\w+-\w+-\w+-\w+&p3=&p4=\w+&t=\d+/).as('onNewActivityRequest');
-    //cy.wait('@onNewActivityRequest', { timeout: 10000 }).then((interception) => {
-    //  expect(interception.response.statusCode).to.eq(200);
-    //});
-    cy.xToastNotification('Criado com sucesso.');
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    if (day < 10) {
+        day = '0' + dia;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+    const today = day + '/' + month + '/' + year;
+    cy.getByData('activity-session-filter-form-datefield-attendance-date-start').find('input').clear().type(today);
+    cy.getByData('activity-session-filter-form-btn-filter').click();
+    //TODO: chegar no ultimo criado
   });
 
-  it.only('Atividades - Nova atividade - Atender agora', () => {
+  it('Atividades - Nova atividade - Atender agora', () => {
     cy.workCenterFlow('activities.new-activity');
     cy.get('.fa-exclamation-circle').should('exist');
     cy.getByData('activity-new-window-btn-create').invoke('attr', 'class').should('include', 'x-btn-disabled');
@@ -66,13 +82,9 @@ describe('Atividades', () => {
     cy.getByData('activity-new-window-checkbox-new-activity').click();
     cy.getByData('activity-new-window-persons-grid').click();
     cy.getByData('activity-new-window-btn-switch-open-now').click();
-    cy.getByData('activity-new-window-btn-create').click();
+    cy.newActivityRequest();
     cy.wait(3000);
     cy.xAttendanceCard('task');
-    //cy.intercept('GET', /\/xgen_desenv6.dll\?OnActivity\?c=0&p1=\d+&p2=\w+-\w+-\w+-\w+-\w+&p3=&p4=\w+&t=\d+/).as('onNewActivityRequest');
-    //cy.wait('@onNewActivityRequest', { timeout: 10000 }).then((interception) => {
-    //  expect(interception.response.statusCode).to.eq(200);
-    //});
-    cy.xToastNotification('Criado com sucesso.');
+    cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CREATED_WITH_SUCCESS);
   });
 });

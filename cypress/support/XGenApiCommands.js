@@ -57,3 +57,24 @@ Cypress.Commands.add('emailRetrievedQueuedRequest', (code) => {
     });
 });
 
+Cypress.Commands.add('newActivityRequest', (code) => {
+    const urlRegex = new RegExp('\\/xgen_desenv6\\.dll\\?OnActivity\\?\\w+');
+    cy.intercept('GET', urlRegex).as('newActivityRequest');
+    cy.getByData('activity-new-window-btn-create').click();
+    cy.wait('@newActivityRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+        const response = interception.request.query;
+        Cypress.env('wid', response.p2);
+    });
+});
+
+Cypress.Commands.add('getCardRequest', (code) => {
+    const urlRegex = new RegExp(`\\/xgen_desenv6cs\\.dll\\/v1\\/interaction\\/viewer\\?agentid=${Cypress.env('id')}&mediaType=128&${Cypress.env('wid')}&rid=&t=\\d+`);
+    cy.intercept('GET', urlRegex).as('getCardRequest');
+    cy.wait('@getCardRequest', { timeout: 10000 }).then((interception) => {
+      expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
+
+
