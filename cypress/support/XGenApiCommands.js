@@ -48,6 +48,17 @@ Cypress.Commands.add('viewerRequest', (code) => {
     });
 });
 
+Cypress.Commands.add('newEmailRequest', (code) => {
+    const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\?WSNewEmailMessage\\?agentid=${Cypress.env('id')}`);
+    cy.intercept('GET', urlRegex).as('newEmailRequest');
+    cy.wait('@newEmailRequest', { timeout: 10000 }).then((interception) => {
+      expect(interception.response.statusCode).to.eq(200);
+      const response = interception.response.body.interaction
+      Cypress.env('wid', response.wid);  
+      Cypress.env('rid', response.rid);  
+    });
+});
+
 Cypress.Commands.add('emailRetrievedQueuedRequest', (code) => {
     const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\?WSEmailRetrievedQueued\\?wid=\w+-\w+-\w+-\w+-\w+&rid=\w+-\w+-\w+-\w+-\w+agentid=1887&t=\d+`);
     cy.intercept('GET', urlRegex).as('viewerRequest');
@@ -73,6 +84,14 @@ Cypress.Commands.add('getCardRequest', (code) => {
     cy.intercept('GET', urlRegex).as('getCardRequest');
     cy.wait('@getCardRequest', { timeout: 10000 }).then((interception) => {
       expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
+Cypress.Commands.add('classificationRequest', () => {
+    cy.intercept('POST', 'https://xgentest6-desenv.xgen.com.br/v1/users/classifications/6/classification_response').as('onClassificationRequest');
+    cy.getByData('classification-panel-btn-general-classification').click();
+    cy.wait('@onClassificationRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
     });
 });
 

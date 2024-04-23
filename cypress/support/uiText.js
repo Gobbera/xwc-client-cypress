@@ -338,6 +338,12 @@ window.UITEXT = {
         ESES: 'Creado con éxito.'
     },
 
+    TOAST_NOTIFICATIONS_SAVED_SUCCESSFULLY: {
+        PTBR: 'Salvo com sucesso!',
+        ENUS: 'Saved successfully.',
+        ESES: 'Guardado exitosamente!'
+    },
+
     //#region WARNING
 
     WARNING_USERNAME_OR_PASSWORD_DOES_NOT_MATCH: {

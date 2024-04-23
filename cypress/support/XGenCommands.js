@@ -43,12 +43,22 @@ Cypress.Commands.add('login', (username, password, request) => {
 
 
 
-Cypress.Commands.add('xClassify', (item) => {
+Cypress.Commands.add('xClassify', (option, item) => {
+    switch (option) {
+        case 'email':
+            cy.getByData('email-screen-btn-classification').click();
+            break;
+        case 'activity':
+            cy.getByData('activity-screen-btn-request-classification').click();
+            break;
+        case 'chat':
+            cy.getByData('conversation-chat-container-btn-request-classification').click();
+            break;
+    }
     cy.getByData('email-screen-btn-classification').click();
     cy.selectGridCheckBoxItem(item);
-    //cy.classificationRequest();
-    cy.getByData('classification-panel-btn-general-classification').click();
-    cy.xToastNotification('Salvo com sucesso!');
+    cy.classificationRequest();
+    cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_SAVED_SUCCESSFULLY);
 });
 
 Cypress.Commands.add('xToastNotification', (text) => {
@@ -170,6 +180,7 @@ Cypress.Commands.add('workCenterFlow', (action) => {
 
         case 'newEmail':
             cy.getByData('workcenter-screen-btn-email').click();
+            cy.newEmailRequest();
             if (action.tabContext === 'historic') {
                 cy.getByData('historic-tab-screen').first().click();
                 cy.checksTheIntegrity(actionString);
