@@ -19,7 +19,7 @@ describe('Propriedades', () => {
         cy.getByData('property-window-quick-phrases-textfield-phrase8').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase9').find('input').clear().type(faker.lorem.sentence(4));
         cy.getByData('property-window-quick-phrases-textfield-phrase10').find('input').clear().type(faker.lorem.sentence(4));
-        cy.propertieRequest(200);
+        cy.propertiesRequest(200);
     });
             
     it('Propriedades - Frases Rapidas - Verificando os campos', () => {
@@ -76,7 +76,7 @@ describe('Propriedades', () => {
         cy.workCenterFlow('properties.attendances');
         cy.getByData('property-window-attendance-combo-capacity-online').click();
         cy.selectComboItem(maximumCapacity);
-        cy.propertieRequest(500);
-        cy.alertWindow('{"error":500,"msg":"Internal Server Error"}');// UITEXT.PROPERTY_WINDOW_MAX_CAPACITY 
+        cy.propertiesRequest(500);
+        cy.alertWindow('Atenção{"error":500,"msg":"Internal Server Error"}0%0%OKYesNoCancel');// UITEXT.PROPERTY_WINDOW_MAX_CAPACITY 
     });
 });

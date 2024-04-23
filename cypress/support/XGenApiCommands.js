@@ -22,11 +22,11 @@ Cypress.Commands.add('changeStatusRequest', (statusCode, status, code) => {
     });
 });
 
-Cypress.Commands.add('propertieRequest', (code) => {
+Cypress.Commands.add('propertiesRequest', (code) => {
     const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/propertie\\?agentId=${Cypress.env('id')}&t=\\d+`);
-    cy.intercept('PUT', urlRegex).as('propertieRequest');
+    cy.intercept('PUT', urlRegex).as('propertiesRequest');
     cy.getByData('property-window-btn-ok').click();
-    cy.wait('@propertieRequest', { timeout: 10000 }).then((interception) => {
+    cy.wait('@propertiesRequest', { timeout: 10000 }).then((interception) => {
             expect(interception.response.statusCode).to.eq(code);
     });
 });
