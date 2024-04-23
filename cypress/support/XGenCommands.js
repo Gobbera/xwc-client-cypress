@@ -155,11 +155,11 @@ Cypress.Commands.add('workCenterFlow', (action) => {
 
         case 'search':
             if (action.tabContext) {
-                cy.splitbtn('workcenter-screen', 'search', action.tabContext);
+                cy.searchRequest(action.tabContext);
                 cy.checksTheIntegrity(actionString);
                 break;
             }
-            cy.getByData('workcenter-screen-splitbtn-search').click();
+            cy.searchRequest(actionString);
             cy.checksTheIntegrity(actionString);
             break;
 

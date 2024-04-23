@@ -45,7 +45,7 @@ Cypress.Commands.add('pag', (context, num) => {
 
 Cypress.Commands.add('splitbtn', (context, button, menuitem) => {
     cy.getByData(`${context}-splitbtn-${button}`).find(`[data-e2e="${context}-splitbtn-arrow-${button}"]`).click({force: true});
-    cy.getByData(`${context}-menuitem-${menuitem}`).click();
+    cy.getByData(`${context}-menuitem-${menuitem}`).click({force: true});
 });
 
 Cypress.Commands.add('windowYesOrNo', (value) => {

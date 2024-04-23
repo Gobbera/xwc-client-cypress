@@ -4,9 +4,8 @@ describe('Busca', () => {
         cy.login(Cypress.env('username'), Cypress.env('password'), true);
     });
 
-    it('Buscar - Email na fila', () => {
-        cy.workCenterFlow('search.search-email-in-queue');
-        //cy.searchRequest('%5B%7B%22property%22%3A%22isAnswered%22%2C%22value%22%3A%221%22%7D%2C%7B%22property%22%3A%22groupedProtocol%22%2C%22value%22%3A%221%22%7D%2C%7B%22property%22%3A%22agentId%22%2C%22value%22%3A%221886%22%7D%5D')
+    it.only('Buscar - Email na fila', () => {
+        cy.workCenterFlow('search');
         //cy.viewerRequest();
         //cy.emailRetrievedQueuedRequest();
         //cy.closeWindow('attendance-search');

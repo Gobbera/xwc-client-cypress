@@ -31,9 +31,14 @@ Cypress.Commands.add('propertiesRequest', (code) => {
     });
 });
 
-Cypress.Commands.add('searchRequest', (filter, code) => {
-    const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6cs\\.dll\\/v1\\/interaction\\/search\\?agentid=${Cypress.env('id')}&offset=0&limit=50&filter=${filter}&t=\\d+`);
+Cypress.Commands.add('searchRequest', (tabContext, code) => {
+    const urlRegex = new RegExp(`\\/xgen_desenv6cs.dll\\/v1\\/interaction\\/search\\?agentId=${Cypress.env('id')}&filter=${Cypress.env(tabContext)}`);
     cy.intercept('GET', urlRegex).as('searchRequest');
+    if (tabContext === 'search') {
+        cy.getByData('workcenter-screen-splitbtn-search').click();
+    } else {
+        cy.splitbtn('workcenter-screen', 'search', tabContext);
+    }
     cy.wait('@searchRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
     });
