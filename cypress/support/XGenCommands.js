@@ -42,8 +42,23 @@ Cypress.Commands.add('login', (username, password, request) => {
 });
 
 
+Cypress.Commands.add('xSelectAttendanceItem', (option) => {
+    cy.viewerRequest(option);
+});
 
-Cypress.Commands.add('xClassify', (option, item) => {
+Cypress.Commands.add('xGetAttendanceItem', (option) => {
+    cy.emailRetrievedQueuedRequest(option);
+});
+
+Cypress.Commands.add('xTransferAttendance', (option) => {
+    if (option === 'operator') {
+        cy.getByData('attendance-transfer-tab-agent').click();
+    }
+    cy.selectGridItem(0);
+    cy.transferRequest(option);
+});
+
+Cypress.Commands.add('xClassifyAttendance', (option, item) => {
     switch (option) {
         case 'email':
             cy.getByData('email-screen-btn-classification').click();

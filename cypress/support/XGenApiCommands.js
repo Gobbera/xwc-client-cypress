@@ -44,12 +44,21 @@ Cypress.Commands.add('searchRequest', (tabContext, code) => {
     });
 });
 
-Cypress.Commands.add('viewerRequest', (code) => {
-    const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6cs\\.dll\\/v1\\/interaction\\/viewer\\?agentid=${Cypress.env('id')}&mediaType=16&wid=\\w+-\\w+-\\w+-\\w+-\\w+&rid=\\w+-\\w+-\\w+-\\w+-\\w+&t=\d+/`);
+Cypress.Commands.add('viewerRequest', (item, code) => {
+    const urlRegex = new RegExp(`\\/xgen_desenv6cs\\.dll\\/v1\\/interaction\\/viewer\\?agentid=${Cypress.env('id')}`);
     cy.intercept('GET', urlRegex).as('viewerRequest');
-    //cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
+    if(item) {
+        cy.selectGridItem(item);
+    }
     cy.wait('@viewerRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
+        const interaction = interception.response.body.interaction;
+        const email = interception.response.body.email;
+        const callType = interception.response.body.calltype;
+        cy.getByData('interaction-search-header-attendance-details-protocol').checkContent(interaction.protocol);
+        cy.getByData('interaction-search-header-attendance-details-identification').checkContent(`(${email.from})`);
+        //cy.getByData('interaction-search-header-seg-info-segment').checkContent(callType.name);
+        cy.getByData('interaction-search-header-attendance-status-status').checkContent(interaction.statusText);
     });
 });
 
@@ -65,11 +74,14 @@ Cypress.Commands.add('newEmailRequest', (code) => {
 });
 
 Cypress.Commands.add('emailRetrievedQueuedRequest', (code) => {
-    const urlRegex = new RegExp(`\\/xgen_desenv6\\/xgen_desenv6\\.dll\\?WSEmailRetrievedQueued\\?wid=\w+-\w+-\w+-\w+-\w+&rid=\w+-\w+-\w+-\w+-\w+agentid=1887&t=\d+`);
-    cy.intercept('GET', urlRegex).as('viewerRequest');
+    const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\?WSEmailRetrievedQueued\\?`);
+    cy.intercept('GET', urlRegex).as('emailRetrievedQueuedRequest');
     cy.getByData('interaction-search-header-attendance-summary-interaction-open').click();
-    cy.wait('@viewerRequest', { timeout: 10000 }).then((interception) => {
+    cy.wait('@emailRetrievedQueuedRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
+        const protocol = interception.response.body.interaction.protocol;
+        cy.xAttendanceCard('email');
+        cy.getByData('asset-bottom-container-current-attendance-protocol').should('exist').and('have.text', protocol);
     });
 });
 
@@ -96,6 +108,15 @@ Cypress.Commands.add('classificationRequest', () => {
     cy.intercept('POST', 'https://xgentest6-desenv.xgen.com.br/v1/users/classifications/6/classification_response').as('onClassificationRequest');
     cy.getByData('classification-panel-btn-general-classification').click();
     cy.wait('@onClassificationRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
+Cypress.Commands.add('transferRequest', () => {
+    const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/transfer\\?mediaType=16&agentId=${Cypress.env('id')}`)
+    cy.intercept('POST', urlRegex).as('transferRequest');
+    cy.getByData('attendance-transfer-btn-transfer-attendance').click();
+        cy.wait('@transferRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
     });
 });

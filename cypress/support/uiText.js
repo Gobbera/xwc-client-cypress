@@ -344,6 +344,12 @@ window.UITEXT = {
         ESES: 'Guardado exitosamente!'
     },
 
+    TOAST_NOTIFICATIONS_DRAFT_SAVED: {
+        PTBR: 'Rascunho salvo',
+        ENUS: 'Just update the draft',
+        ESES: 'Borrador guardado'
+    },
+
     //#region WARNING
 
     WARNING_USERNAME_OR_PASSWORD_DOES_NOT_MATCH: {
