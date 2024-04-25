@@ -9,7 +9,7 @@ describe('Create a new person on CRM', () => {
   } 
   beforeEach(() => {
     cy.viewport(1600, 900);
-    cy.login(Cypress.env('username'), Cypress.env('password'));
+    cy.login(Cypress.env('username'), Cypress.env('password'), true);
   });
 
   it('Should open CRM and create a new contact person', () => {

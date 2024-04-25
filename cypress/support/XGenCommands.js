@@ -184,12 +184,18 @@ Cypress.Commands.add('workCenterFlow', (action) => {
             break;
 
         case 'crm':
-            if (action.tabContext) {
-                cy.splitbtn('workcenter-screen', 'persons-and-contacts', action.tabContext);
+            if (action.tabContext === 'automation-tasks') {
+                cy.taskAutomationRequest(action.tabContext);
                 cy.checksTheIntegrity(actionString);
                 break;
             }
-            cy.getByData('workcenter-screen-splitbtn-persons-and-contacts').click();
+            if (action.tabContext === 'new-person') {
+                cy.contactDetailsRequest(action.tabContext);
+                cy.checksTheIntegrity(actionString);
+                cy.newPersonRequest();
+                break;
+            }
+            cy.contactDetailsRequest(actionString);
             cy.checksTheIntegrity(actionString);
             break;
 

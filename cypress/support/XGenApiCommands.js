@@ -113,10 +113,37 @@ Cypress.Commands.add('classificationRequest', () => {
 });
 
 Cypress.Commands.add('transferRequest', () => {
-    const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/transfer\\?mediaType=16&agentId=${Cypress.env('id')}`)
+    const urlRegex = new RegExp(`\\/xgen_desenv6\\.dll\\/v1\\/agent\\/transfer\\?mediaType=16&agentId=${Cypress.env('id')}`);
     cy.intercept('POST', urlRegex).as('transferRequest');
     cy.getByData('attendance-transfer-btn-transfer-attendance').click();
         cy.wait('@transferRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
+Cypress.Commands.add('contactDetailsRequest', (tabContext) => {
+    const urlRegex = new RegExp(`\\/v1\\/users\\/contactsDetails\\?offset=0&limit=20`);
+    cy.intercept('GET', urlRegex).as('contactDetailsRequest');
+    cy.getByData('workcenter-screen-splitbtn-persons-and-contacts').click();
+    cy.wait('@contactDetailsRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
+Cypress.Commands.add('newPersonRequest', () => {
+    const urlRegex = new RegExp(`\\/v1\\/users\\/contacts\\?personId=0&offset=0&limit=20`)
+    cy.intercept('GET', urlRegex).as('newPersonRequest');
+    cy.getByData('person-window-btn-new-grid-person').click();
+        cy.wait('@newPersonRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
+Cypress.Commands.add('taskAutomationRequest', () => {
+    const urlRegex = new RegExp(`\\/v1\\/users\\/task_automation\\?offset=0&limit=20`);
+    cy.intercept('GET', urlRegex).as('taskAutomationRequest');
+    cy.splitbtn('workcenter-screen', 'persons-and-contacts', 'automation-tasks');
+        cy.wait('@taskAutomationRequest', { timeout: 10000 }).then((interception) => {
         expect(interception.response.statusCode).to.eq(200);
     });
 });

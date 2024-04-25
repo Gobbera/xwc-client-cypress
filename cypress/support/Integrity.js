@@ -141,7 +141,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             break;
 
         case 'crm':
-            cy.windowsHeaderComponent('person-and-contacts', UITEXT.WORKCENTER_PERSONS);
+            cy.windowsHeaderComponent('person', UITEXT.WORKCENTER_PERSONS);
             cy.getByData('person-window-tabpanel').should('exist');
             cy.getByData('activity-new-window-persons-grid').should('exist');
             cy.getByData('activity-new-window-persons-grid-grid-search-text').checkContent(UITEXT.GENERAL_TEXT);
@@ -151,7 +151,7 @@ Cypress.Commands.add('checksTheIntegrity', (context) => {
             cy.getByData('person-window-btn-new-person').checkContent(UITEXT.PERSON_WINDOW_ASSOCIATE_NEW_PERSON);
             cy.getByData('person-window-btn-new-grid-person').checkContent(UITEXT.GENERAL_PERSON);
             cy.getByData('person-window-tabpanel-list').checkContent(UITEXT.GENERAL_LIST);
-            cy.pagingToolBarComponent('activity-session');
+            cy.pagingToolBarComponent('activity-new-window-persons');
             break;
 
         case 'crm.task-automation':
