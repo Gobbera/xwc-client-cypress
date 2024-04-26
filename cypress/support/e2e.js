@@ -22,6 +22,7 @@ import './ExtClassicCommands';
 import './XGenCommands';
 import './XGenApiCommands';
 import './UtilCommands';
+import './SupportFunction';
 
 
 // Alternatively you can use CommonJS syntax:

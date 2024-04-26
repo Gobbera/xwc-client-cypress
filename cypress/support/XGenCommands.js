@@ -50,6 +50,44 @@ Cypress.Commands.add('xGetAttendanceItem', (option) => {
     cy.emailRetrievedQueuedRequest(option);
 });
 
+Cypress.Commands.add('xCreatePerson', (person, contactType) => {
+    cy.getByData('contact-window-client-contact-name').type(person.name && person.lastName ? `${person.name} ${person.lastName}` : '{backspace}');
+    cy.getByData('contact-window-client-contact-nick').type(person.nickname ? person.nickname : '{backspace}');
+    cy.selectComboItem('contact-window-client-contact-gender', person.gender ? person.gender : '');
+    cy.getByData('contact-window-client-contact-title').type(person.title ? person.title : '{backspace}');
+    cy.selectComboItem('contact-window-contact-marital-status', person.maritalState ? person.maritalState : '');
+    cy.getByData('contact-window-date-field').type(person.dateOfBirth ? person.dateOfBirth : '{backspace}' );
+    cy.getByData('contact-window-client-contact-note').type(person.note ? person.note : '{backspace}');
+    cy.xCreateContact(contactType, person);
+    cy.addPersonRequest();
+    cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CONTACT_ADDED);
+});
+
+Cypress.Commands.add('xCreateContact', (type, person) => {
+    cy.getByData('contact-tab-btn-new').click();
+    cy.selectComboItem('new-contact-container-combobox-contact-type', type);
+    cy.getByData('new-contact-container-textfield-contact-name').find('input').type(person.name && person.lastName ? `${person.name} ${person.lastName}` : '{backspace}');
+    if(type === 'Email') {
+        cy.getByData('new-contact-container-textfield-conversation-identification-email').find('input').type(person.email ? person.email : person.name ? `${formatString('email', person.name)}@gmail.com` : '{backspace}');
+    }
+    if (type === 'Telefone') {
+        cy.getByData('new-contact-container-textfield-conversation-identification-phone').find('input').type(person.phone ? person.phone : '{backspace}');
+    }
+    cy.newContactRequest();
+    function formatString(type, string) {
+        switch (type) {
+          case 'email':
+            string = string.replace(' ', '.').toLowerCase(string);
+            return string;
+          case 'nickname':
+            return string.slice(0, 3);
+            }
+        }
+    cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CONTACT_ADDED);
+});
+
+
+
 Cypress.Commands.add('xTransferAttendance', (option) => {
     if (option === 'operator') {
         cy.getByData('attendance-transfer-tab-agent').click();
@@ -191,8 +229,8 @@ Cypress.Commands.add('workCenterFlow', (action) => {
             }
             if (action.tabContext === 'new-person') {
                 cy.contactDetailsRequest(action.tabContext);
-                cy.checksTheIntegrity(actionString);
                 cy.newPersonRequest();
+                cy.checksTheIntegrity(actionString);
                 break;
             }
             cy.contactDetailsRequest(actionString);

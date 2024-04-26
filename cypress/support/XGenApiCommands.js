@@ -148,5 +148,21 @@ Cypress.Commands.add('taskAutomationRequest', () => {
     });
 });
 
+Cypress.Commands.add('newContactRequest', () => {
+    cy.intercept('POST', 'https://xgentest6-desenv.xgen.com.br/v1/users/contacts/').as('newContactRequest');
+    cy.getByData('new-contact-container-btn-add').click();
+    cy.wait('@newContactRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(201);
+    });
+});
+
+Cypress.Commands.add('addPersonRequest', () => {
+    cy.intercept('POST', 'https://xgentest6-desenv.xgen.com.br/v1/users/persons/').as('addPersonRequest');
+    cy.getByData('contact-window-btn-save').click();
+    cy.wait('@addPersonRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(201);
+    });
+});
+
 
 

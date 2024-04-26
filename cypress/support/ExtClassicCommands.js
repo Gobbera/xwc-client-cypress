@@ -21,8 +21,14 @@ Cypress.Commands.add('pagingToolBarComponent', (context) => {
 
 
 //commands
-Cypress.Commands.add('selectComboItem', (item) => {
-    cy.get('.x-boundlist-item').contains(item).click();
+Cypress.Commands.add('selectComboItem', (component, option) => {
+    if (!option) {
+        return;
+    }
+    cy.getByData(component).within(() => {
+        cy.get('.x-form-arrow-trigger').click();
+    });
+    cy.get('.x-boundlist-item').contains(option).click();
 });
 
 Cypress.Commands.add('selectGridItem', (item) => {

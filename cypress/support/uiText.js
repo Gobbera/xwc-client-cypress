@@ -350,6 +350,12 @@ window.UITEXT = {
         ESES: 'Borrador guardado'
     },
 
+    TOAST_NOTIFICATIONS_CONTACT_ADDED: {
+        PTBR: 'Contato Adicionado',
+        ENUS: 'Contact Added',
+        ESES: 'Contacto Agregado'
+    },
+
     //#region WARNING
 
     WARNING_USERNAME_OR_PASSWORD_DOES_NOT_MATCH: {
