@@ -33,7 +33,7 @@ describe('Busca', () => {
         cy.xTransferAttendance('operator');
     });
 
-    it.only('Buscar - Email na fila - Classificar', () => {
+    it('Buscar - Email na fila - Classificar', () => {
         cy.get('.pending-action').should('exist');
         cy.xClassifyAttendance('email', 0);
         cy.getByData('email-screen-btn-classification').click();

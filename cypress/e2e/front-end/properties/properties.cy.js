@@ -63,7 +63,7 @@ describe('Propriedades', () => {
         cy.getByData('property-window-attendance-combo-capacity-offline').find('input').should('have.value', capacity.offline);
     });
 
-    it.only('Propriedades - Atendimentos - Excedendo limite de atendimentos', () => {
+    it('Propriedades - Atendimentos - Excedendo limite de atendimentos', () => {
         cy.workCenterFlow('properties.attendances');
         const maximumCapacity = Cypress.env('maximumCapacity');
         cy.getByData('property-window-attendance-combo-capacity-online').click();

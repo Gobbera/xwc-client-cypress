@@ -78,7 +78,7 @@ Cypress.Commands.add('xCreatePerson', (person, contactType) => {
 Cypress.Commands.add('xCreateContact', (type, person) => {
     cy.getByData('contact-tab-btn-new').click();
     cy.selectComboItem('new-contact-container-combobox-contact-type', type);
-    cy.getByData('new-contact-container-textfield-contact-name').find('input').type(person.name && person.lastName ? `${person.name} ${person.lastName}` : '{backspace}');
+    cy.getByData('new-contact-container-textfield-contact-name').find('input').type(person.name ? person.name : '{backspace}');
     if(type === 'Email') {
         cy.getByData('new-contact-container-textfield-conversation-identification-email').find('input').type(person.email ? person.email : person.name ? `${formatString('email', person.name)}@gmail.com` : '{backspace}');
     }
@@ -97,6 +97,18 @@ Cypress.Commands.add('xCreateContact', (type, person) => {
         }
     cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CONTACT_ADDED);
 });
+
+Cypress.Commands.add('xDeleteContact', (contact) => {
+    cy.get('.x-grid-item').each(($item) => {
+      if ($item.text().includes(contact.name)) {
+        cy.wrap($item).click({force: true});
+        cy.wait(2000);
+        cy.wrap($item).type('{enter}');
+      }
+    });
+    cy.getByData('contact-tab-btn-delete').click();
+    cy.deleteContactRequest();
+}); 
 
 Cypress.Commands.add('xCreateAddress', (type, person) => {
     cy.get('.card-type-virtual-tab').first().within(()=> { //TODO mudar no client

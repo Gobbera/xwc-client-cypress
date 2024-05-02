@@ -156,6 +156,15 @@ Cypress.Commands.add('newContactRequest', () => {
     });
 });
 
+Cypress.Commands.add('deleteContactRequest', () => {
+    const urlRegex = new RegExp(`\\/v1\\/users\\/persons\\/`);
+    cy.intercept('DELETE', urlRegex).as('deleteContactRequest');
+    cy.windowYesOrNo('y');
+    cy.wait('@deleteContactRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
 Cypress.Commands.add('addPersonRequest', () => {
     cy.intercept('POST', 'https://xgentest6-desenv.xgen.com.br/v1/users/persons/').as('addPersonRequest');
     cy.getByData('contact-window-btn-save').click();
@@ -172,6 +181,8 @@ Cypress.Commands.add('attPersonRequest', () => {
         expect(interception.response.statusCode).to.eq(200);
     });
 });
+
+
 
 
 

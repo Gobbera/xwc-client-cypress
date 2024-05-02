@@ -39,11 +39,16 @@ describe('Crm - Pessoas e Contatos', () => {
       cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_SUCCESSFULLY_UPDATED);
     });  
 
-    it.only('Crm - Pessoa existente - Deletar contato', () => {
+    it('Crm - Pessoa existente - Deletar contato', () => {
+      const name = faker.person.firstName(); 
+      const contact = {
+        name: name,
+        email: `${name}.contact@willbedeleted.com`
+      }
       cy.pag('activity-new-window-persons', 52);
       cy.getByData('activity-new-window-persons-grid').dblclick();
-      cy.wait(5000);
-      cy.get('.x-grid-item').eq(0).click({force: true});
-      //cy.selectGridItem(0);
-    });  
+      cy.wait(3000);
+      cy.xCreateContact('Email', contact);
+      cy.xDeleteContact(contact); 
+    }); 
 });

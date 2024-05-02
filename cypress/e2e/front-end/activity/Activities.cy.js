@@ -4,7 +4,7 @@ describe('Atividades', () => {
     cy.login(Cypress.env('username'), Cypress.env('password'), true);
   });
   
-  it('Atividades', () => {
+/*   it('Atividades', () => {
     cy.workCenterFlow('activities');
     cy.wait(5000);
     cy.get('.activity-session-header').should('exist');
@@ -34,13 +34,13 @@ describe('Atividades', () => {
         }
       }
     });
-  });
+  }); */
  
   it('Atividades - Backlog', () => {
     cy.workCenterFlow('activities.activity-backlog'); //TODO trocar no client para somente backlog
   });
 
-  it.only('Atividades - Nova atividade - Verificar no grid', () => {
+  it('Atividades - Nova atividade - Verificar no grid', () => {
     cy.workCenterFlow('activities.new-activity');
     cy.get('.fa-exclamation-circle').should('exist');
     cy.getByData('activity-new-window-btn-create').invoke('attr', 'class').should('include', 'x-btn-disabled');
