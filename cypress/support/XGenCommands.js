@@ -52,15 +52,27 @@ Cypress.Commands.add('xGetAttendanceItem', (option) => {
 
 Cypress.Commands.add('xCreatePerson', (person, contactType) => {
     cy.getByData('contact-window-client-contact-name').type(person.name && person.lastName ? `${person.name} ${person.lastName}` : '{backspace}');
-    cy.getByData('contact-window-client-contact-nick').type(person.nickname ? person.nickname : '{backspace}');
+    cy.getByData('contact-window-client-contact-nick').type(person.nickname ? person.nickname : person.name ? person.name : '{backspace}');
     cy.selectComboItem('contact-window-client-contact-gender', person.gender ? person.gender : '');
     cy.getByData('contact-window-client-contact-title').type(person.title ? person.title : '{backspace}');
     cy.selectComboItem('contact-window-contact-marital-status', person.maritalState ? person.maritalState : '');
     cy.getByData('contact-window-date-field').type(person.dateOfBirth ? person.dateOfBirth : '{backspace}' );
     cy.getByData('contact-window-client-contact-note').type(person.note ? person.note : '{backspace}');
-    cy.xCreateContact(contactType, person);
-    cy.addPersonRequest();
-    cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CONTACT_ADDED);
+    if (contactType) {
+        if (contactType === 'Associar') {
+            cy.xAssociateContact();
+            cy.addPersonRequest();
+            cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CONTACT_ADDED);
+            return;
+        }
+        cy.xCreateContact(contactType, person);
+        cy.addPersonRequest();
+        cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CONTACT_ADDED);
+    } else {
+        cy.getByData('contact-window-btn-save').click();
+        cy.alertWindow('Erro ao criar.Por favor, adicione pelo menos um contato antes de criar uma nova Pessoa0%0%OKYesNoCancel');
+    }
+
 });
 
 Cypress.Commands.add('xCreateContact', (type, person) => {
@@ -86,7 +98,19 @@ Cypress.Commands.add('xCreateContact', (type, person) => {
     cy.xToastNotification(UITEXT.TOAST_NOTIFICATIONS_CONTACT_ADDED);
 });
 
+Cypress.Commands.add('xCreateAddress', (type, person) => {
+    cy.get('.card-type-virtual-tab').first().within(()=> { //TODO mudar no client
+        cy.get('.fa-address-book').click(); //TODO mudar no client
+    }); 
+    cy.getByData('contact-tab-btn-new').click();
+});
 
+Cypress.Commands.add('xAssociateContact', (type, person) => {
+    cy.getByData('contact-tab-btn-associate').click();
+    cy.get('.associate-contact-container').click();
+    //cy.selectGridItem(0);
+    cy.getByData('associate-contact-container-btn-add').click();
+});
 
 Cypress.Commands.add('xTransferAttendance', (option) => {
     if (option === 'operator') {

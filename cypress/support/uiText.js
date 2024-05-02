@@ -331,17 +331,17 @@ window.UITEXT = {
     },
 
     //#region TOAST NOTIFICATIONS
-
+    
     TOAST_NOTIFICATIONS_CREATED_WITH_SUCCESS: {
         PTBR: 'Criado com sucesso.',
         ENUS: 'Successfully created.',
         ESES: 'Creado con éxito.'
     },
-
-    TOAST_NOTIFICATIONS_SAVED_SUCCESSFULLY: {
-        PTBR: 'Salvo com sucesso!',
-        ENUS: 'Saved successfully.',
-        ESES: 'Guardado exitosamente!'
+    
+    TOAST_NOTIFICATIONS_CONTACT_ADDED: {
+        PTBR: 'Contato Adicionado',
+        ENUS: 'Contact Added',
+        ESES: 'Contacto Agregado'
     },
 
     TOAST_NOTIFICATIONS_DRAFT_SAVED: {
@@ -350,10 +350,16 @@ window.UITEXT = {
         ESES: 'Borrador guardado'
     },
 
-    TOAST_NOTIFICATIONS_CONTACT_ADDED: {
-        PTBR: 'Contato Adicionado',
-        ENUS: 'Contact Added',
-        ESES: 'Contacto Agregado'
+    TOAST_NOTIFICATIONS_SAVED_SUCCESSFULLY: {
+        PTBR: 'Salvo com sucesso!',
+        ENUS: 'Saved successfully.',
+        ESES: 'Guardado exitosamente!'
+    },
+
+    TOAST_NOTIFICATIONS_SUCCESSFULLY_UPDATED: {
+        PTBR: 'Atualizado com sucesso',
+        ENUS: 'Successfully updated',
+        ESES: 'Actualizado exitosamente'
     },
 
     //#region WARNING

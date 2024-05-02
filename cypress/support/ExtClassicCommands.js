@@ -33,8 +33,8 @@ Cypress.Commands.add('selectComboItem', (component, option) => {
 
 Cypress.Commands.add('selectGridItem', (item) => {
     cy.get('.x-grid-item').eq(item).click({force: true});
-})
-;
+});
+
 Cypress.Commands.add('selectGridCheckBoxItem', (item) => {
     cy.get('.x-grid-item').eq(item).within(() => {
         cy.get('.x-tree-checkbox').click();
@@ -68,4 +68,12 @@ Cypress.Commands.add('windowYesOrNo', (value) => {
         return;
     }
 });
+
+Cypress.Commands.add('searchItem', () => {
+    
+});
+
+
+
+
 

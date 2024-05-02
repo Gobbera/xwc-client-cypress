@@ -164,5 +164,14 @@ Cypress.Commands.add('addPersonRequest', () => {
     });
 });
 
+Cypress.Commands.add('attPersonRequest', () => {
+    const urlRegex = new RegExp(`\\/v1\\/users\\/persons\\/`);
+    cy.intercept('PUT', urlRegex).as('attPersonRequest');
+    cy.getByData('contact-window-btn-save').click();
+    cy.wait('@attPersonRequest', { timeout: 10000 }).then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+    });
+});
+
 
 
